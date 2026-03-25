@@ -21,7 +21,7 @@ Notes: Enforces obligation-first epistemic control across all project artifacts 
 ## Purpose of This Document
 
 This document defines **how work proceeds** under the constraints established in:
-- `CONSTITUTION_Principles__*`
+- `KNOWLEDGE_GRAPH_Thomas__[latest].md` (your belief graph is your constitution)
 
 **This is a flexible framework, not rigid prescription.** It describes ideal behaviors and goals while allowing adaptation to emerging needs.
 

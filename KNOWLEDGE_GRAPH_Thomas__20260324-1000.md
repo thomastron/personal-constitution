@@ -19,7 +19,6 @@ Notes: v3.3 (2026-03-24): DB-8 amended (human-AI entanglement via distributed ob
 - `Mind Map 2025.md`
 - `PT$D_book_20260217-1005.md`
 - `NARRATIVE_STRUCTURE__20260217-1500.md`
-- `CONSTITUTION_Principles__20260129-1145.md`
 - `PROCESS_Obligation_First_Workflow__20260130-1428.md`
 - `_Debating Bad-Faith Tactics_ Socratic Redirections .md`
 - Thomas's oral review session, 2026-03-06
@@ -31,7 +30,7 @@ Notes: v3.3 (2026-03-24): DB-8 amended (human-AI entanglement via distributed ob
 - Thomas / Claude conversation, 2026-03-23: functional discourse analysis, capacity failure taxonomy, O'Brien LBC segment (Strait of Hormuz), drapedapes framework
 - Thomas / Claude conversation, 2026-03-24: U.S. fiscal insolvency analysis (Fortune article, Hanke & Walker), Treasury FY2025 consolidated financial statements, human-AI entanglement and distributed obligation (Sapolsky), BS-9 promotion to DB-26
 
-**Companion documents required:** `KNOWLEDGE_GRAPH_Interlocutor__[latest].md` (interlocutor graph — build your own), `CONSTITUTION_Principles__20260129-1145.md`
+**Companion documents required:** `KNOWLEDGE_GRAPH_Interlocutor__[latest].md` (interlocutor graph — build your own)
 
 ---
 

@@ -115,6 +115,5 @@ The MD file contains a **Section 7 — Edge Map** at the bottom: a human-readabl
 ## Active Companion Documents
 
 - `KNOWLEDGE_GRAPH_FriendS__20260322-1000.md` — Friend S's belief system (anonymized; see README for how to build your own)
-- `CONSTITUTION_Principles__20260129-1145.md` — Original source for FP nodes
 
 > Use timestamps in filenames to identify the current version of each file.

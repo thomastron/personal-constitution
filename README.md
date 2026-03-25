@@ -1,6 +1,8 @@
 # Personal Constitution — Belief Accountability System
 
-A structured, machine-traversable knowledge graph of one person's belief system — built for Socratic debate preparation, self-audit, and epistemic accountability. Designed to run inside an agentic AI environment (Claude Code).
+You talk. AI listens, organizes, and pushes back. Your beliefs end up on the record — mapped, connected, and stress-tested.
+
+No coding required. The structure is there so the AI can understand you more deeply. You don't have to think in graphs. That's what the AI is for.
 
 ---
 
@@ -8,7 +10,13 @@ A structured, machine-traversable knowledge graph of one person's belief system 
 
 Most people hold beliefs without mapping them. They argue from positions they can't fully articulate, contradict themselves without noticing, and struggle to distinguish what they actually believe from what they're defending in the moment.
 
-This system is an attempt to fix that — for one person, done rigorously.
+This system fixes that — not by making you learn a new skill, but by giving you an AI wingman that does the organizing for you.
+
+**You say what you believe. The AI helps you figure out what that actually means, what it connects to, and where it breaks down.**
+
+The structured format (nodes, edges, syntax) exists so the AI can understand your thinking at a deeper level — not because you need to think that way. You'll rarely look at the raw structure. You'll just talk, and the AI will build the map.
+
+Think of it as *Help me help you* — the more clearly your beliefs are on record, the more precisely the AI can challenge, support, and extend your thinking.
 
 The core idea: **put your beliefs on the record, in a structured format, with traceability.** Then use an AI agent to attack them.
 
@@ -123,9 +131,9 @@ For `/socratic` sessions, the CLAUDE.md instructs Claude to load:
 
 This system is designed to be forked and repopulated with your own beliefs.
 
-### Step 1 — Write your Constitution
+### Step 1 — Articulate your First Principles
 
-Start with `CONSTITUTION_Principles__*.md`. These are the non-negotiable constraints on your thinking — not opinions, not positions, but operating principles. State them in universal form. Anything that can't survive being stated universally probably isn't a first principle.
+Start by telling the AI what you actually believe at the deepest level — the things you'd defend in any situation, not just positions you hold on particular topics. These become your FP nodes. You don't need to format them yourself; just say them in plain language and let the AI translate. Anything that can't survive being stated universally probably isn't a first principle.
 
 ### Step 2 — Build your First Principles layer (FP nodes)
 
@@ -158,7 +166,6 @@ First Principles may only be revised via **explicit, timestamped amendment** wit
 | File | Description |
 |------|-------------|
 | `CLAUDE.md` | Session configuration for Claude Code — context loading rules, architecture overview |
-| `CONSTITUTION_Principles__20260129-1145.md` | Foundational principles governing all work |
 | `KNOWLEDGE_GRAPH_Thomas__20260324-1000.md` | Full belief graph — authoritative prose version (v2.3) |
 | `KNOWLEDGE_GRAPH_Thomas__CHANGELOG__20260323.md` | Amendment history and version log |
 | `graph_thomas.jsonc` | Belief graph — JSONC node file (machine-traversable) |
