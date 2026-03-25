@@ -33,6 +33,8 @@ This repo contains:
 
 Everything is versioned, timestamped, and amendment-traceable.
 
+**NOTE:** _I use an unconventional flat folder structure with date suffixes. This works for small teams and allows for instant visibility into document control history. For example, when browsing the folder sorted alphabetically, the file revision history is fairly obvious as the files create a visual timeline of sorts. It's also more obvious if you are working on an out-of-date file._ 
+
 ---
 
 ## Why It Exists
