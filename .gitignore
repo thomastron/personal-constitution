@@ -1,5 +1,8 @@
 # ── Private / excluded from public repo ────────────────────────────────────
 
+# Constitution (superseded by Knowledge Graph; kept locally as archive)
+CONSTITUTION_Principles__*
+
 # Interlocutor graphs (private personal data)
 KNOWLEDGE_GRAPH_Skyler*
 SKYLER_*
