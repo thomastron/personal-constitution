@@ -54,6 +54,13 @@ Mind Map*.md
 # Standalone session notes
 "The Pincer Movement*.md"
 
+# Media / images (exclude by default; whitelist _media/ for README assets)
+*.png
+*.jpg
+*.jpeg
+!_media/
+!_media/*
+
 # OS / editor artifacts
 .DS_Store
 Thumbs.db
