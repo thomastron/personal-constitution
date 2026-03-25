@@ -120,6 +120,9 @@ The chain-of-reasoning explainer. Walks a complex argument step-by-step, making 
 
 ## How to Use in Claude Code
 
+EASIEST OPTION - save the `KNOWLEDGE_GRAPH_Thomas.md` to your local machine, edit it to make your own `KNOWLEDGE_GRAPH_yournamehere.md`, and use it as context to feed into future AI sessions on any platform. 
+
+## For Users of Agentic platforms like Claude Code
 1. **Clone this repo** and open it as your working directory in Claude Code
 2. **CLAUDE.md** will be auto-loaded as session configuration
 3. Start a session with `/socratic [opponent's claim]` or `/dog-walk [topic]`
