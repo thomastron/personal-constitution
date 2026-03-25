@@ -4,7 +4,7 @@
 
 You talk. AI listens, organizes, and pushes back. Your beliefs end up on the record — mapped, connected, and stress-tested.
 
-No coding required. The structure is there so the AI can understand you more deeply. You don't have to think in graphs. That's what the AI is for.
+No coding or software required. For a most simple example: save `KNOWLEDGE_GRAPH_Thomas.md` to your local machine, edit it as needed and make your own `KNOWLEDGE_GRAPH_yournamehere.md`, and then just drag this file into AI conversations as context. Then prompt about any topic. The structure is there so the AI can understand you more deeply. You don't have to think in graphs. That's what the AI is for.
 
 ![Help Me Help You](https://media.giphy.com/media/fdLR6LGwAiVNhGQNvf/giphy.gif)
 
