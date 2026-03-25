@@ -54,6 +54,11 @@ Mind Map*.md
 # Standalone session notes
 "The Pincer Movement*.md"
 
+# Media / images
+*.png
+*.jpg
+*.jpeg
+
 # OS / editor artifacts
 .DS_Store
 Thumbs.db
