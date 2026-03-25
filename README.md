@@ -53,7 +53,7 @@ Three purposes:
 
 ### Node Taxonomy
 
-| Prefix | Type | Description |
+| ...Prefix... | Type | Description |
 |--------|------|-------------|
 | `FP-n` | First Principle | Strong moral/logical default; universal form establishes weight |
 | `FR-n` | Framework | Interpretive lens applied to data |
