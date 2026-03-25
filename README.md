@@ -1,28 +1,31 @@
 # Personal Constitution — Belief Accountability System
 
+![The Personal Constitution of [User]](Gemini_Generated_Image_pbdkvrpbdkvrpbdk.png)
+
 You talk. AI listens, organizes, and pushes back. Your beliefs end up on the record — mapped, connected, and stress-tested.
 
 No coding required. The structure is there so the AI can understand you more deeply. You don't have to think in graphs. That's what the AI is for.
+
+![Help Me Help You](https://media.giphy.com/media/fdLR6LGwAiVNhGQNvf/giphy.gif)
 
 ---
 
 ## What This Is
 
-Most people hold beliefs without mapping them. They argue from positions they can't fully articulate, contradict themselves without noticing, and struggle to distinguish what they actually believe from what they're defending in the moment.
+Everyone has a personal constitution. It's the set of principles that actually govern how you think, what you defend, and what you won't compromise on — whether you've written them down or not. The difference between having it on paper and not is accountability.
 
-This system fixes that — not by making you learn a new skill, but by giving you an AI wingman that does the organizing for you.
+This system is that constitution, in digital form. Instead of pen and paper, you get a packet of structured files that an AI can read, traverse, and reason over. The Knowledge Graph *is* the constitution. They're the same thing.
+
+The core idea: **AI is your wingman.** It holds your beliefs in memory better than you can. It organizes them, maps how they connect, flags where they contradict each other, and points out the blind spots your principles imply but you've never consciously addressed.
+
+Most people argue from System 1 — fast, automatic, pattern-matched. You say what feels right. This system forces System 2: slow, deliberate, effortful reasoning where you actually examine the chain of logic holding your positions together. Not because the AI lectures you, but because it asks the question you haven't asked yourself yet.
 
 **You say what you believe. The AI helps you figure out what that actually means, what it connects to, and where it breaks down.**
 
-The structured format (nodes, edges, syntax) exists so the AI can understand your thinking at a deeper level — not because you need to think that way. You'll rarely look at the raw structure. You'll just talk, and the AI will build the map.
-
-Think of it as *Help me help you* — the more clearly your beliefs are on record, the more precisely the AI can challenge, support, and extend your thinking.
-
-The core idea: **put your beliefs on the record, in a structured format, with traceability.** Then use an AI agent to attack them.
+The structured format (nodes, edges, syntax) exists so the AI can understand your thinking at a deeper level — not because you need to think that way. You'll rarely look at the raw structure. You'll just talk, and the AI will build the map. The more clearly your beliefs are on record, the more precisely the AI can challenge, support, and extend your thinking.
 
 This repo contains:
-- A **personal constitution** — the foundational principles that govern all downstream beliefs
-- A **knowledge graph** of first principles, frameworks, derived beliefs, evidence, tensions, blind spots, and self-audits
+- A **knowledge graph** (your constitution) — first principles, frameworks, derived beliefs, evidence, tensions, blind spots, and self-audits
 - A **Socratic debate engine** (`/socratic`) that loads the graph and generates targeted questions to probe the weakest structural points
 - A **chain-of-reasoning explainer** (`/dog-walk`) for working through complex arguments step by step
 - A **governing process** that enforces epistemic accountability across all artifacts
