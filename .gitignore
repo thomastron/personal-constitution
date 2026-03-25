@@ -1,0 +1,59 @@
+# ── Private / excluded from public repo ────────────────────────────────────
+
+# Interlocutor graphs (private personal data)
+KNOWLEDGE_GRAPH_Skyler*
+SKYLER_*
+
+# Book project (separate concern)
+PT$D_book_*
+NARRATIVE_STRUCTURE_*
+KNOWLEDGE_GRAPH_PTSD_*
+BOOK_DEVELOPMENT_*
+BOOK_INSIGHTS_*
+
+# Session transcripts and conversation logs
+20260*.md
+20260*.txt
+
+# Pending-review drafts
+XXXX*.md
+XXX*.md
+
+# Underscore-prefixed private drafts and notes
+_*.md
+
+# Backup files
+*_backup.jsonc
+
+# Internal eval data
+.dog-walk-evals/
+
+# Version archive
+_archive/
+
+# Loose Claude session task-description files (generated during sessions)
+# These are planning notes, not content
+Add *.md
+Build *.md
+Compare *.md
+Consolidate *.md
+Create *.md
+Discuss *.md
+Embed *.md
+Plan *.md
+Review *.md
+Personal *.md
+Untitled.md
+
+# Mind map drafts
+Mind Map*.md
+
+# Standalone session notes
+"The Pincer Movement*.md"
+
+# OS / editor artifacts
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo

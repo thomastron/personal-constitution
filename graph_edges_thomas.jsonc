@@ -1,0 +1,478 @@
+{
+  "meta": {
+    "version": "3.2",
+    "timestamp": "2026-03-24",
+    "note": "v3.2 (2026-03-24): EV-12 added (OpenAI Economic Blueprint); DB-28 enriched with Blueprint case study; 8 new EV-12 edges. v3.1 (2026-03-24): BS-7+BS-10 promoted to DB-27 (Healthcare as Civil Right); BS-8 promoted to DB-28 (Technology Regulation); 15 additional edges. All blind spots (BS-7–BS-10) now declared. v3.0 (2026-03-24): DB-8 amended (human-AI entanglement); BS-9 promoted to DB-26 (progressive taxation + UBI); EV-11 added (Treasury FY2025 fiscal insolvency); FR-26 enriched (fiscal application); T-13 added (transformation vs. captured political class); SA-3 amended (post-book resilience). 19 new edges. Source: Thomas / Claude session 2026-03-24. v2.9 (2026-03-23): added edges for FR-26 (Isometric Hold), SA-8 (Cognitive Synthesis Self-Model), and EV-10 (CRE 2026 Market Data). 11 new edges total. Source: Thomas / Gemini conversation 2026-03-23: _CRE Market Faces Debt Maturity Wall.md. v2.8 (2026-03-23): added edges for FR-24 (Functional Discourse) and FR-25 (Taxonomy of Capacity Failure). Source: Thomas / Claude session 2026-03-23. v2.7 (2026-03-21): added edges for DB-25 (Conscription as Electoral Equalizer). Source: Socratic debate session, 2026-03-21. v2.6 (2026-03-19): added edges for DB-24 (Harm-Avoidance Institutional Frames) and EV-9 (ACE Study). Source: Thomas's essay on 'Do No Harm' vs. 'Reduce Suffering'. v2.4 (2026-03-16): added FP-10 missing edges, SA-4↔SA-6 rationalization loop, T-12 edges, DB-19 through DB-23 edges. All edges in the Socratic Debater knowledge graph. Thomas-internal edges and cross-graph contradiction edges (Thomas ↔ Friend S). Friend S edges to be populated after graph_interlocutor.json is built. Edges to retired nodes (FR-10, DB-4, DB-9, DB-11, DB-14) retained for lineage; nodes marked retired in graph_thomas.jsonc. v2.3: added edges for DB-18 (Reconciliation Requires Architectural Change, Not Time). v1.9: added edges for FR-19 (Negative Capability) and SA-6 (Outcome Attachment); added previously missing structural edges identified by graph audit (FP-11, FP-2, FR-6 connections). v2.0: added edges for FP-16 (Promise Trauma), FR-20 (Truth as Scarce Commodity), FR-21 (Living in Truth as Political Practice), FR-22 (Cultural Pathology Patterns), FR-23 (Collective Solidarity vs. Individual Obligation). v2.2: added edges for DB-17 (Book as Witness Record) and SA-7 (Capacity Constraint: cPTSD/Resource Depletion).",
+    "relation_vocabulary": {
+      "grounds":        "source node justifies or supports target node",
+      "contradicts":    "source and target are in direct conflict — primary Socratic engine target",
+      "supports":       "evidence anchors a belief",
+      "implies":        "principle generates an undeclared position (blind spots)",
+      "tensions_with":  "internal conflict requiring resolution",
+      "example_of":     "evidence instantiates a framework"
+    }
+  },
+
+  "edges": [
+
+    // ── GROUNDS: First Principles → Derived Beliefs ───────────────────────────
+
+    { "source": "FP-1",  "target": "DB-1",  "relation": "grounds",  "load_bearing": false, "notes": "" },
+    { "source": "FP-1",  "target": "DB-8",  "relation": "grounds",  "load_bearing": false, "notes": "" },
+    { "source": "FP-1",  "target": "DB-11", "relation": "grounds",  "load_bearing": false, "notes": "" },
+    { "source": "FP-2",  "target": "DB-10", "relation": "grounds",  "load_bearing": false, "notes": "" },
+    { "source": "FP-3",  "target": "DB-10", "relation": "grounds",  "load_bearing": false, "notes": "Conditional application" },
+    { "source": "FP-4",  "target": "DB-12", "relation": "grounds",  "load_bearing": false, "notes": "" },
+    { "source": "FP-5",  "target": "DB-3",  "relation": "grounds",  "load_bearing": true,  "notes": "Core obligation argument" },
+    { "source": "FP-5",  "target": "DB-7",  "relation": "grounds",  "load_bearing": false, "notes": "" },
+    { "source": "FP-6",  "target": "DB-2",  "relation": "grounds",  "load_bearing": false, "notes": "" },
+    { "source": "FP-6",  "target": "DB-3",  "relation": "grounds",  "load_bearing": true,  "notes": "" },
+    { "source": "FP-6",  "target": "DB-7",  "relation": "grounds",  "load_bearing": false, "notes": "" },
+    { "source": "FP-6",  "target": "DB-12", "relation": "grounds",  "load_bearing": false, "notes": "" },
+    { "source": "FP-8",  "target": "DB-1",  "relation": "grounds",  "load_bearing": false, "notes": "" },
+    { "source": "FP-8",  "target": "DB-6",  "relation": "grounds",  "load_bearing": false, "notes": "" },
+    { "source": "FP-10", "target": "DB-13", "relation": "grounds",  "load_bearing": false, "notes": "" },
+
+    // ── GROUNDS: Frameworks → Derived Beliefs ────────────────────────────────
+
+    { "source": "FR-1",  "target": "DB-8",  "relation": "grounds",  "load_bearing": false, "notes": "" },
+    { "source": "FR-1",  "target": "DB-9",  "relation": "grounds",  "load_bearing": false, "notes": "" },
+    { "source": "FR-1",  "target": "DB-11", "relation": "grounds",  "load_bearing": false, "notes": "" },
+    { "source": "FR-2",  "target": "DB-1",  "relation": "grounds",  "load_bearing": true,  "notes": "Deferral = temporal distortion. Load-bearing for Trump debate." },
+    { "source": "FR-2",  "target": "DB-2",  "relation": "grounds",  "load_bearing": true,  "notes": "Jan 6 as temporal binding violation" },
+    { "source": "FR-2",  "target": "DB-4",  "relation": "grounds",  "load_bearing": false, "notes": "" },
+    { "source": "FR-2",  "target": "DB-6",  "relation": "grounds",  "load_bearing": false, "notes": "" },
+    { "source": "FR-3",  "target": "DB-5",  "relation": "grounds",  "load_bearing": false, "notes": "Running deficits" },
+    { "source": "FR-3",  "target": "DB-10", "relation": "grounds",  "load_bearing": false, "notes": "Don't play stupid games" },
+    { "source": "FR-4",  "target": "DB-5",  "relation": "grounds",  "load_bearing": false, "notes": "" },
+    { "source": "FR-4",  "target": "DB-8",  "relation": "grounds",  "load_bearing": false, "notes": "" },
+    { "source": "FR-4",  "target": "DB-13", "relation": "grounds",  "load_bearing": false, "notes": "" },
+    { "source": "FR-8",  "target": "DB-4",  "relation": "grounds",  "load_bearing": false, "notes": "" },
+    { "source": "FR-8",  "target": "DB-6",  "relation": "grounds",  "load_bearing": false, "notes": "" },
+    { "source": "FR-9",  "target": "DB-1",  "relation": "grounds",  "load_bearing": false, "notes": "Ego distortion explains denialism" },
+    { "source": "FR-9",  "target": "DB-6",  "relation": "grounds",  "load_bearing": false, "notes": "" },
+    { "source": "FR-10", "target": "DB-4",  "relation": "grounds",  "load_bearing": false, "notes": "Madison inversion by algorithms" },
+    { "source": "FR-12", "target": "DB-10", "relation": "grounds",  "load_bearing": false, "notes": "" },
+
+    // ── SUPPORTS: Evidence → Derived Beliefs ─────────────────────────────────
+
+    { "source": "EV-1",  "target": "DB-1",  "relation": "supports", "load_bearing": false, "notes": "" },
+    { "source": "EV-1",  "target": "DB-3",  "relation": "supports", "load_bearing": false, "notes": "" },
+    { "source": "EV-2",  "target": "DB-2",  "relation": "supports", "load_bearing": true,  "notes": "Primary evidentiary anchor" },
+    { "source": "EV-3",  "target": "DB-5",  "relation": "supports", "load_bearing": false, "notes": "" },
+    { "source": "EV-3",  "target": "DB-9",  "relation": "supports", "load_bearing": false, "notes": "" },
+    { "source": "EV-4",  "target": "DB-7",  "relation": "supports", "load_bearing": true,  "notes": "Primary evidentiary anchor" },
+    { "source": "EV-5",  "target": "DB-9",  "relation": "supports", "load_bearing": true,  "notes": "4,000x ratio" },
+    { "source": "EV-6",  "target": "DB-4",  "relation": "supports", "load_bearing": false, "notes": "" },
+    { "source": "EV-6",  "target": "DB-6",  "relation": "supports", "load_bearing": false, "notes": "" },
+    { "source": "EV-7",  "target": "DB-8",  "relation": "supports", "load_bearing": false, "notes": "" },
+    { "source": "EV-8",  "target": "FR-5",  "relation": "example_of", "load_bearing": false, "notes": "" },
+
+    // ── IMPLIES: First Principles → Blind Spots ───────────────────────────────
+
+    { "source": "FP-5",  "target": "BS-1",  "relation": "implies",  "load_bearing": false, "notes": "" },
+    { "source": "FP-6",  "target": "BS-1",  "relation": "implies",  "load_bearing": false, "notes": "" },
+    { "source": "FR-2",  "target": "BS-1",  "relation": "implies",  "load_bearing": false, "notes": "Denial = temporal deferral" },
+    { "source": "FP-4",  "target": "BS-2",  "relation": "implies",  "load_bearing": false, "notes": "" },
+    { "source": "FP-11", "target": "BS-2",  "relation": "implies",  "load_bearing": false, "notes": "" },
+    { "source": "FR-4",  "target": "BS-2",  "relation": "implies",  "load_bearing": false, "notes": "Mass incarceration as labor control" },
+    { "source": "FR-4",  "target": "BS-3",  "relation": "implies",  "load_bearing": false, "notes": "Capital free to move, labor cannot" },
+    { "source": "FP-4",  "target": "BS-3",  "relation": "implies",  "load_bearing": false, "notes": "" },
+    { "source": "FR-1",  "target": "BS-4",  "relation": "implies",  "load_bearing": false, "notes": "" },
+    { "source": "FR-8",  "target": "BS-5",  "relation": "implies",  "load_bearing": false, "notes": "" },
+    { "source": "FP-9",  "target": "BS-5",  "relation": "implies",  "load_bearing": false, "notes": "" },
+
+    // ── NEW EDGES v1.3 ────────────────────────────────────────────────────────
+
+    // FP-12 grounds
+    { "source": "FP-5",  "target": "FP-12", "relation": "grounds",    "load_bearing": false, "notes": "Singer's logic is species-neutral" },
+    { "source": "FP-4",  "target": "FP-12", "relation": "grounds",    "load_bearing": false, "notes": "Dignity not limited to humans" },
+
+    // FR-14 (distributed responsibility) nuances DB-1
+    { "source": "FR-14", "target": "DB-1",  "relation": "grounds",    "load_bearing": false, "notes": "Architects of information environment share moral weight; reduces but does not eliminate enabler obligation" },
+
+    // DB-14 (advocacy as Singer compliance)
+    { "source": "FP-5",  "target": "DB-14", "relation": "grounds",    "load_bearing": false, "notes": "" },
+    { "source": "FP-3",  "target": "DB-14", "relation": "grounds",    "load_bearing": false, "notes": "" },
+    { "source": "FP-8",  "target": "DB-14", "relation": "grounds",    "load_bearing": false, "notes": "" },
+
+    // DB-15 (autonomy scales with good faith)
+    { "source": "FP-3",  "target": "DB-15", "relation": "grounds",    "load_bearing": false, "notes": "Conditional application of FP-3" },
+    { "source": "FP-4",  "target": "DB-15", "relation": "grounds",    "load_bearing": false, "notes": "" },
+    { "source": "FP-8",  "target": "DB-15", "relation": "grounds",    "load_bearing": false, "notes": "" },
+    { "source": "FR-9",  "target": "DB-15", "relation": "grounds",    "load_bearing": false, "notes": "Ego distortion explains bad-faith pattern" },
+    { "source": "FR-12", "target": "DB-15", "relation": "grounds",    "load_bearing": false, "notes": "" },
+
+    // FR-15 (harm framework) and FP-12 → blind spots
+    { "source": "FR-15", "target": "BS-1",  "relation": "implies",    "load_bearing": false, "notes": "Climate denial fails all three harm parameters" },
+    { "source": "FP-12", "target": "BS-2",  "relation": "implies",    "load_bearing": false, "notes": "All conscious beings → criminal justice scope expands" },
+    { "source": "FP-12", "target": "BS-3",  "relation": "implies",    "load_bearing": false, "notes": "All conscious beings regardless of national origin" },
+
+    // ── NEW EDGES v1.4–v1.8 ──────────────────────────────────────────────────
+
+    // FP-15 (Silence Is a Position)
+    { "source": "FP-8",  "target": "FP-15", "relation": "grounds",     "load_bearing": true,  "notes": "Silence enables = silence is therefore a categorized position" },
+    { "source": "FP-15", "target": "DB-1",  "relation": "grounds",     "load_bearing": false, "notes": "Enablers' silence is a named position on the accountability map" },
+    { "source": "T-11",  "target": "FP-15", "relation": "grounds",     "load_bearing": true,  "notes": "Flowchart demonstrates structurally: no exit from the map" },
+
+    // FR-16 (Earned Clarity Distortion)
+    { "source": "FR-9",  "target": "FR-16", "relation": "grounds",     "load_bearing": false, "notes": "Ego distortion and earned clarity both compress pattern recognition" },
+    { "source": "FR-16", "target": "SA-5",  "relation": "grounds",     "load_bearing": false, "notes": "Distortion affects how Thomas reads friend behavior" },
+    { "source": "FR-16", "target": "T-9",   "relation": "grounds",     "load_bearing": false, "notes": "Distortion risk is why function separation matters" },
+
+    // FR-17 (Confrontation: Moral Witness vs. Persuasion)
+    { "source": "FP-8",  "target": "FR-17", "relation": "grounds",     "load_bearing": true,  "notes": "FP-8 mandates the moral witness function; FR-17 separates it from persuasion" },
+    { "source": "FR-17", "target": "DB-10", "relation": "grounds",     "load_bearing": false, "notes": "Disengagement valid when persuasion function exhausted" },
+    { "source": "FR-17", "target": "T-9",   "relation": "grounds",     "load_bearing": false, "notes": "FR-17 resolves T-9 by separating the two functions" },
+
+    // FR-18 (Filter-Premise Detection)
+    { "source": "FR-5",  "target": "FR-18", "relation": "grounds",     "load_bearing": false, "notes": "Neuroscience explains why logical chains fail against filter-premises" },
+    { "source": "FR-18", "target": "T-10",  "relation": "grounds",     "load_bearing": true,  "notes": "Friend N routing strategy derived from FR-18 applied to futility filter" },
+    { "source": "FR-18", "target": "T-11",  "relation": "grounds",     "load_bearing": false, "notes": "T-11 flowchart presented as shared inquiry per FR-18 framing protocol" },
+    { "source": "FR-12", "target": "FR-18", "relation": "grounds",     "load_bearing": false, "notes": "Triage protocol and filter detection are complementary load-bearing-node strategies" },
+
+    // DB-16 (Cultural Sensitivity ≠ Cultural Relativism)
+    { "source": "FP-4",  "target": "DB-16", "relation": "grounds",     "load_bearing": false, "notes": "Respect for persons is the basis for cultural sensitivity" },
+    { "source": "FP-8",  "target": "DB-16", "relation": "grounds",     "load_bearing": true,  "notes": "Obligation to name harmful patterns = rejection of cultural relativism" },
+    { "source": "FP-12", "target": "DB-16", "relation": "grounds",     "load_bearing": false, "notes": "All conscious beings — regardless of cultural origin — deserve respect" },
+    { "source": "FR-16", "target": "DB-16", "relation": "grounds",     "load_bearing": false, "notes": "Earned clarity distortion risk: Thomas must not assign maximum moral weight to ambiguous cultural patterns" },
+
+    // T-9 (Complicity vs. Efficacy)
+    { "source": "FP-8",  "target": "T-9",   "relation": "grounds",     "load_bearing": true,  "notes": "FP-8 is what mandates moral witness regardless of efficacy" },
+    { "source": "FR-17", "target": "T-9",   "relation": "grounds",     "load_bearing": true,  "notes": "FR-17 provides the conceptual framework that resolves T-9" },
+    { "source": "T-9",   "target": "DB-10", "relation": "grounds",     "load_bearing": false, "notes": "T-9 resolution licenses strategic disengagement from persuasion without abandoning moral witness" },
+
+    // T-10 (Futility Objection)
+    { "source": "FP-8",  "target": "T-10",  "relation": "grounds",     "load_bearing": true,  "notes": "FP-8 establishes the mandate that the futility objection challenges" },
+    { "source": "FP-15", "target": "T-10",  "relation": "grounds",     "load_bearing": true,  "notes": "FP-15 (silence is a position) is the direct counter to the futility veto" },
+    { "source": "FR-18", "target": "T-10",  "relation": "grounds",     "load_bearing": false, "notes": "FR-18 provides the chain-routing strategy for futility-filter holders" },
+    { "source": "T-9",   "target": "T-10",  "relation": "grounds",     "load_bearing": false, "notes": "T-9 (efficacy/accountability distinction) is the same logic applied in T-10" },
+
+    // T-11 (Flowchart of Historical Accountability)
+    { "source": "FP-8",  "target": "T-11",  "relation": "grounds",     "load_bearing": true,  "notes": "FP-8 is the structural basis for the flowchart's accountability logic" },
+    { "source": "FP-15", "target": "T-11",  "relation": "grounds",     "load_bearing": true,  "notes": "FP-15 (silence is a position) is instantiated structurally in T-11" },
+    { "source": "T-10",  "target": "T-11",  "relation": "grounds",     "load_bearing": false, "notes": "T-10 provides the live Switzerland case study that enriches T-11 Node 4b analysis" },
+    { "source": "T-11",  "target": "DB-1",  "relation": "grounds",     "load_bearing": false, "notes": "Trump enablers map to nodes 2, 3, 6, 7 on the accountability flowchart" },
+
+    // SA-5 (Presence as Epistemic Variable)
+    { "source": "FR-9",  "target": "SA-5",  "relation": "grounds",     "load_bearing": false, "notes": "Ego distortion in friends may be amplified by Thomas's presence" },
+    { "source": "FR-16", "target": "SA-5",  "relation": "grounds",     "load_bearing": false, "notes": "Earned clarity distortion means Thomas may misread friend data" },
+    { "source": "T-9",   "target": "SA-5",  "relation": "grounds",     "load_bearing": false, "notes": "SA-5 is the data-quality caveat on T-9's confrontation decisions" },
+
+    // ── NEW EDGES v1.9 ────────────────────────────────────────────────────────
+
+    // FR-19 (Negative Capability)
+    { "source": "FP-9",  "target": "FR-19", "relation": "grounds",     "load_bearing": false, "notes": "FR-19 is the missing operationalization of FP-9's epistemological humility — the practice that makes provisional belief-holding livable" },
+    { "source": "FR-16", "target": "FR-19", "relation": "grounds",     "load_bearing": true,  "notes": "FR-19 is the specific counteractive practice for FR-16's compression distortion — lets ambiguous cases stay ambiguous" },
+    { "source": "FR-6",  "target": "FR-19", "relation": "grounds",     "load_bearing": false, "notes": "DFW 'learning how to think' = choosing what to pay attention to = the stance that enables Negative Capability. FR-6 was a structural orphan (0 edges); this connection makes it operative." },
+    { "source": "FR-19", "target": "SA-6",  "relation": "grounds",     "load_bearing": false, "notes": "FR-19 is the practice that allows SA-6's outcome attachment question to stay open without producing anxiety" },
+    { "source": "FR-19", "target": "FR-8",  "relation": "grounds",     "load_bearing": false, "notes": "FR-19 is the cognitive-level antidote to the FR-8 cognitive cascade (resists absolutism and conceit of knowledge endpoints)" },
+
+    // SA-6 (Outcome Attachment)
+    { "source": "FR-3",  "target": "SA-6",  "relation": "grounds",     "load_bearing": true,  "notes": "FR-3 (Stoicism) is the principle SA-6 calibrates against — Stoic detachment from outcome is what SA-6 tests" },
+    { "source": "FP-10", "target": "SA-6",  "relation": "grounds",     "load_bearing": false, "notes": "FP-10 integration requirement (v1.9 amendment) extends to SA-6: internal coherence includes consistency between stated Stoic values and actual post-confrontation affect" },
+    { "source": "FP-11", "target": "SA-6",  "relation": "grounds",     "load_bearing": true,  "notes": "FP-11 (fear as distortion) routed inward for first time: is Thomas's confrontation intensity fear-driven (attachment to outcome) vs. obligation-driven (detached witness)? FP-11 was never applied to Thomas's own SA nodes before v1.9." },
+    { "source": "SA-3",  "target": "SA-6",  "relation": "tensions_with","load_bearing": false, "notes": "SA-3 acknowledges emotional intensity; SA-6 names the specific dimension (outcome attachment) that SA-3 has not yet isolated" },
+
+    // PREVIOUSLY MISSING STRUCTURAL EDGES (graph audit v1.9)
+    // These edges were implied by the .md but absent from the graph — flagged by structural audit
+
+    { "source": "FP-2",  "target": "FR-9",  "relation": "grounds",     "load_bearing": false, "notes": "FP-2 (Comfort Is Suspect) grounds FR-9 (ego distortion): ego maintenance is motivated by comfort-seeking, making FP-2 the moral foundation of the distortion model. FP-2 was previously grounding only DB-10." },
+    { "source": "FP-2",  "target": "DB-1",  "relation": "grounds",     "load_bearing": false, "notes": "FP-2: Trump enablers choose comfort (deferring consequence) over clarity — FP-2 is a direct ground for DB-1 alongside FR-2." },
+    { "source": "FP-11", "target": "DB-1",  "relation": "grounds",     "load_bearing": false, "notes": "FP-11 (fear as distortion): Trump supporters' behavior is fear-driven (fear of status loss, exclusion, identity threat) — a distortion variable, not purely cowardice. Nuances DB-1 alongside FR-9." },
+    { "source": "FP-11", "target": "SA-3",  "relation": "grounds",     "load_bearing": false, "notes": "FP-11 applied inward: Thomas's emotional intensity in political positions (SA-3) may have a fear component — fear of the stakes being real, of not being heard, of the moment passing. FP-11 was previously only applied outward to others." },
+    { "source": "FP-11", "target": "FR-9",  "relation": "grounds",     "load_bearing": false, "notes": "Fear drives ego-protection: the FR-9 distortion mechanism is partly powered by FP-11 (fear of being wrong, fear of ego collapse). Missing edge." },
+    { "source": "FP-9",  "target": "FR-1",  "relation": "grounds",     "load_bearing": false, "notes": "FP-9 (truth through curiosity) grounds FR-1 (credibility formula): reality-contact capacity (Intelligence variable) requires the curiosity and openness FP-9 prescribes. FP-9 was nearly inert in the graph before this edge." },
+    { "source": "FR-14", "target": "BS-2",  "relation": "implies",     "load_bearing": false, "notes": "FR-14 (distributed moral responsibility): criminal justice reform follows from cage-builder accountability — the system engineers criminal conditions, primary burden to architects. FR-14 was grounding only DB-1 before this edge." },
+    { "source": "FR-14", "target": "BS-3",  "relation": "implies",     "load_bearing": false, "notes": "FR-14: immigration restriction as a constrained-choice cage — workers cannot move freely by design (FR-4). Cage-builders bear primary moral weight." },
+
+    // ── EDGES FOR T-1 THROUGH T-8 (added v1.9 comprehensive pass) ────────────
+    // These edges were implied by the .md and the T-node notes fields
+    // but absent from all prior graph_edges versions.
+
+    // T-1: "Argue to Understand" vs. Building a Debate Weapon
+    { "source": "FP-3",  "target": "T-1",   "relation": "grounds",      "load_bearing": false, "notes": "FP-3 is the principle that creates both the value and the tension — argue to understand is what makes the 'debate weapon' construction a potential violation." },
+    { "source": "FR-13", "target": "T-1",   "relation": "grounds",      "load_bearing": false, "notes": "FR-13 (contextual application) resolves T-1 by separating the principled Socratic mode from the adversarial mode: each has its domain." },
+    { "source": "T-1",   "target": "DB-15", "relation": "grounds",      "load_bearing": false, "notes": "T-1 resolution licenses DB-15: engagement posture conditioned on demonstrated good faith." },
+    { "source": "T-1",   "target": "DB-10", "relation": "grounds",      "load_bearing": false, "notes": "T-1 resolution licenses disengagement from bad-faith debates." },
+
+    // T-2: Basic Respect vs. Relational Boundary
+    { "source": "FP-4",  "target": "T-2",   "relation": "grounds",      "load_bearing": false, "notes": "FP-4 (dignity/respect as baseline) is what generates the apparent tension — how can Thomas simultaneously respect persons and set hard relational boundaries?" },
+    { "source": "FP-8",  "target": "T-2",   "relation": "grounds",      "load_bearing": false, "notes": "FP-8 (obligation to name harmful patterns) creates the operational side of T-2: obligation to witness requires presence, which conflicts with the boundary impulse." },
+    { "source": "FR-13", "target": "T-2",   "relation": "grounds",      "load_bearing": false, "notes": "FR-13 domain separation dissolves T-2 as apparent: respect and relational boundary operate in different domains." },
+    { "source": "FR-17", "target": "T-2",   "relation": "grounds",      "load_bearing": false, "notes": "FR-17 (moral witness vs. persuasion) provides the functional separation that resolves T-2: moral witness does not require ongoing relationship." },
+    { "source": "T-2",   "target": "DB-10", "relation": "grounds",      "load_bearing": false, "notes": "T-2 resolution licenses strategic disengagement as compatible with FP-4 dignity baseline." },
+
+    // T-3: Self-Referential Absolutism
+    { "source": "FP-3",  "target": "T-3",   "relation": "grounds",      "load_bearing": false, "notes": "FP-3 (argue to understand) is the principle whose self-referential application generates T-3: does arguing that absolutism is wrong constitute... absolutism?" },
+    { "source": "FP-9",  "target": "T-3",   "relation": "grounds",      "load_bearing": false, "notes": "FP-9 (hold positions provisionally) raises the self-referential version: is Thomas's meta-position on absolutism itself provisional? Resolution: self-aware irony dissolves the formal paradox." },
+    { "source": "FR-13", "target": "T-3",   "relation": "grounds",      "load_bearing": false, "notes": "FR-13: contextual application note added (v1.1) — language imprecision acknowledged; the principle is not self-refuting in practice." },
+
+    // T-4: Stoic Detachment vs. Political/Emotional Intensity
+    { "source": "FR-3",  "target": "T-4",   "relation": "grounds",      "load_bearing": true,  "notes": "FR-3 (Stoicism) is what generates T-4 — the tension exists because FR-3 prescribes internal detachment while Thomas's political commitments are emotionally engaged. Load-bearing: this is the structural tension SA-6 extends." },
+    { "source": "T-4",   "target": "SA-3",  "relation": "grounds",      "load_bearing": false, "notes": "T-4's resolution (domain separation) explicitly routes to SA-3 — the calibration challenge where Stoic intention meets actual affective experience." },
+    { "source": "T-4",   "target": "SA-6",  "relation": "grounds",      "load_bearing": false, "notes": "T-4 grounds SA-6 directly: SA-6 names the specific dimension (outcome attachment vs. obligation-driven witness) that T-4's domain-separation resolution leaves unresolved." },
+
+    // T-5: Singer's Demanding Standard vs. Thomas's Actual Behavior
+    { "source": "FP-5",  "target": "T-5",   "relation": "grounds",      "load_bearing": false, "notes": "FP-5 (Singer's standard) is what generates the apparent tension — rigorous application looks demanding." },
+    { "source": "FR-13", "target": "T-5",   "relation": "grounds",      "load_bearing": false, "notes": "FR-13 provides dissolution path: contextual application of FP-5 includes advocacy compliance. Dissolved by facts, not by weakening the principle." },
+
+    // T-6: Collective Obligation vs. Anti-Control Principle
+    { "source": "FP-5",  "target": "T-6",   "relation": "grounds",      "load_bearing": false, "notes": "FP-5 (collective/systemic obligation) is one horn of T-6." },
+    { "source": "FP-4",  "target": "T-6",   "relation": "grounds",      "load_bearing": false, "notes": "FP-4 (anti-control / respect for autonomy) is the other horn of T-6 — collective action can override individual choices." },
+    { "source": "FR-13", "target": "T-6",   "relation": "grounds",      "load_bearing": false, "notes": "FR-13 domain separation resolves T-6: collective obligation operates at the systemic level, not by controlling individuals." },
+
+    // T-7: Get Out of the Way vs. Singer Obligation
+    { "source": "FP-5",  "target": "T-7",   "relation": "grounds",      "load_bearing": false, "notes": "FP-5 (Singer obligation) establishes the mandate that T-7's withdrawal position must clear." },
+    { "source": "FP-8",  "target": "T-7",   "relation": "grounds",      "load_bearing": false, "notes": "FP-8 (obligation to name harm) is what T-7's threshold test must satisfy before withdrawal is licensed." },
+    { "source": "FR-17", "target": "T-7",   "relation": "grounds",      "load_bearing": false, "notes": "FR-17 (moral witness vs. persuasion) provides the threshold logic: withdrawal from the persuasion function is distinct from abandoning the witness function." },
+    { "source": "T-7",   "target": "DB-10", "relation": "grounds",      "load_bearing": false, "notes": "T-7 threshold resolution licenses strategic disengagement when game objectives are destructive, engagement validates the frame, or cost exceeds plausible benefit." },
+
+    // T-8: "Do Not Lie" vs. Regular Lying in Practice
+    { "source": "FP-9",  "target": "T-8",   "relation": "tensions_with", "load_bearing": true,  "notes": "FP-9 encodes honesty as a near-principle; T-8 is the honest acknowledgment that Thomas departs from it regularly. Load-bearing: this is the tension SA-4 audits." },
+    { "source": "FR-13", "target": "T-8",   "relation": "grounds",      "load_bearing": false, "notes": "FR-13 provides the resolution framework: lying is a consequentialist exception that must clear a bar — not an admission that the principle is wrong." },
+    { "source": "T-8",   "target": "SA-4",  "relation": "grounds",      "load_bearing": true,  "notes": "T-8 structural analysis grounds SA-4 — the self-audit node exists because T-8 is partially resolved only. Load-bearing: SA-4 is where the live calibration challenge lives." },
+
+    // ── EDGES FOR SA-1 THROUGH SA-4 (added v1.9 comprehensive pass) ──────────
+
+    // SA-1 (retired) — no active edges; retained for lineage only
+
+    // SA-2: Patience Threshold Not Fully Principled
+    { "source": "FP-3",  "target": "SA-2",  "relation": "tensions_with", "load_bearing": false, "notes": "FP-3 prescribes arguing to understand; SA-2 is the honest acknowledgment that the line between principled withdrawal and convenient avoidance is not fully resolved." },
+    { "source": "FP-8",  "target": "SA-2",  "relation": "grounds",      "load_bearing": false, "notes": "FP-8's engagement mandate is what makes SA-2 a calibration challenge rather than a simple judgment call — the obligation is live." },
+    { "source": "SA-2",  "target": "DB-10", "relation": "tensions_with", "load_bearing": false, "notes": "DB-10 licenses strategic disengagement; SA-2 acknowledges that Thomas cannot always distinguish principled use of DB-10 from convenient avoidance." },
+
+    // SA-3: Emotional Intensity in Political Positions
+    { "source": "FR-3",  "target": "SA-3",  "relation": "tensions_with", "load_bearing": false, "notes": "FR-3 (Stoicism) prescribes non-reactive posture; SA-3 acknowledges that some political positions are written with intensity that suggests real-time reactivity. Explicit calibration challenge." },
+    // Note: FP-11 → SA-3 already present in v1.9 NEW EDGES section above.
+
+    // SA-4: Lying as Consequentialist Exception
+    { "source": "FP-9",  "target": "SA-4",  "relation": "tensions_with", "load_bearing": true,  "notes": "FP-9 encodes honesty as a near-principle; SA-4 is the self-audit of Thomas's acknowledged departure from it. Load-bearing: this is the most structurally unresolved self-audit node." },
+    { "source": "FR-13", "target": "SA-4",  "relation": "grounds",      "load_bearing": false, "notes": "FR-13 provides the normative frame for SA-4: the exception is principled only if it clears the bar. SA-4 acknowledges it cannot always claim the bar is cleared." },
+    { "source": "T-8",   "target": "SA-4",  "relation": "grounds",      "load_bearing": true,  "notes": "T-8 grounds SA-4 — the structural analysis of the tension lives in T-8; SA-4 is the honest self-audit companion. Both load-bearing: loss of either breaks the accountability chain." },
+
+    // ── NEW EDGES v2.0 ────────────────────────────────────────────────────────
+
+    // FP-16 (Promise Trauma)
+    { "source": "FP-16", "target": "DB-1",  "relation": "grounds",     "load_bearing": false, "notes": "Promise trauma nuances DB-1: enablers' cowardice operates within a system that has taught them idealism leads to betrayal. Cowardice is real; context shifts moral weight toward system architects." },
+    { "source": "FP-16", "target": "FR-14", "relation": "grounds",     "load_bearing": false, "notes": "FP-16 reinforces FR-14 distributed responsibility: promise-breakers (system architects) bear the heaviest weight; traumatized adapters bear less." },
+    { "source": "FP-16", "target": "FR-22", "relation": "grounds",     "load_bearing": false, "notes": "American promise trauma is an instance of FR-22 cultural pathology: the culture transmits the broken-promise adaptation as a survival strategy." },
+
+    // FR-20 (Truth as Scarce Commodity)
+    { "source": "FP-9",  "target": "FR-20", "relation": "grounds",     "load_bearing": true,  "notes": "FP-9 (individual truth-seeking) is the agent-level complement to FR-20's systemic analysis. Individual commitment is necessary; FR-20 explains why it's insufficient alone." },
+    { "source": "FP-15", "target": "FR-20", "relation": "grounds",     "load_bearing": true,  "notes": "FP-15 market-failure framing (v2.0 amendment) is the mechanism by which silence depletes FR-20's truth supply. FP-15 is the micro-level; FR-20 is the systemic-level." },
+    { "source": "FR-20", "target": "FP-5",  "relation": "grounds",     "load_bearing": false, "notes": "FR-20 contextualizes FP-5 (Singer obligation): individual giving operates within a degraded truth supply chain; advocacy is not optional because the supply chain itself needs restoration." },
+    { "source": "FR-20", "target": "FR-23", "relation": "grounds",     "load_bearing": true,  "notes": "Supply chain restoration is precisely what FR-23 (collective solidarity) provides. FR-20 is the diagnosis; FR-23 is the structural remedy." },
+
+    // FR-21 (Living in Truth as Political Practice)
+    { "source": "FP-8",  "target": "FR-21", "relation": "grounds",     "load_bearing": true,  "notes": "FP-8 (obligation to name harmful patterns) is the moral ground for FR-21: naming things accurately is the most basic form of Living in Truth." },
+    { "source": "FR-17", "target": "FR-21", "relation": "grounds",     "load_bearing": false, "notes": "FR-17 (moral witness vs. persuasion) is operationalized by FR-21: the witness function is a political act, not merely a relational one." },
+    { "source": "FR-21", "target": "T-11",  "relation": "grounds",     "load_bearing": true,  "notes": "FR-21 provides the political-practice framework that T-11 (Node 4a: Living in Truth) applies in the resistance typology. FR-21 is the principle; T-11 is the application." },
+    { "source": "FR-21", "target": "FR-23", "relation": "grounds",     "load_bearing": false, "notes": "Living in Truth builds the authentic community infrastructure that FR-23 (collective solidarity) requires. You cannot have effective collective action without authentic networks." },
+
+    // FR-22 (Cultural Pathology Patterns)
+    { "source": "FR-9",  "target": "FR-22", "relation": "grounds",     "load_bearing": false, "notes": "FR-22 adds the cultural-transmission layer to FR-9's ego-distortion model: individual ego distortion is amplified and sustained by cultural operating systems." },
+    { "source": "FP-16", "target": "FR-22", "relation": "grounds",     "load_bearing": false, "notes": "Promise trauma (FP-16) is the American instantiation of cultural pathology: the adaptive strategy becomes the cultural norm." },
+    { "source": "FR-22", "target": "DB-16", "relation": "grounds",     "load_bearing": false, "notes": "FR-22 provides the analytical basis for DB-16 (cultural sensitivity ≠ relativism): understanding cultural operating systems enables critique without essentializing the individual." },
+    { "source": "FR-22", "target": "FR-16", "relation": "grounds",     "load_bearing": false, "notes": "FR-22 warns against the earned-clarity risk (FR-16) in cultural critique: pattern-recognition sharpness on authoritarianism may compress the distance between documented cultural pathologies and ambiguous individual cases." },
+    { "source": "FP-11", "target": "FR-22", "relation": "grounds",     "load_bearing": false, "notes": "FP-11's manufactured-fear category (v2.0 amendment) is the mechanism by which cultural pathology sustains itself: cultures teach members to feel manufactured fear toward truth-telling." },
+
+    // FR-23 (Collective Solidarity vs. Individual Obligation)
+    { "source": "FP-5",  "target": "FR-23", "relation": "grounds",     "load_bearing": true,  "notes": "FP-5 (Singer standard) grounds FR-23 by establishing individual obligation; FR-23 identifies what individual compliance cannot satisfy." },
+    { "source": "FR-21", "target": "FR-23", "relation": "grounds",     "load_bearing": false, "notes": "FR-21 (Living in Truth as political practice) is a form of collective solidarity work: authentic networks are the infrastructure collective action requires." },
+    { "source": "T-6",   "target": "FR-23", "relation": "grounds",     "load_bearing": false, "notes": "T-6 (collective obligation vs. anti-control) resolves a tension that FR-23 refines: the resolution licenses collective action at systemic level without controlling individuals. FR-23 names this as a distinct mode." },
+    { "source": "FR-23", "target": "DB-14", "relation": "grounds",     "load_bearing": false, "notes": "FR-23 extends DB-14 (advocacy as Singer compliance): collective solidarity is what transforms individual advocacy into systemic-level truth infrastructure." },
+
+    // ── NEW EDGES v2.2 ────────────────────────────────────────────────────────
+
+    // DB-17 (Book as Witness Record, Not Persuasion Project)
+    { "source": "FR-17", "target": "DB-17", "relation": "grounds",      "load_bearing": true,  "notes": "DB-17 is the personal application of FR-17's witness vs. persuasion distinction to the book itself; load-bearing because without FR-17, DB-17's non-persuasion claim has no structural basis" },
+    { "source": "FP-8",  "target": "DB-17", "relation": "grounds",      "load_bearing": false, "notes": "Obligation satisfied by the witness record existing; accuracy is the success criterion" },
+    { "source": "FR-20", "target": "DB-17", "relation": "grounds",      "load_bearing": false, "notes": "Book is a supply-chain contribution: individual truth-infrastructure act" },
+    { "source": "FR-21", "target": "DB-17", "relation": "grounds",      "load_bearing": false, "notes": "Book as Living in Truth political practice: named act of non-compliance with normalcy" },
+    { "source": "FP-5",  "target": "DB-17", "relation": "grounds",      "load_bearing": false, "notes": "FP-5 sustainability: resource constraint means not forcing book at cost Thomas doesn't have; obligation that destroys the obligation-bearer is self-defeating" },
+    { "source": "DB-17", "target": "SA-7",  "relation": "grounds",      "load_bearing": false, "notes": "Accepting the book's non-commercial function requires acknowledging the capacity constraints SA-7 names" },
+
+    // SA-7 (Capacity Constraint: cPTSD, Resource Depletion, Requirement to Be Safe)
+    { "source": "FR-11", "target": "SA-7",  "relation": "grounds",      "load_bearing": true,  "notes": "FR-11 (Maslow domain): cPTSD keeps Thomas partially in safety tier; obligations scale with domain position — this is the structural reason the capacity constraint is principled rather than an excuse" },
+    { "source": "FP-5",  "target": "SA-7",  "relation": "grounds",      "load_bearing": false, "notes": "FP-5 Maslow constraint: sustainable action only; self-destruction is not Singer compliance" },
+    { "source": "FR-3",  "target": "SA-7",  "relation": "grounds",      "load_bearing": false, "notes": "FR-3 (Stoicism): running deficits is the enemy; operating within capacity is correct Stoic resource management" },
+    { "source": "SA-3",  "target": "SA-7",  "relation": "grounds",      "load_bearing": false, "notes": "SA-7 extends SA-3: not just emotional intensity but structural capacity limit" },
+    { "source": "SA-6",  "target": "SA-7",  "relation": "tensions_with","load_bearing": false, "notes": "SA-7 capacity constraint and SA-6 outcome attachment are both live: constraints are real but may be over-applied" },
+    { "source": "T-11",  "target": "SA-7",  "relation": "grounds",      "load_bearing": false, "notes": "T-11 Node 4a: historian-informed survival — quiet discernment, not overt activism — is the operational match for SA-7's capacity constraint" },
+
+    // ── NEW EDGES v2.3 ────────────────────────────────────────────────────────
+
+    // DB-18 (Reconciliation Requires Architectural Change, Not Time)
+    { "source": "FR-17", "target": "DB-18", "relation": "grounds", "load_bearing": true,  "notes": "FR-17 (moral witness vs. persuasion) is the structural basis for DB-18's distinction between surface apology and architectural change; without FR-17, DB-18 reads as cruelty rather than accurate epistemology" },
+    { "source": "DB-10", "target": "DB-18", "relation": "grounds", "load_bearing": false, "notes": "DB-10 licenses principled exit; DB-18 governs the conditions for return — logically paired; a system with exit but no defined return condition is operationally incomplete" },
+    { "source": "DB-15", "target": "DB-18", "relation": "grounds", "load_bearing": false, "notes": "DB-15's good-faith requirement is the operative standard DB-18 applies to return: demonstrated good faith over time = re-engagement condition met" },
+    { "source": "FP-3",  "target": "DB-18", "relation": "grounds", "load_bearing": false, "notes": "FP-3 (argue to understand) is conditional on good faith; DB-18 defines what demonstrated good faith looks like for return to engagement" },
+
+    // ── NEW EDGES v2.4 ────────────────────────────────────────────────────────
+
+    // FP-10 missing edges (internal coherence deployed to SA/T nodes)
+    { "source": "FP-10", "target": "SA-4", "relation": "grounds", "load_bearing": false, "notes": "FP-10 integration requirement applies directly to SA-4: honesty self-audit is precisely where internal coherence between stated principle (FP-9: near-honesty) and practice (regular lying) must be held without collapse" },
+    { "source": "FP-10", "target": "T-8",  "relation": "grounds", "load_bearing": false, "notes": "FP-10 means T-8 is not just a tension to be named but a coherence obligation: the integration requirement demands T-8 be acknowledged, not explained away" },
+    { "source": "FP-10", "target": "SA-2", "relation": "grounds", "load_bearing": false, "notes": "FP-10 demands coherence between Thomas's principled-withdrawal claim and actual practice: SA-2's calibration challenge is exactly the integration gap FP-10 targets" },
+    { "source": "FP-10", "target": "SA-7", "relation": "grounds", "load_bearing": false, "notes": "FP-10 demands coherence between stated obligation claims and stated capacity limits: SA-7 is the active integration test" },
+    { "source": "FP-10", "target": "DB-18","relation": "grounds", "load_bearing": false, "notes": "FP-10 demands coherence between exit conditions (DB-10) and return conditions (DB-18): they must integrate as a complete framework, not exist as disconnected policies" },
+
+    // T-12 (Perpetual Openness vs. Integration Requirement)
+    { "source": "FP-9",  "target": "T-12", "relation": "tensions_with", "load_bearing": false, "notes": "FP-9 (perpetual openness) generates the tension T-12 names: openness requirement conflicts with integration requirement at the moment of rapid revision" },
+    { "source": "FP-10", "target": "T-12", "relation": "grounds",      "load_bearing": true,  "notes": "FP-10 (integration requirement) is what generates T-12's tension with FP-9; without FP-10, no tension exists — FP-9 would stand alone" },
+    { "source": "FR-19", "target": "T-12", "relation": "grounds",      "load_bearing": false, "notes": "FR-19 (Negative Capability) provides the resolution mechanism for T-12: holding both openness and coherence simultaneously without collapse" },
+
+    // SA-4 ↔ SA-6 rationalization loop
+    { "source": "SA-4",  "target": "SA-6", "relation": "tensions_with", "load_bearing": false, "notes": "Mutual rationalization loop: SA-6 (outcome attachment) can explain SA-4 away (lying as outcome-attachment symptom, not honesty failure) and SA-4 can explain SA-6 away (attachment reframed as consequentialist exception-making). Neither can be cleanly assessed without the other present." },
+
+    // DB-19 (Climate)
+    { "source": "FR-15", "target": "DB-19", "relation": "grounds", "load_bearing": false, "notes": "Climate denial fails all three FR-15 harm parameters: scale is civilizational, time window is 1–2 generations, evidence is robust" },
+    { "source": "FR-22", "target": "DB-19", "relation": "grounds", "load_bearing": false, "notes": "Manufactured climate denial is a cultural pathology: systematic incentivization of denial through political economy and attention capture" },
+    { "source": "FP-8",  "target": "DB-19", "relation": "grounds", "load_bearing": false, "notes": "Obligation to name harmful patterns: climate denial is the clearest possible case of deferring consequence onto future people" },
+    { "source": "FR-20", "target": "DB-19", "relation": "grounds", "load_bearing": false, "notes": "Manufactured climate doubt is a deliberate truth-supply depletion mechanism; DB-19 names it as such" },
+
+    // DB-20 (Mass incarceration)
+    { "source": "FR-4",  "target": "DB-20", "relation": "grounds", "load_bearing": false, "notes": "Mass incarceration is the post-civil-rights continuation of racialized labor control: FR-4's political economy analysis is the structural explanation" },
+    { "source": "FR-14", "target": "DB-20", "relation": "grounds", "load_bearing": false, "notes": "Cage-builders (legislators, private prison operators, political economy architects) bear the primary moral weight; incarcerated individuals bear constrained-choice moral weight" },
+    { "source": "FP-4",  "target": "DB-20", "relation": "grounds", "load_bearing": false, "notes": "Dignity grounds the rehabilitation obligation: a person's inherent dignity is not forfeited by criminal conduct, which is why the death penalty is rejected" },
+    { "source": "FP-12", "target": "DB-20", "relation": "grounds", "load_bearing": false, "notes": "All conscious beings — obligation extends to the incarcerated regardless of crime severity" },
+
+    // DB-21 (Immigration)
+    { "source": "FR-14", "target": "DB-21", "relation": "grounds", "load_bearing": false, "notes": "Immigrants face constrained choices; immigration restriction is cage-building that assigns moral weight to those who design restriction, not to those who move in response to constrained options" },
+    { "source": "FR-15", "target": "DB-21", "relation": "grounds", "load_bearing": false, "notes": "Harm assessment: what harm? Data shows net benefit; the restriction frame fails FR-15's evidentiary standard" },
+    { "source": "FR-22", "target": "DB-21", "relation": "grounds", "load_bearing": false, "notes": "Immigration restriction is a fear-based cultural pathology: culture-war deployment to suppress class solidarity and maintain labor control" },
+    { "source": "FP-12", "target": "DB-21", "relation": "grounds", "load_bearing": false, "notes": "All conscious beings regardless of national origin: FP-12 makes immigration restriction structurally difficult to justify under Thomas's principles" },
+
+    // DB-22 (AI Governance)
+    { "source": "FP-1",  "target": "DB-22", "relation": "grounds", "load_bearing": true,  "notes": "Obligation Precedes Intelligence is the load-bearing ground for DB-22: AI has intelligence but cannot bear obligation; therefore cannot achieve credibility independent of human obligation-holders" },
+    { "source": "FR-1",  "target": "DB-22", "relation": "grounds", "load_bearing": false, "notes": "FR-1 credibility formula: AI capability score is high but obligation score is structurally zero; FR-1 forces the conclusion that AI requires human adoption to be credible" },
+    { "source": "FP-8",  "target": "DB-22", "relation": "grounds", "load_bearing": false, "notes": "Obligation to name the structural implication: capability without obligation scales as a threat, not a safeguard" },
+
+    // DB-23 (Education)
+    { "source": "FR-8",  "target": "DB-23", "relation": "grounds", "load_bearing": false, "notes": "Democratic architecture requires citizens capable of dual-process cognition; education as epistemic infrastructure is a prerequisite for democratic function" },
+    { "source": "FR-23", "target": "DB-23", "relation": "grounds", "load_bearing": false, "notes": "Free education is collective solidarity infrastructure: what individual compliance cannot provide, shared epistemic investment must" },
+    { "source": "FR-4",  "target": "DB-23", "relation": "grounds", "load_bearing": false, "notes": "Neoliberal commodification of education is the mechanism of degradation: when education is a product, it optimizes for revenue, not for citizen production" },
+    { "source": "FP-5",  "target": "DB-23", "relation": "grounds", "load_bearing": false, "notes": "Singer standard: education investment is a form of systemic obligation with civilizational-scale returns; the obligation to fund it is derivable from FP-5" },
+
+    // DB-24 (Harm-Avoidance Institutional Frames Produce the Harm They Prohibit)
+    { "source": "FP-5",  "target": "DB-24", "relation": "grounds",  "load_bearing": true,  "notes": "Beneficence is the correct institutional operating frame — the load-bearing ground: without FP-5's positive obligation logic, DB-24 reduces to a critique with no alternative" },
+    { "source": "FR-2",  "target": "DB-24", "relation": "grounds",  "load_bearing": false, "notes": "Temporal distortion: harm-avoidance makes inaction feel safe by deferring its costs onto others' timelines — the same distortion mechanism as denial and cowardice" },
+    { "source": "FR-14", "target": "DB-24", "relation": "grounds",  "load_bearing": false, "notes": "Liability structures as cage-building: the professional operating under them is constrained; the architects of those incentive structures bear primary moral weight" },
+    { "source": "FR-15", "target": "DB-24", "relation": "grounds",  "load_bearing": false, "notes": "Harm requires active multi-parameter assessment; the harm-avoidance frame bypasses FR-15 by treating inaction as a safe default rather than a harm to be measured" },
+    { "source": "FP-8",  "target": "DB-24", "relation": "grounds",  "load_bearing": false, "notes": "Inaction is not neutrality — deferring suffering onto others is harm propagated by another route; FP-8's silence-enables logic applies to institutional inaction" },
+
+    // EV-9 (ACE Study)
+    { "source": "EV-9",  "target": "FP-16", "relation": "supports", "load_bearing": false, "notes": "ACE data grounds the promise-trauma → intergenerational health-outcome claim with dose-response epidemiological evidence" },
+    { "source": "EV-9",  "target": "FR-22", "relation": "supports", "load_bearing": false, "notes": "Trauma transmission as a cultural operating system: ACE data shows childhood adversity patterns persisting across generations" },
+    { "source": "EV-9",  "target": "DB-24", "relation": "supports", "load_bearing": false, "notes": "Institutional non-adoption of ACE screening is the harm-avoidance frame in operation: costs of screening are immediate; costs of inaction are deferred and diffuse" },
+
+    // ── NEW EDGES v2.7 ────────────────────────────────────────────────────────
+
+    // DB-25 (Conscription as Electoral Equalizer: The Structural Case for Universal Draft)
+    { "source": "FR-23", "target": "DB-25", "relation": "grounds",      "load_bearing": false, "notes": "Collective skin-in-the-game as democratic infrastructure: national obligation as the mechanism that transforms the voting electorate and makes wars politically expensive across all class lines" },
+    { "source": "FR-4",  "target": "DB-25", "relation": "grounds",      "load_bearing": false, "notes": "Class structure critique: insulation from war costs enables foreign policy adventurism; the draft's class-weapon failure is a direct FR-4 prediction" },
+    { "source": "FR-1",  "target": "DB-25", "relation": "grounds",      "load_bearing": false, "notes": "Credibility formula: insulated advocates (politicians, commentators who won't serve) have near-zero credibility; a genuinely universal draft uniquely reduces insulation for the political class, closing the FR-1 gap" },
+    { "source": "FR-14", "target": "DB-25", "relation": "grounds",      "load_bearing": false, "notes": "War architects bear primary moral weight regardless of whether a draft exists; conscription does not transfer that weight to draftees" },
+    { "source": "FP-11", "target": "DB-25", "relation": "grounds",      "load_bearing": false, "notes": "Fear-based standard draft advocacy (manufactured national security emergency) fails FP-11 distortion test; the structural democratic reform argument is distinct and is not fear-based" },
+    { "source": "FR-15", "target": "DB-25", "relation": "grounds",      "load_bearing": false, "notes": "Forced service is a rights cost requiring justified benefit under FR-15; the electoral transformation mechanism (making wars politically expensive across all class lines) is that justification" },
+    { "source": "T-10",  "target": "DB-25", "relation": "grounds",      "load_bearing": false, "notes": "T-10 (futility-veto rejection): implementation difficulty of a truly universal draft is an empirical prior about political will, not a logical defeat of the structural case; potential solutions are politically difficult, not logically impossible" },
+
+    // ── NEW EDGES v2.8 ────────────────────────────────────────────────────────
+
+    // FR-24 (Functional Discourse) and FR-25 (Taxonomy of Capacity Failure)
+    { "source": "FR-25", "target": "FR-24", "relation": "grounds",       "load_bearing": true,  "notes": "Knowing which failure type you face determines whether functional discourse is available — load-bearing: without this, FR-24 is descriptive but not actionable" },
+    { "source": "FR-24", "target": "DB-1",  "relation": "grounds",       "load_bearing": true,  "notes": "Functional discourse failure explains why moral cowardice is not corrected by argument: against a discourse-broken actor, refutation becomes audience-facing performance, not exchange" },
+    { "source": "FR-24", "target": "FP-8",  "relation": "grounds",       "load_bearing": false, "notes": "Discourse collapse is a mechanism by which silence enables — it makes speaking costly and correction structurally impossible; FR-24 provides the mechanism that FP-8 asserts" },
+    { "source": "FR-25", "target": "DB-1",  "relation": "grounds",       "load_bearing": false, "notes": "Moral allocation for Trump enablement depends on which failure type they are: motivated reasoners bear high allocation; capacity-limited bear low; epistemically vulnerable bear medium" },
+    { "source": "FR-2",  "target": "FR-25", "relation": "grounds",       "load_bearing": false, "notes": "Cowardice reframe ('won't look' not 'can't see') is type-specific: applies to motivated reasoners only; FR-25 is the taxonomy that makes FR-2's reframe precise rather than universal" },
+    { "source": "FP-4",  "target": "FR-25", "relation": "tensions_with", "load_bearing": false, "notes": "Apparent tension: naming capacity limits feels like a dignity violation. Resolution: FP-4 respect is a floor, not an accuracy suppressor — accurate diagnosis is compatible with baseline dignity" },
+
+    // ── NEW EDGES v2.9 ────────────────────────────────────────────────────────
+
+    // FR-26 (Isometric Hold: The Hidden Cost of Equilibrium) — load-bearing
+    { "source": "FR-26", "target": "FP-8",  "relation": "grounds",       "load_bearing": true,  "notes": "Isometric Hold makes explicit the mechanism behind FP-8: zero-displacement silence is not neutrality but an active energy-intensive hold against change; the load_bearing flag follows from FP-8's structural centrality" },
+
+    // FR-26 — non-load-bearing grounds
+    { "source": "FR-26", "target": "FR-2",  "relation": "grounds",       "load_bearing": false, "notes": "Isometric Hold is the mechanism behind extend-and-pretend: both are snapshot fallacies where the level hides the rate; FR-26 supplies the physics-grounded mechanism that FR-2's rates/levels sub-dimension describes" },
+    { "source": "FR-26", "target": "FR-4",  "relation": "grounds",       "load_bearing": false, "notes": "Status quo maintenance extracts cost disproportionately from those at the bottom of the structure who lack reserves to absorb it; isometric hold as a cost-extraction framework" },
+    { "source": "FR-26", "target": "DB-5",  "relation": "grounds",       "load_bearing": false, "notes": "The energy budget of maintaining the hold is extracted from those with fewest ATP reserves — those at the bottom bear the depletion cost of the status quo" },
+    { "source": "FR-2",  "target": "FR-26", "relation": "grounds",       "load_bearing": false, "notes": "The snapshot fallacy (rates vs. levels) is the epistemological root of why isometric holds go unrecognized: the level is visible; the rate — the stacking cost — is not" },
+
+    // SA-8 (Cognitive Synthesis Self-Model: Process + Trauma + AI)
+    { "source": "SA-8",  "target": "SA-7",  "relation": "tensions_with", "load_bearing": false, "notes": "Same underlying conditions (trauma/cPTSD) produce both the constructive synthesis capacity (SA-8) and the resource depletion constraint (SA-7); neither cancels the other — both must be held simultaneously; invoking one to dismiss the other is rationalization" },
+    { "source": "SA-8",  "target": "FR-5",  "relation": "grounds",       "load_bearing": false, "notes": "System 2 as engine is the neuroscience of SA-8: deliberate, high-cost integration vs. intuitive System 1 default; EV-8 (dual-process literature) is the empirical anchor" },
+    { "source": "SA-8",  "target": "DB-17", "relation": "grounds",       "load_bearing": false, "notes": "The book is both the product of the SA-8 synthesis process and its most important output: the process justifies the book and the book preserves the process" },
+
+    // EV-10 (CRE 2026 Market Data)
+    { "source": "EV-10", "target": "FR-2",  "relation": "example_of",    "load_bearing": false, "notes": "CRE 'extend and pretend' (2024-2025) is institutional temporal distortion in operation: deferred consequence stacked until the structural threshold was hit; the level (delinquency rate) appeared manageable while the rate (stacking maturities) was building toward the 2026-2027 wall" },
+    { "source": "EV-10", "target": "FR-26", "relation": "example_of",    "load_bearing": false, "notes": "CRE 2024-2025 stability was an isometric hold — lenders expended institutional energy deferring recognition while the underlying load stacked; collapse of the hold produces the visible wall, not a new event" },
+    { "source": "EV-10", "target": "FR-4",  "relation": "supports",      "load_bearing": false, "notes": "K-shaped recovery is empirical instance of wealth concentration in crisis resolution: well-capitalized buyers acquire distressed assets from over-leveraged sellers at discount; crisis as mechanism of upward wealth transfer" },
+
+    // ── NEW EDGES v3.0 (2026-03-24) ──────────────────────────────────────────
+    // DB-26 (Aggressively Progressive Taxation + UBI — promoted from BS-9)
+    { "source": "FR-4",  "target": "DB-26", "relation": "grounds",       "load_bearing": false, "notes": "Neoliberal wealth concentration critique grounds the redistributive position" },
+    { "source": "FR-26", "target": "DB-26", "relation": "grounds",       "load_bearing": false, "notes": "Isometric hold cost extraction grounds structural redistribution as necessary corrective" },
+    { "source": "DB-5",  "target": "DB-26", "relation": "grounds",       "load_bearing": false, "notes": "Time extraction from the least resourced grounds UBI as floor mechanism" },
+    { "source": "FR-1",  "target": "DB-26", "relation": "grounds",       "load_bearing": false, "notes": "Credibility formula: progressive taxation reduces insulation variable for the political class" },
+    { "source": "FR-9",  "target": "DB-26", "relation": "grounds",       "load_bearing": false, "notes": "Ego distortion explains why MAGA voters enabled wealth-extraction policies against their own fiscal interests" },
+    { "source": "FP-8",  "target": "DB-26", "relation": "grounds",       "load_bearing": false, "notes": "Denialism about fiscal insolvency enables continued extraction; media silence on Treasury data is FP-8 at institutional scale" },
+
+    // DB-8 v3.3 amendment (human-AI entanglement)
+    { "source": "FR-14", "target": "DB-8",  "relation": "grounds",       "load_bearing": false, "notes": "Distributed Moral Responsibility provides structural precedent for obligation flowing through human-AI entanglement; if responsibility distributes for blame, it distributes for obligation" },
+
+    // T-13 (Transformation Arrival vs. Captured Political Class)
+    { "source": "FR-26", "target": "T-13",  "relation": "grounds",       "load_bearing": false, "notes": "Isometric hold failure progression is the structural basis for the race condition: does transformation arrive before phase 4?" },
+    { "source": "FR-4",  "target": "T-13",  "relation": "grounds",       "load_bearing": false, "notes": "Captured political class controls AI deployment architecture; will deploy to maintain hold, not release it" },
+    { "source": "DB-26", "target": "T-13",  "relation": "grounds",       "load_bearing": false, "notes": "Progressive taxation + UBI are preconditions for the escape path — they shift political conditions under which deployment decisions are made" },
+    { "source": "DB-8",  "target": "T-13",  "relation": "grounds",       "load_bearing": false, "notes": "Human-AI entanglement (v3.3 amendment) determines whether obligation-holders control the deployment" },
+
+    // EV-11 (Treasury FY2025 Fiscal Insolvency Data)
+    { "source": "EV-11", "target": "DB-26", "relation": "supports",      "load_bearing": false, "notes": "Treasury FY2025 data is the primary evidentiary anchor for the fiscal insolvency dimension of DB-26" },
+    { "source": "EV-11", "target": "FR-26", "relation": "example_of",    "load_bearing": false, "notes": "$136.2T obligations, $10.1T/year growth, $1T/year interest = sovereign-scale isometric hold; level appears stable while cost compounds" },
+    { "source": "EV-11", "target": "FR-2",  "relation": "example_of",    "load_bearing": false, "notes": "Rolling scheme / extend-and-pretend at civilizational scale: each day's fiscal scheme only needs to get to tomorrow's" },
+    { "source": "EV-11", "target": "FR-4",  "relation": "supports",      "load_bearing": false, "notes": "Tax cuts for the wealthy created the hole; unfunded obligations fall on Social Security/Medicare beneficiaries = wealth concentration via fiscal architecture" },
+    { "source": "EV-11", "target": "FR-9",  "relation": "supports",      "load_bearing": false, "notes": "MAGA voters enabled policies against their own fiscal interests; ego distortion prevents acknowledgment" },
+    { "source": "EV-11", "target": "FP-8",  "relation": "supports",      "load_bearing": false, "notes": "Media silence on Treasury data = denialism at institutional scale; 29-year GAO audit failure = accountability structure that has been silenced" },
+
+    // DB-27 (Healthcare as Civil Right — promoted from BS-7 + BS-10)
+    { "source": "DB-24", "target": "DB-27", "relation": "grounds",       "load_bearing": false, "notes": "Harm-avoidance frames produce the harm they prohibit — the healthcare system's instrumental turn" },
+    { "source": "EV-9",  "target": "DB-27", "relation": "supports",      "load_bearing": false, "notes": "ACE Study: mind-body separation is empirically false; institutional non-adoption is the system's negligence in action" },
+    { "source": "FR-14", "target": "DB-27", "relation": "grounds",       "load_bearing": false, "notes": "Liability structures as cage-building in healthcare; providers are constrained, not purely culpable" },
+    { "source": "FP-5",  "target": "DB-27", "relation": "grounds",       "load_bearing": false, "notes": "If you can prevent harm, you must — the richest country's failure to provide healthcare is an obligation failure, not a resource failure" },
+    { "source": "FP-1",  "target": "DB-27", "relation": "grounds",       "load_bearing": false, "notes": "Intelligence is present in the system; obligation has atrophied — the instrumental turn" },
+    { "source": "FR-4",  "target": "DB-27", "relation": "grounds",       "load_bearing": false, "notes": "Revenue concentration at the top while cost is externalized onto the population — FR-4 in the healthcare domain" },
+    { "source": "FR-26", "target": "DB-27", "relation": "grounds",       "load_bearing": false, "notes": "The healthcare status quo is an isometric hold: massive expenditure maintaining artificial scarcity" },
+    { "source": "SA-7",  "target": "DB-27", "relation": "grounds",       "load_bearing": false, "notes": "Thomas has direct personal experience of the mental health system's failures — cPTSD as structural limit the system nominally but not practically addresses" },
+
+    // DB-28 (Technology Requires Regulation — promoted from BS-8)
+    { "source": "FR-8",  "target": "DB-28", "relation": "grounds",       "load_bearing": false, "notes": "Algorithmic architecture inverts democratic design — regulation is the corrective" },
+    { "source": "FR-24", "target": "DB-28", "relation": "grounds",       "load_bearing": false, "notes": "Discourse collapse as systemic consequence of unregulated platforms" },
+    { "source": "FR-22", "target": "DB-28", "relation": "grounds",       "load_bearing": false, "notes": "Cultural pathology amplified by algorithmic systems — regulation breaks the amplification loop" },
+    { "source": "FP-11", "target": "DB-28", "relation": "grounds",       "load_bearing": false, "notes": "The AI race framing is manufactured urgency — FP-11 distortion test applies" },
+    { "source": "FR-1",  "target": "DB-28", "relation": "grounds",       "load_bearing": false, "notes": "OpenAI's credibility collapsed when it severed its public benefit obligation — FR-1 formula in operation" },
+    { "source": "FR-20", "target": "DB-28", "relation": "grounds",       "load_bearing": false, "notes": "OpenAI's bait-and-switch depleted its own truth-supply — 'open' is now manufactured consent" },
+
+    // EV-12 (OpenAI Economic Blueprint — Feb 2025)
+    { "source": "EV-12", "target": "DB-28", "relation": "supports",      "load_bearing": false, "notes": "OpenAI Economic Blueprint is the primary evidentiary anchor for DB-28: lobbying document disguised as policy analysis, produced by an entity that already severed its public benefit obligation" },
+    { "source": "EV-12", "target": "FR-4",  "relation": "supports",      "load_bearing": false, "notes": "Blueprint explicitly offers regulatory preemption in exchange for national security cooperation — FR-4 mechanism 1 (regulatory capture) stated in plain text" },
+    { "source": "EV-12", "target": "FP-11", "relation": "supports",      "load_bearing": false, "notes": "'Race America must win' + $175B 'will flow to China' = manufactured urgency to suppress regulatory instinct" },
+    { "source": "EV-12", "target": "FR-9",  "relation": "supports",      "load_bearing": false, "notes": "'The values the US has always stood for' without acknowledging the actual record = national ego distortion" },
+    { "source": "EV-12", "target": "FR-20", "relation": "supports",      "load_bearing": false, "notes": "Red Flag Act analogy and selective history deployed as argument against regulation = truth-supply depletion via cherry-picked narrative" },
+    { "source": "EV-12", "target": "FR-1",  "relation": "supports",      "load_bearing": false, "notes": "OpenAI trajectory (nonprofit to for-profit, open to closed, public benefit to shareholder value) is FR-1 credibility collapse when obligation is severed" },
+    { "source": "EV-12", "target": "FR-24", "relation": "example_of",    "load_bearing": false, "notes": "Thucydides Trap framing forecloses cooperative options before conversation begins — discourse collapse applied to geopolitics" },
+    { "source": "EV-12", "target": "FR-2",  "relation": "supports",      "load_bearing": false, "notes": "$175B 'will flow to China' is temporal distortion: 'act now or lose forever' framing collapses deliberation window" },
+
+    // ── CROSS-GRAPH CONTRADICTIONS (Thomas ↔ Friend S) ─────────────────────────
+    // TO BE POPULATED after graph_interlocutor.json is built.
+    // Format:
+    // {
+    //   "source": "FP-1",
+    //   "target": "S-DB-1",
+    //   "relation": "contradicts",
+    //   "load_bearing": true,
+    //   "notes": "Friend S's X directly violates Thomas's obligation principle because..."
+    // }
+
+  ]
+}

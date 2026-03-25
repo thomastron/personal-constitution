@@ -1,0 +1,912 @@
+// Corrected version. Source: graph_thomas.jsonc (v2.4, 2026-03-16).
+// Corrections applied 2026-03-17: REC-1 (BTN-11 cross-graph citation corrected in FR-21 and T-11),
+// REC-4 (BS-5 stale FR-10 ref updated to FR-8), REC-5 (FP-7 and FR-7 gap stubs added),
+// REC-6 (DB-11 successor_note added), REC-7 (DB-4 notes updated), REC-8 (FP-16 B-1 formalized to C-23).
+// See graph_thomas.jsonc for prior version.
+{
+  "meta": {
+    "person": "thomas",
+    "version": "2.9",
+    "timestamp": "2026-03-23",
+    "source": "KNOWLEDGE_GRAPH_Thomas__20260323-1000.md",
+    "note": "v2.9 (2026-03-23): Added FR-26 (Isometric Hold: The Hidden Cost of Equilibrium), SA-8 (Cognitive Synthesis Self-Model: Process + Trauma + AI), EV-10 (CRE 2026 Market Data); amended FR-2 (Rates vs. Levels sub-dimension). Source: Thomas / Gemini conversation 2026-03-23: _CRE Market Faces Debt Maturity Wall.md. v2.8 (2026-03-23): Added FR-24 (Functional Discourse) and FR-25 (Taxonomy of Capacity Failure). Source: Thomas / Claude session 2026-03-23. v2.7 (2026-03-21): Added DB-25 (Conscription as Electoral Equalizer: The Structural Case for Universal Draft). Source: Socratic debate session, 2026-03-21. v2.6 (2026-03-19): Added EV-9 (ACE Study: adverse childhood experiences → long-term health outcomes; Felitti et al. 1998) and DB-24 (Harm-Avoidance Institutional Frames Produce the Harm They Prohibit). Source: Thomas's essay on 'Do No Harm' vs. 'Reduce Suffering'. v2.5 (2026-03-17): REC-1 corrected BTN-11 cross-graph citation in FR-21 and T-11 (wrong node — MASTER BTN-11 is 'Determined Past vs. Possible Future', not resistance typology; correct book-graph nodes for Living in Truth / resistance typology are C-63, C-81, A-38, BFR-25); REC-4 BS-5 stale FR-10 reference updated to FR-8 (FR-10 was absorbed into FR-8 at v1.4); REC-5 FP-7 and FR-7 gap stubs added to document intentional/unexplained ID gaps; REC-6 DB-11 successor_note added pointing to DB-22; REC-7 DB-4 notes updated to replace retired FR-10 ref with FR-8; REC-8 FP-16 B-1 informal reference formalized to C-23 (book-graph Promise Trauma concept). v2.4 (2026-03-16): Added T-12 (FP-9 vs. FP-10 tension), DB-19 (Climate), DB-20 (Mass Incarceration), DB-21 (Immigration), DB-22 (AI Governance), DB-23 (Education); added FP-10 missing edges; added SA-4↔SA-6 rationalization loop edge. v2.3 (2026-03-16): Added DB-18 (Reconciliation Requires Architectural Change, Not Time). Source: _Boundaries of Asymmetric Witnessing.md; session analysis 2026-03-16. v2.2 (2026-03-15): Added DB-17 (Book as Witness Record, Not Persuasion Project) and SA-7 (Capacity Constraint: cPTSD, Resource Depletion, and the Requirement to Be Safe). Source: Thomas's stated positions 2026-03-15 and 20260215 Friend S conversation. v2.1 (2026-03-15): Namespace-resolved — Book Master T-11 citations updated to BTN-11 (matching KNOWLEDGE_GRAPH_PTSD_Book__MASTER__20260315.md BFR-/BTN- prefix convention). text fields are debate-ready summaries. Full prose lives in the .md source. Retired nodes retained with status field for edge-reference integrity. v1.9: added FR-19 (Negative Capability), SA-6 (Outcome Attachment); amended FP-10 (integration requirement), FR-8 (cognitive cascade), T-11 (Living in Truth political practice); missing structural edges added based on graph audit. v2.0 — cross-graph integration session (2026-03-14): (a) FP-11 amended with manufactured-fear distinction; (b) FP-15 amended with market-failure framing; (c) New node FP-16: Promise Trauma; (d) New node FR-20: Truth as Scarce Commodity; (e) New node FR-21: Living in Truth as Political Practice (elevated from T-11 note); (f) New node FR-22: Cultural Pathology Patterns; (g) New node FR-23: Collective Solidarity vs. Individual Obligation. Source: cross-graph analysis with KNOWLEDGE_GRAPH_PTSD_Book__MASTER__20260314.md."
+  },
+
+  "nodes": [
+
+    // ── FIRST PRINCIPLES ──────────────────────────────────────────────────────
+    // Strong moral/logical defaults. Universal form establishes weight.
+    // Application is always contextual. See FR-13.
+
+    {
+      "id": "FP-1",
+      "person": "thomas",
+      "type": "FirstPrinciple",
+      "label": "Obligation Precedes Intelligence",
+      "text": "No authority without accepting consequence. Intelligence alone confers no credibility. Obligation can be accepted, declined, or atrophied — atrophy is structural incapacity, not mere refusal.",
+      "notes": ""
+    },
+    {
+      "id": "FP-2",
+      "person": "thomas",
+      "type": "FirstPrinciple",
+      "label": "Comfort Is a Suspect Incentive",
+      "text": "When comfort conflicts with clarity, calibration, or accountability — comfort yields. Emotional relief is not an intrinsic good.",
+      "notes": ""
+    },
+    {
+      "id": "FP-3",
+      "person": "thomas",
+      "type": "FirstPrinciple",
+      "label": "Argue to Understand, Not to Win",
+      "text": "The goal of argument is truth-proximity, not victory. Conditional: applies to good-faith interlocutors only. Against bad-faith actors, the goal shifts to structural defense.",
+      "notes": "Conditional on good-faith classification of interlocutor"
+    },
+    {
+      "id": "FP-4",
+      "person": "thomas",
+      "type": "FirstPrinciple",
+      "label": "Everyone on the Bell Curve Deserves Basic Respect",
+      "text": "Baseline dignity regardless of intelligence, mental health, or belief. Respect is the floor, not the ceiling. Does not require engagement, relationship, or validation of false premises.",
+      "notes": "Respect ≠ relationship. Drawing a boundary is compatible with this principle."
+    },
+    {
+      "id": "FP-5",
+      "person": "thomas",
+      "type": "FirstPrinciple",
+      "label": "If You Can Prevent Harm Without Moral Sacrifice, You Must",
+      "text": "Singer (1972): obligation, not charity. The pond and the famine are morally equivalent. Application requires judgment about what 'moral significance' means. Obligations scale with capability (see FR-11).",
+      "notes": "Thomas satisfies this at high level: no meat, no new clothing, no pleasure travel, substantial donation of wealth and time."
+    },
+    {
+      "id": "FP-6",
+      "person": "thomas",
+      "type": "FirstPrinciple",
+      "label": "Freedom Ends Where It Harms Others",
+      "text": "Personal freedom is not absolute. When behavior harms others, the social contract legitimately constrains it. This is the definition of coexistence, not paternalism.",
+      "notes": ""
+    },
+    {
+      "id": "FP-7",
+      "person": "thomas",
+      "type": "FirstPrinciple",
+      "label": "[ID NOT ASSIGNED]",
+      "text": "This ID was skipped in original numbering. No node was ever assigned to FP-7.",
+      "status": "never_assigned",
+      "notes": "Gap documented 2026-03-17 audit. FP-1 through FP-6 are sequential; FP-7 is absent with no retirement note or explanation in any prior version. FP-8 follows directly. May have been intentionally skipped or lost before version tracking began."
+    },
+    {
+      "id": "FP-8",
+      "person": "thomas",
+      "type": "FirstPrinciple",
+      "label": "Denialism and Silence Enable Oppression",
+      "text": "Silence is not neutrality — it favors whoever benefits from the status quo. Strong default: silence is presumed enabling until shown otherwise. Exception: strategic disengagement where continued presence causes net harm.",
+      "notes": ""
+    },
+    {
+      "id": "FP-9",
+      "person": "thomas",
+      "type": "FirstPrinciple",
+      "label": "Truth Is Approached Through Curiosity and Openness, Not Certainty",
+      "text": "Never trust an absolutist (self-aware irony — demonstrates FR-13). All positions held provisionally: open to revision if evidence warrants. High confidence ≠ immunity to evidence.",
+      "notes": "The self-referential form is intentional. See FR-13."
+    },
+    {
+      "id": "FP-10",
+      "person": "thomas",
+      "type": "FirstPrinciple",
+      "label": "The Internal Scorecard Is the Valid Authority for Self-Assessment",
+      "text": "External validation optimizes for approval, not truth. Using crowd approval as a truth-signal hands your epistemology to whoever controls the crowd.",
+      "notes": "Epictetus: 'When you look outside, you have handed over your autonomy.' LIMITATION (v1.9): FP-10 establishes autonomy from external judgment — what the scorecard measures against. It does not yet name the integration requirement: that the scorecard must itself be coherent across beliefs, stated principles, and concrete actions. The fuller test: not only 'did I consult myself?' but 'does my self-consultation reveal consistency?' See SA-6 (outcome attachment) and FR-19 (Negative Capability) for active calibration. STRUCTURAL NOTE: FP-10 currently grounds only DB-13. Under-deployed relative to its stated importance."
+    },
+    {
+      "id": "FP-11",
+      "person": "thomas",
+      "type": "FirstPrinciple",
+      "label": "Fear Is a Distortion Variable, Not a Reliable Signal",
+      "text": "Fear of exclusion, loss, mortality, meaninglessness — a systemic distortion amplifier. Fear-driven arguments deserve structural skepticism. Fear is not a character flaw; it is a force to be managed.",
+      "notes": "v2.0 amendment: Two categories of fear must be distinguished. (1) Naturally-arising fear: the organic response to real stakes — status loss, exclusion, identity threat. This was the original FP-11 scope. (2) Manufactured fear: fear that is *designed* by algorithmic architecture, attention-capture systems, and status-insecurity amplification — not incidental to the information system but a deliberate output of it. The manufactured category is strategically amplified, not merely exploited. This distinction matters for moral allocation: individuals experiencing manufactured fear are more constrained than individuals experiencing natural fear; the architects of manufactured fear bear the primary moral weight (see FR-14, and new FR-22)."
+    },
+
+    // ── FRAMEWORKS ────────────────────────────────────────────────────────────
+    // Interpretive lenses. Revisable if they produce systematic error.
+
+    {
+      "id": "FR-1",
+      "person": "thomas",
+      "type": "Framework",
+      "label": "The Obligation-Credibility Axis",
+      "text": "Credibility = Intelligence × Obligation ÷ Insulation. Intelligence = reality-contact capacity (not IQ). Obligation = degree of consequence-bearing. Insulation = buffers from consequence. Credibility → 0 as insulation → ∞, or when obligation = 0.",
+      "notes": "The Altitude Model: ground level = full consequence exposure = where credibility lives."
+    },
+    {
+      "id": "FR-2",
+      "person": "thomas",
+      "type": "Framework",
+      "label": "Temporal Distortion Lens",
+      "text": "Every major pathology = failure to bind present actions to future consequences. Trauma=collapse, Certainty=freeze, Denial=defer, Cowardice=refuses extension, Populism=reversal, Emergency=compression, Algorithms=monetize, High discount rate=prices future near zero.",
+      "notes": "Cowardice reframe: 'They won't look' not 'They can't see.'"
+    },
+    {
+      "id": "FR-3",
+      "person": "thomas",
+      "type": "Framework",
+      "label": "Stoicism",
+      "text": "Control distinction: invest only in what is in your control. Internal scorecard. Don't react in real-time. Obstacle → path. Signal-to-noise: most things don't matter. Stoicism governs internal state, not action choices.",
+      "notes": "Stoic detachment and moral engagement are not in conflict. Marcus Aurelius governed an empire."
+    },
+    {
+      "id": "FR-4",
+      "person": "thomas",
+      "type": "Framework",
+      "label": "Neoliberal Critique",
+      "text": "Since 1970s: systematic wealth/power concentration via reduced democracy, redesigned economy (capital free, labor not), burden-shifting, attacking solidarity, engineering elections, manufacturing consent. Policies track corporate, not public, interest.",
+      "notes": "Sources: Chomsky, Requiem for the American Dream"
+    },
+    {
+      "id": "FR-5",
+      "person": "thomas",
+      "type": "Framework",
+      "label": "Neuroscience of Decision-Making",
+      "text": "Emotional brain: fast, pattern-matching, trained by experience. Rational brain: slow, tires easily, cedes to emotional brain when fatigued. Moral decisions made by emotional brain; rational brain provides post-hoc rationalization. Stated reasons ≠ actual reasons.",
+      "notes": "Debate implication: Socratic questions activate emotional discomfort with one's own contradictions."
+    },
+    {
+      "id": "FR-6",
+      "person": "thomas",
+      "type": "Framework",
+      "label": "DFW Consciousness (This Is Water)",
+      "text": "Default human setting: self-centered. 'Learning to think' = choosing what to pay attention to. What you worship will consume you. Curiosity = quality of attention, not quantity. Present-moment openness.",
+      "notes": ""
+    },
+    {
+      "id": "FR-7",
+      "person": "thomas",
+      "type": "Framework",
+      "label": "[ID NOT ASSIGNED]",
+      "text": "This ID was skipped in original numbering. No node was ever assigned to FR-7.",
+      "status": "never_assigned",
+      "notes": "Gap documented 2026-03-17 audit. FR-1 through FR-6 are sequential; FR-7 is absent with no retirement note or explanation in any prior version. FR-8 follows directly. May have been intentionally skipped or lost before version tracking began."
+    },
+    {
+      "id": "FR-8",
+      "person": "thomas",
+      "type": "Framework",
+      "label": "Social Fragmentation Model",
+      "text": "Three pillars of democracy: social capital, strong institutions, shared stories. Social media weakened all three: too-fast feedback loops, outrage amplification, mob justice without due process, state-actor disinformation. Madison's design inverted.",
+      "notes": "COGNITIVE CASCADE (v1.9): Prior analysis traced political consequence only. Book model adds cognitive cascade: Strategic Ignorance → Architecture of Ignorance → Algorithmic Complacency → High-Fructose Feed → Cognitive Malnourishment → Anti-intellectualism → Absolutism → Conceit of Knowledge. Endpoint: loss of capacity to know what you don't know. Two distinct interventions: political (structural/regulatory) vs. cognitive (rebuild discriminating attention and tolerance of complexity). FR-6 (DFW: 'learning how to think') is the positive antidote at the cognitive level. See FR-19 (Negative Capability)."
+    },
+    {
+      "id": "FR-9",
+      "person": "thomas",
+      "type": "Framework",
+      "label": "Ego Distortion Model",
+      "text": "Ego maintenance requires denialism. To protect self-narrative: reject contradicting evidence, suppress curiosity, silence critics. Produces systemic stupification. Minimizing ego = epistemic hygiene. When opponent attacks your character: the argument is landing.",
+      "notes": "Over-literalizing an opponent's statement to avoid engaging it is also an ego-protection move."
+    },
+    {
+      "id": "FR-10",
+      "person": "thomas",
+      "type": "Framework",
+      "label": "Madison's Institutional Design Principles",
+      "status": "retired",
+      "retired_note": "MERGED INTO FR-8 (v1.4). Content preserved in FR-8 'Design intent' section.",
+      "text": "Democratic institutions must: slow deliberation, require compromise, insulate leaders from mob dynamics while maintaining electoral accountability. When these conditions are removed, institutions fail architecturally, not just from bad actors.",
+      "notes": ""
+    },
+    {
+      "id": "FR-11",
+      "person": "thomas",
+      "type": "Framework",
+      "label": "Maslow Domain Boundaries as Empathy Limiters",
+      "text": "People systematically fail to empathize across Maslow domain gaps. Safety-scarcity ↔ esteem-surplus gap is nearly unbridgeable without deliberate effort. Obligations scale with domain position. What looks irrational from your domain may be locally rational in theirs.",
+      "notes": ""
+    },
+    {
+      "id": "FR-12",
+      "person": "thomas",
+      "type": "Framework",
+      "label": "Firehose Triage Protocol",
+      "text": "When facing argument expansion: (1) identify load-bearing node, (2) ignore decorations, (3) anchor and freeze — 'all five of your points rely on X being true, can we verify X first?', (4) refuse topic hops — demand the logic bridge. Goal: contraction, not expansion.",
+      "notes": "Strawman via Over-Literalization: when attacker argues against extreme literal form rather than intent. Name it, clarify intent, redirect to actual claim."
+    },
+    {
+      "id": "FR-13",
+      "person": "thomas",
+      "type": "Framework",
+      "label": "Language Imprecision & Principled Defaults",
+      "text": "Absolute-sounding statements are not necessarily intended as absolutes — limitation of language, not failure of position. First Principles = strong defaults establishing burden of proof. Universal form sets weight; contextual application requires judgment. Attacking the literal extreme rather than intended meaning = strawman.",
+      "notes": "Dissolves T-2 and T-3 as apparent tensions. Applies to FP-3, FP-4, FP-5, FP-8, FP-9."
+    },
+
+    // ── DERIVED BELIEFS ───────────────────────────────────────────────────────
+    // Positions held because of Principle + Framework + Evidence.
+    // Revisable if underlying grounds change.
+
+    {
+      "id": "DB-1",
+      "person": "thomas",
+      "type": "DerivedBelief",
+      "label": "Trump's Enablers Are Practicing Moral Cowardice, Not Ignorance",
+      "text": "Evidence of harm documented since 2015. Continued support = choice to defer consequence onto others. Moral diagnosis, not cognitive one. Cowardice = the dominant explanatory default; Maslow/time-poverty exceptions apply at margins.",
+      "notes": "Grounds: FP-1, FP-8, FR-2 (deferral), FR-9 (ego)"
+    },
+    {
+      "id": "DB-2",
+      "person": "thomas",
+      "type": "DerivedBelief",
+      "label": "January 6 Was a Coup Attempt",
+      "text": "Peaceful transfer of power = mechanism by which present choice binds future governance. Violating it severs that temporal binding. The Big Lie = temporal distortion: freezing a false past to prevent the future from arriving.",
+      "notes": "Grounds: FP-6, FR-2, EV-2"
+    },
+    {
+      "id": "DB-3",
+      "person": "thomas",
+      "type": "DerivedBelief",
+      "label": "Vaccine and Mask Refusal Violates Collective Obligation",
+      "text": "Not a freedom issue — a collective obligation issue. Measurable harm to others triggers FP-6. 1M+ COVID deaths from declared 'hoax virus' is the evidentiary anchor.",
+      "notes": "Grounds: FP-5, FP-6, EV-1"
+    },
+    {
+      "id": "DB-4",
+      "person": "thomas",
+      "type": "DerivedBelief",
+      "label": "Social Media Is a Deliberate Temporal Distortion Machine",
+      "status": "retired",
+      "retired_note": "ABSORBED INTO FR-8 (v1.4). Content preserved in FR-8 'Temporal dimension' section.",
+      "text": "Engagement algorithms optimize for attention capture = time extraction. The design is not a side effect — it is the product. Attention is the commodity; temporal distortion is the mechanism.",
+      "notes": "Grounds: FR-2, FR-8 (FR-8 absorbed FR-10 at v1.4)"
+    },
+    {
+      "id": "DB-5",
+      "person": "thomas",
+      "type": "DerivedBelief",
+      "label": "Capitalism Extracts Time from Those with Fewer Resources",
+      "text": "Time is the actual scarce resource. The rich trade money for others' time. Everyone else runs perpetual deficits and cannot afford to think for themselves.",
+      "notes": "Grounds: FR-4, FR-3"
+    },
+    {
+      "id": "DB-6",
+      "person": "thomas",
+      "type": "DerivedBelief",
+      "label": "Denialism Enables Classism, Sexism, Racism",
+      "text": "Denialism = active choice to defer consequence onto those who already bear it most. Ego protection explains persistence: acknowledging harm requires acknowledging complicity.",
+      "notes": "Grounds: FP-8, FR-2, FR-9"
+    },
+    {
+      "id": "DB-7",
+      "person": "thomas",
+      "type": "DerivedBelief",
+      "label": "Gun Ownership Increases Net Harm, Not Net Safety",
+      "text": "Gun owners more likely to harm themselves or family than use weapon defensively. Removing guns dropped suicide rates. Harm-reduction issue, not freedom issue. Counter-arguments (rural contexts, defensive use stats) exist — position held with awareness of contested evidence.",
+      "notes": "Grounds: FP-5, FP-6, EV-4"
+    },
+    {
+      "id": "DB-8",
+      "person": "thomas",
+      "type": "DerivedBelief",
+      "label": "Credibility Collapses When Systems Sever Obligation from Consequence",
+      "text": "Bailouts, regulatory capture, elite insulation = credibility → 0 regardless of stated intelligence or values. Applies to corporations, governments, media, and AI equally.",
+      "notes": "Grounds: FP-1, FR-1"
+    },
+    {
+      "id": "DB-9",
+      "person": "thomas",
+      "type": "DerivedBelief",
+      "label": "Elites Have Near-Zero Credibility Regardless of Intelligence",
+      "status": "retired",
+      "retired_note": "MERGED INTO DB-8 (v1.4). Content preserved in DB-8 'Elites' subsection.",
+      "text": "Billionaires 4,000× more likely to hold office = 4,000× higher altitude. Credibility → 0 as insulation → ∞. Not envy — the formula applied.",
+      "notes": "Grounds: FR-1, EV-5"
+    },
+    {
+      "id": "DB-10",
+      "person": "thomas",
+      "type": "DerivedBelief",
+      "label": "Bad-Faith Debate Is Performance; Disengagement Is Valid",
+      "text": "Engaging bad-faith actors on their terms concedes the frame. Withdrawal = correct classification of interaction type. Meta-discourse about the tactic is more effective than continued engagement.",
+      "notes": "Grounds: FP-3 (conditional), FR-3, FR-12"
+    },
+    {
+      "id": "DB-11",
+      "person": "thomas",
+      "type": "DerivedBelief",
+      "label": "AI Systems Have Near-Zero Credibility on Truth Claims",
+      "status": "retired",
+      "retired_note": "MERGED INTO DB-8 (v1.4). Content preserved in DB-8 'AI systems' subsection.",
+      "successor_note": "DB-22 (AI Governance, v2.4) covers the AI credibility territory more precisely than the original DB-8 merger target.",
+      "text": "Credibility = Intelligence × 0 (obligation) ÷ Insulation = 0. AI output has analytical value but zero epistemic authority. All AI-generated content is untrusted until explicitly adopted by a human obligation-holder.",
+      "notes": "Grounds: FP-1, FR-1"
+    },
+    {
+      "id": "DB-12",
+      "person": "thomas",
+      "type": "DerivedBelief",
+      "label": "The 1st Amendment Protects Speech from Government, Not Social Consequence",
+      "text": "Constrains the state, not individuals or platforms. Social criticism, platform moderation, relational boundaries are not 1st Amendment violations. Treating them as such is a false premise to be named before engaging.",
+      "notes": "Grounds: FP-6, FP-4"
+    },
+    {
+      "id": "DB-13",
+      "person": "thomas",
+      "type": "DerivedBelief",
+      "label": "Carrots and Sticks Are Control Technology, Not Leadership",
+      "text": "Incentive manipulation requires controlling reward/punishment supply = classism in structural form. Real leadership = credibility-based. People follow because the ideas are good and the track record is consistent.",
+      "notes": "Grounds: FR-4, FP-10"
+    },
+
+    // ── NEW NODES v1.3 ────────────────────────────────────────────────────────
+
+    {
+      "id": "FP-12",
+      "person": "thomas",
+      "type": "FirstPrinciple",
+      "label": "All Conscious Beings Deserve Respect and Certain Rights",
+      "text": "Not limited to humans. Not limited to one country. All sentient, conscious beings have a claim to basic respect and certain rights. Complicated in practice — competing interests, capacity questions, implementation difficulties — but the principle is firm.",
+      "notes": "Retired BS-6. Grounds: FP-5 (Singer's logic is species-neutral), FP-4, Thomas's behavior (no meat). Source: Thomas review 2026-03-06."
+    },
+    {
+      "id": "FR-14",
+      "person": "thomas",
+      "type": "Framework",
+      "label": "Distributed Moral Responsibility",
+      "text": "When an actor is constrained into a choice between bad options, moral burden is distributed to whoever built the cage — not only to the forced actor. The constrained actor bears trauma; the cage-builders bear primary moral weight. Anger at the system is accurate moral accounting, not rationalization. Systemic responsibility reduces but does not eliminate individual obligation.",
+      "notes": "Connects to FR-4 (neoliberal systems engineer constraints by design) and FR-2 (cowardice builds cages through deferral). Nuances DB-1: information environment architects share responsibility for enabler choices. Source: Thomas review 2026-03-06, trolley problem critique."
+    },
+    {
+      "id": "FR-15",
+      "person": "thomas",
+      "type": "Framework",
+      "label": "Harm Assessment Framework",
+      "text": "Harm requires three parameters: (1) Time window — less than one generation: negligent; 1-2 generations: Thomas's practical obligation horizon; beyond 2 generations: prediction too unreliable to obligate specifically. (2) Scale — micro (individual) and macro (systemic) both morally relevant. (3) Sampling/evidence — grounded claims, not assertion; beware cherry-picked windows. Commitment: reach as far as practically useful, challenge yourself, do your best.",
+      "notes": "Operationalizes FP-6 (scope of harm) and FR-2 (temporal distortion). Climate (BS-1) fails all three parameters of harm denial. Source: Thomas review 2026-03-06."
+    },
+    {
+      "id": "DB-14",
+      "person": "thomas",
+      "type": "DerivedBelief",
+      "label": "Advocacy Is Part of Singer Compliance",
+      "status": "retired",
+      "retired_note": "ABSORBED INTO FP-5 compliance note (v1.4). Content preserved in FP-5 'Compliance note' section of the .md source.",
+      "text": "Meeting FP-5 is not only a personal practice requirement — it includes actively propagating the principle to others. Giving Singer's books, engaging people, modeling the behavior, being recognized as an agent of change: these are compliance, not supererogatory extras. If advocacy can prevent harm without sacrificing anything of moral significance, FP-5 applies to it.",
+      "notes": "Grounds: FP-5, FP-3, FP-8. Resolves demandingness gap from v1.2. Source: Thomas review 2026-03-06."
+    },
+    {
+      "id": "DB-15",
+      "person": "thomas",
+      "type": "DerivedBelief",
+      "label": "Autonomy Respect Scales with Demonstrated Good Faith",
+      "text": "The Kantian obligation to respect interlocutor autonomy is not unconditional. It scales inversely with: (1) demonstrated bad faith — repeated non-truth-seeking pattern; (2) harm enabled — positions represent danger to others (useful idiot function); (3) exhaustion of genuine engagement — exceptional good-faith effort made and documented. When all three conditions are met, goal shifts from autonomy preservation to structural defense and harm prevention.",
+      "notes": "Grounds: FP-3 (conditional), FP-4, FP-8, FR-9, FR-12. Friend S: all three conditions met. Consequentialist override of Kantian constraint — Thomas accepts this tradeoff explicitly. Source: Thomas review 2026-03-06."
+    },
+
+    // ── NEW NODES v1.4–v1.8 ──────────────────────────────────────────────────
+
+    {
+      "id": "FP-15",
+      "person": "thomas",
+      "type": "FirstPrinciple",
+      "label": "Silence Is a Position",
+      "text": "Silence under an authoritarian system is not neutrality — it is a categorized historical position. The Flowchart of Historical Accountability (T-11) demonstrates this structurally: every path from 'aware of authoritarian system → yes' leads to a named node. There is no exit from the map. Awareness plus silence = a position. Thomas's obligation to name this (FP-8) is not dependent on efficacy — it is dependent on awareness.",
+      "notes": "Links to: FP-8, T-10, T-11, FR-18, DB-1. Historical anchors: post-WWII Germans judged for silence regardless of outcome; Switzerland — committed strategic withdrawer — broke silence in 2026 when continued withdrawal became structurally untenable. Source: dog-walk session, 2026-03-14. v2.0 amendment: Two complementary framings of why silence is consequential. (1) Accountability frame (original): silence gets categorized on the historical map whether intended or not — the witness who stays silent is counted. (2) Market-failure frame (added v2.0): silence is an active mechanism depleting truth supply. In systems where denialism is incentivized and silence is cheaper than speaking, truth becomes functionally scarce — not because truth is objectively rare, but because the supply chain (witnesses bearing record, institutions reporting facts, culture valuing accuracy) has been disrupted. Both framings are true and complementary. The accountability frame explains the speaker's obligation; the market-failure frame explains the systemic consequence of that silence at scale. See new FR-20 (Truth as Scarce Commodity)."
+    },
+    {
+      "id": "FR-16",
+      "person": "thomas",
+      "type": "Framework",
+      "label": "Earned Clarity Distortion",
+      "text": "Repeated vindication on large-scale threats sharpens pattern recognition — an asset. But it also compresses moral distance between unambiguous cases (Nazi salute on inaugural stage) and contextually ambiguous ones (friend not reading the book). Trauma-sharpened recognition accelerates compression. Risk: ambiguous data assigned the moral weight of the clearest cases. Active mitigants: willingness to walk away, Grey Rock as active discernment, explicit awareness of this risk.",
+      "notes": "Calibration test: 'Am I assigning this situation the moral weight it actually carries, or the weight of the clearest case it resembles?' Connects to: FP-8, FR-9, SA-3, SA-5, T-9. Source: Socratic audit session, 2026-03-13."
+    },
+    {
+      "id": "FR-17",
+      "person": "thomas",
+      "type": "Framework",
+      "label": "Confrontation: Moral Witness vs. Persuasion Function",
+      "text": "Confronting denialism serves two distinct functions: (1) Moral witness — naming evil, bearing public record, refusing to normalize. FP-8 mandates this. Morally necessary regardless of efficacy. (2) Persuasion — attempting to shift beliefs of the person confronted. Historically low-yield against useful idiots and conflict-avoidant actors. Confrontation does not convert useful idiots — it makes them defensive. Most effective resisters during authoritarian collapse built trusted networks; they didn't try to convert the unreliable. Friend-circle reduction is historically validated strategy, not only PTSD-driven avoidance.",
+      "notes": "Connects to: FP-8, DB-10, T-7, T-9, FR-16. Source: Socratic audit session, 2026-03-13."
+    },
+    {
+      "id": "FR-18",
+      "person": "thomas",
+      "type": "Framework",
+      "label": "Filter-Premise Detection: Find the Right Chain",
+      "text": "Before walking any reasoning chain, ask: does this person hold a filter-premise that pre-rejects the destination regardless of chain clarity? Filter-premises: futility ('nothing we can do'), irrelevance, source distrust, prior conclusion. Walking more clearly won't help against a filter-premise — find a parallel chain to the same destination from premises they already accept. Protocol: (1) identify filter-premise, (2) check if current chain requires agreement with contested premise, (3) find unblocked chain, (4) acknowledge first chain honestly then put it down, (5) walk unblocked chain. Friend N routing: futility filter → use accountability chain (Germans judged for silence regardless of outcome), not efficacy chain → T-11 as shared inquiry ('where do you see yourself?').",
+      "notes": "Connects to: FR-5 (logic targets wrong system), T-10, FP-8, FR-17. Source: Dog-walk session, 2026-03-14."
+    },
+    {
+      "id": "FP-16",
+      "person": "thomas",
+      "type": "FirstPrinciple",
+      "label": "Promise Trauma",
+      "text": "Systems built on foundational promises that are never kept produce intergenerational trauma expressed as oscillation between idealism and cynicism. Americans are not irrational deniers — they are rationally traumatized by a broken constitutional promise (equality, rule of law, dignity as birthright). Denialism is, in this frame, learned self-protection: if idealism leads to betrayal, cynicism becomes an adaptive strategy. This does not excuse denialism. It explains it, and changes the moral allocation: the primary blame falls on those who design and maintain the broken promise, not on those who adapted to it.",
+      "notes": "Source: PT$D book C-23 (book-graph: Promise Trauma concept). Nuances DB-1: Trump enablers are practicing moral cowardice *within a system that has already taught them that idealism leads to betrayal.* The cowardice is real; the context matters for understanding it. Also nuances FR-14 (distributed responsibility): the architects of the broken promise bear the heaviest moral weight. Added v2.0 based on cross-graph analysis with book KG."
+    },
+
+    {
+      "id": "DB-16",
+      "person": "thomas",
+      "type": "DerivedBelief",
+      "label": "Cultural Sensitivity ≠ Cultural Relativism",
+      "text": "Cultural sensitivity (respecting persons across cultures as persons) is categorically distinct from cultural relativism (refusing to critique harmful cultural patterns because culturally embedded). Thomas holds the former; explicitly rejects the latter. Intolerance of harmful cultural patterns is an obligation (FP-8), not a failure of empathy. The charge of 'cultural insensitivity' is usually a category error — it conflates critique of a pattern with disrespect for the person. Limit: delivery may warrant adjustment even when substance is correct.",
+      "notes": "Illustrative cases: Russian friend defending Putin; Turkish friends' conflict-avoidance around Musk Nazi salute. Grounds: FP-4, FP-8, FP-12. Connects to: FR-16, FR-17, T-9. Source: Socratic audit session, 2026-03-13."
+    },
+
+    // ── EVIDENCE / DATA ───────────────────────────────────────────────────────
+
+    {
+      "id": "EV-1",
+      "person": "thomas",
+      "type": "Evidence",
+      "label": "1M+ U.S. COVID Deaths from a Declared Hoax",
+      "text": "Over one million Americans died from COVID-19, a disease called a hoax by Trump. Anchors DB-1 and DB-3.",
+      "notes": ""
+    },
+    {
+      "id": "EV-2",
+      "person": "thomas",
+      "type": "Evidence",
+      "label": "January 6 Documented Record",
+      "text": "Court findings, criminal convictions, congressional record, video evidence of Capitol attack. Big Lie litigation outcomes. Anchors DB-2.",
+      "notes": ""
+    },
+    {
+      "id": "EV-3",
+      "person": "thomas",
+      "type": "Evidence",
+      "label": "Neoliberal Wealth Concentration Data",
+      "text": "Gini coefficient trends, wealth share data since 1970s showing systematic upward redistribution. Anchors DB-5, DB-9, FR-4.",
+      "notes": ""
+    },
+    {
+      "id": "EV-4",
+      "person": "thomas",
+      "type": "Evidence",
+      "label": "Gun Violence and Suicide Statistics",
+      "text": "Gun owners more likely to harm themselves or family than use weapon defensively. International comparison data. Countries that removed guns saw suicide rate reduction. Anchors DB-7.",
+      "notes": ""
+    },
+    {
+      "id": "EV-5",
+      "person": "thomas",
+      "type": "Evidence",
+      "label": "Billionaire Political Representation Ratio",
+      "text": "Billionaires 4,000× more likely to hold office than average citizen. Anchors DB-9.",
+      "notes": ""
+    },
+    {
+      "id": "EV-6",
+      "person": "thomas",
+      "type": "Evidence",
+      "label": "Social Media Fragmentation Research",
+      "text": "Haidt, Bail, Zuboff. Polarization trend data. Documented weakening of social capital, institutional trust, and shared narrative. Anchors DB-4, DB-6, FR-8.",
+      "notes": ""
+    },
+    {
+      "id": "EV-7",
+      "person": "thomas",
+      "type": "Evidence",
+      "label": "Gilens & Page (2014): Policy Tracks Corporate, Not Public, Interest",
+      "text": "Empirical study showing U.S. policy outcomes correlate with elite economic interests, not median voter preferences. Anchors FR-4, DB-8.",
+      "notes": ""
+    },
+    {
+      "id": "EV-8",
+      "person": "thomas",
+      "type": "Evidence",
+      "label": "Dual-Process Neuroscience Literature",
+      "text": "Kahneman, dopamine reward systems, amygdala response research. Establishes emotional/rational brain architecture and its implications for belief formation and change. Anchors FR-5.",
+      "notes": ""
+    },
+    {
+      "id": "EV-9",
+      "person": "thomas",
+      "type": "Evidence",
+      "label": "ACE Study (Felitti et al., 1998): Adverse Childhood Experiences → Long-Term Health Outcomes",
+      "text": "~17,000 participants through Kaiser Permanente. Dose-response relationship: higher ACE score directly predicts adult chronic disease (heart disease, cancer, liver disease), mental health disorders, and shortened lifespan. Mechanism is physiological: chronic stress dysregulates HPA axis, producing lasting biological changes. Institutional non-adoption of ACE screening (most physicians untrained; not integrated into standard protocols) is itself evidence of the harm-avoidance frame in operation — costs of screening (time, scope uncertainty) are immediate; costs of inaction (missed root causes, downstream disease) are deferred and diffuse. Anchors FP-16, FR-22, DB-24.",
+      "notes": "Source: Felitti, V.J. et al. (1998). American Journal of Preventive Medicine, 14(4), 245-258. Added v2.6 (2026-03-19)."
+    },
+
+    {
+      "id": "EV-10",
+      "person": "thomas",
+      "type": "Evidence",
+      "label": "CRE 2026 Market Data",
+      "text": "US commercial real estate 2026: office CMBS delinquency at 12.34% (early 2026); ~$875B debt maturing 2026, ~$1.26T in 2027 — stacking effect of 2024-2025 'Extend and Pretend' loan extensions (lenders extended maturing loans 12-24 months rather than recognizing losses, now concentrated); K-shaped recovery (trophy/Class A assets stabilizing; Class B/C office in negative equity — collateral value below loan amount); BlackRock HLEND ($26B fund) gated withdrawals March 6 2026 ($1.2B redemption requests against 5% quarterly cap; paid $620M; remainder deferred). Primary instantiation of FR-2 Rates vs. Levels (stable level concealed stacking rate), FR-26 Isometric Hold (2024-2025 stability was active energy-intensive hold, not equilibrium), and FR-4 K-shaped distress (well-capitalized acquire distressed assets from over-leveraged).",
+      "notes": "Source: Thomas / Gemini conversation 2026-03-23: _CRE Market Faces Debt Maturity Wall.md. Added v2.9."
+    },
+
+    {
+      "id": "DB-25",
+      "person": "thomas",
+      "type": "DerivedBelief",
+      "label": "Conscription as Electoral Equalizer: The Structural Case for Universal Draft",
+      "text": "Two arguments that must not be conflated. (1) The standard opposition (well-grounded): as historically implemented, the draft is a class weapon — the insulated class reliably exits through deferments; FR-1 strips the credibility of insulated advocates; FP-11/FR-2 flag fear-based national-security justifications as manufactured emergency. (2) The structural democratic argument (non-dismissible): a genuinely universal draft (zero deferments, no class exits) is a different moral object. When wars carry mandatory personal cost across all class lines, the voting electorate transforms — wars become politically expensive, uninformed/insulated voting collapses, and the political class acquires genuine obligation (FR-1). This is a FR-23 argument — national skin-in-the-game as collective democratic infrastructure. Cannot be dismissed as futile: implementation failures in past drafts are empirical claims about political will, not logical defeats of the structural case. Potential solutions (non-waivable service, lottery with zero exemptions) are politically difficult, not logically impossible.",
+      "notes": "Grounds: FR-23 (collective skin-in-the-game as democratic infrastructure), FR-4 (class structure: insulation enables foreign policy adventurism), FR-1 (insulated advocates near-zero credibility; universal draft uniquely reduces insulation). Limiting: FR-14 (war architects bear primary moral weight regardless), FP-11 (fear-based draft advocacy fails distortion test; structural argument does not), FR-15 (forced service is rights cost requiring justified benefit). T-10 futility-veto rejected: implementation difficulty is not a logical defeater. Source: Socratic debate session, 2026-03-21."
+    },
+
+    // ── BLIND SPOTS ───────────────────────────────────────────────────────────
+    // Domains where Thomas's principles imply positions not yet declared.
+
+    {
+      "id": "BS-1",
+      "person": "thomas",
+      "type": "BlindSpot",
+      "label": "Climate Change",
+      "text": "FR-2 (denial=deferral) + FP-5 (Singer) + FP-6 (harm) all converge on mandatory action. Clearest possible example of deferring consequence onto future people. Position: implied but undeclared.",
+      "notes": "Status: undeclared"
+    },
+    {
+      "id": "BS-2",
+      "person": "thomas",
+      "type": "BlindSpot",
+      "label": "Criminal Justice",
+      "text": "FP-4 + FP-11 + FR-11 + FR-4 imply rehabilitative over punitive justice. Fear-based deterrence is a distortion variable. Mass incarceration as neoliberal labor control implied by FR-4.",
+      "notes": "Status: undeclared"
+    },
+    {
+      "id": "BS-3",
+      "person": "thomas",
+      "type": "BlindSpot",
+      "label": "Immigration",
+      "text": "FR-4: capital free to move, labor cannot. Immigration restriction = labor suppression tool. FP-4 applies regardless of national origin.",
+      "notes": "Status: undeclared. Most politically sensitive blind spot."
+    },
+    {
+      "id": "BS-4",
+      "person": "thomas",
+      "type": "BlindSpot",
+      "label": "AI Governance",
+      "text": "FR-1 directly implies AI requires human obligation-holders. AI governance frameworks should center obligation, not capability.",
+      "notes": "Status: partially declared in PROCESS doc; not in debate-ready graph"
+    },
+    {
+      "id": "BS-5",
+      "person": "thomas",
+      "type": "BlindSpot",
+      "label": "Education",
+      "text": "FR-8 + FP-9 imply education should produce citizens capable of slowing down, managing dual-process cognition, maintaining shared narrative. Currently not optimized for this.",
+      "notes": "Status: undeclared. Note: original text referenced FR-10 alongside FR-8; FR-10 was retired and absorbed into FR-8 at v1.4 — corrected in v2.5 to remove stale FR-10 reference. The book-graph BFR-10 (Instrumental Turn Diagnosis Framework) is also relevant here but is a distinct cross-graph reference."
+    },
+
+    // ── TENSION NODES ─────────────────────────────────────────────────────────
+    // Genuine contradictions (require resolution) and apparent tensions (dissolve
+    // under FR-13 or domain separation). Full analysis in .md source.
+    // NOTE: T-1 through T-8 were absent from prior JSONC versions (gap identified v1.9 graph audit).
+
+    {
+      "id": "T-1",
+      "person": "thomas",
+      "type": "TensionNode",
+      "label": "\"Argue to Understand\" vs. Building a Debate Weapon",
+      "status": "resolved",
+      "resolution": "good_faith_conditionality",
+      "text": "FP-3 says argue to understand. The Socratic Debater is designed to collapse an opponent's argument. Resolution: FP-3 is conditional on good faith (FR-13). Against bad-faith actors, the goal shifts to structural defense. Socratic questions are invitations to examine one's own beliefs — if the opponent's beliefs are internally coherent, the questions produce no collapse. Collapse reveals pre-existing structural failure, not one caused by the questions.",
+      "notes": "Grounds: FP-3 (conditional), FR-13. Resolves to: DB-10, DB-15. Note: T-1 through T-3 are all FR-13 demonstrations."
+    },
+    {
+      "id": "T-2",
+      "person": "thomas",
+      "type": "TensionNode",
+      "label": "\"Everyone Deserves Basic Respect\" vs. \"I Don't Want You in My Life\"",
+      "status": "apparent",
+      "resolution": "FR-13_domain_separation",
+      "text": "FP-4 grants universal basic respect. Thomas draws hard relational boundaries. Resolution: Respect is the floor — minimum dignity, not engagement, relationship, or validation. Drawing a relational boundary is not a retraction of respect. FP-4 governs treatment of humanity; relationship is a separate choice. Additional ground: continued engagement without acknowledged harm is itself enabling (FP-8). v1.6: Grey Rock withdrawal is historically grounded (authoritarian collapse trusted networks), not only PTSD-driven avoidance.",
+      "notes": "Grounds: FP-4, FP-8, FR-13, FR-17. CRITICAL for SA-6: T-2's relational boundary logic and the Living in Truth political practice (T-11) are complementary — one governs individual relationships, the other the political function of those choices."
+    },
+    {
+      "id": "T-3",
+      "person": "thomas",
+      "type": "TensionNode",
+      "label": "\"Never Trust an Absolutist\" Is Self-Referentially Absolute",
+      "status": "apparent",
+      "resolution": "self_aware_irony_FR-13_demonstration",
+      "text": "FP-9 says never trust an absolutist. The statement is itself absolute. Resolution: deliberate self-aware irony demonstrating FR-13. The universal form is not the intended meaning. The point is epistemological absolutism (refusing to revise under evidence), not a prohibition on confident well-grounded positions. Prepared debate response: 'What evidence would change your mind about [X]? I can answer that for everything I hold. The absolutist is the one who can't.'",
+      "notes": "Grounds: FP-9, FR-13. Debate function: a bad-faith attacker who targets the literal extreme is committing a strawman — name it, don't defend the extreme, redirect to actual claim."
+    },
+    {
+      "id": "T-4",
+      "person": "thomas",
+      "type": "TensionNode",
+      "label": "Stoic Detachment vs. Political/Emotional Intensity",
+      "status": "resolved",
+      "resolution": "domain_separation",
+      "text": "Stoicism (FR-3) prescribes internal detachment. The political positions are emotionally engaged. Resolution: Stoicism governs internal state, not action choices. Marcus Aurelius governed an empire. Cato chose death rather than submit. Stoic engagement means action without being governed by reactive emotion. What Stoicism prohibits is destabilization — not engagement with injustice.",
+      "notes": "Grounds: FR-3. See SA-3 for where this remains a calibration challenge in practice. STRUCTURAL NOTE (v1.9): FR-3 grounds only 2 nodes in the edge graph, raising the deeper question of whether Stoicism is actually operative vs. aspirationally stated. SA-6 directly extends this tension."
+    },
+    {
+      "id": "T-5",
+      "person": "thomas",
+      "type": "TensionNode",
+      "label": "Singer's Demanding Standard vs. Thomas's Actual Behavior",
+      "status": "apparent",
+      "resolution": "dissolved_by_facts",
+      "text": "FP-5 applied rigorously is extraordinarily demanding. A debater might assume the position is theoretical. Resolution: the attack fails on the facts. Thomas does not eat meat. Does not buy new clothing. Does not travel for pleasure. Donates substantially — to the degree people urge him to do less. This is not a tension; it is a credibility asset. Residual conceptual point: 'without moral sacrifice' requires judgment — sustainable giving is correct application, not compromise.",
+      "notes": "Grounds: FP-5. Prepared response: 'Before you finish — I don't eat meat, I don't buy new clothing, I don't travel for entertainment, I donate until people tell me I'm giving too much. What were you going to say?'"
+    },
+    {
+      "id": "T-6",
+      "person": "thomas",
+      "type": "TensionNode",
+      "label": "Collective Obligation vs. Anti-Control Stance",
+      "status": "resolved",
+      "resolution": "domain_separation",
+      "text": "Thomas supports collective enforcement (mandates, regulations) but rejects carrots-and-sticks management and has no interest in using fear to control others. Resolution: different domains, different valid mechanisms. Interpersonal leadership: inspiration-based, voluntary, credibility-driven — carrots/sticks corrupt this domain. Institutional governance: rule-based, enforced, democratically legitimated — enforcement necessary because not everyone acts on rational obligation. The anti-control stance is interpersonal; collective obligation stance is institutional.",
+      "notes": "Grounds: FP-5 tensions_with DB-13. Domain separation: interpersonal vs. institutional mechanisms."
+    },
+    {
+      "id": "T-7",
+      "person": "thomas",
+      "type": "TensionNode",
+      "label": "\"Get Out of the Way\" vs. Singer Obligation",
+      "status": "resolved",
+      "resolution": "threshold",
+      "text": "'Getting out of the way is often the best option' vs. FP-5 (prevent harm if you can) and FP-8 (silence enables). Resolution: FP-8 is a strong default requiring judgment (FR-13). Withdrawal is justified when continued engagement causes net harm — toxic dynamics, ego battles, presence validates harmful frame. It fails the FP-8 test when presence or absence materially affects whether harm propagates to others. Threshold: valid when (a) game objectives are destructive, (b) engagement validates the frame, or (c) cost exceeds plausible benefit.",
+      "notes": "Grounds: FP-5, FP-8 tensions_with DB-10. Connects to T-9 (moral witness vs. persuasion function) and FR-17."
+    },
+    {
+      "id": "T-8",
+      "person": "thomas",
+      "type": "TensionNode",
+      "label": "\"Do Not Lie\" vs. Regular Lying in Practice",
+      "status": "partially_resolved",
+      "resolution": "consequentialist_exception_acknowledged",
+      "text": "FP-9 and Mind Map §3 state 'do not lie' as a near-principle. Thomas acknowledges lying regularly when it appears to be the best available option. He dislikes it. He does it. Resolution: 'do not lie' is the strong default (FR-13). Lying is a consequentialist exception — justified when harm of truth exceeds harm of deception in a specific case. This is not hypocrisy: holding honesty as a strong default while acknowledging contextual exceptions is different from claiming never to lie while lying. Risk: 'appears to be the best option' is subjective and can rationalize.",
+      "notes": "Grounds: FP-9. See SA-4 for honest self-audit of this. FR-13: the exception must clear a bar — lying must genuinely appear to produce less harm than truth."
+    },
+
+    {
+      "id": "T-9",
+      "person": "thomas",
+      "type": "TensionNode",
+      "label": "Complicity vs. Efficacy in Confrontation",
+      "status": "resolved",
+      "resolution": "function_separation",
+      "text": "FP-8 mandates confronting denialism. Historical record shows confronting useful idiots produces minimal belief change. Resolution: the moral witness function (FP-8-mandated, non-negotiable) is categorically distinct from the persuasion function (cost-benefit governed). Confrontation for moral witness is justified regardless of efficacy. Persuasion requires its own justification. Honest answer: 'Both — and they are not the same justification.'",
+      "notes": "Connects to: FP-8, FR-16, FR-17, DB-10, T-7, SA-5. Source: Socratic audit session, 2026-03-13."
+    },
+    {
+      "id": "T-10",
+      "person": "thomas",
+      "type": "TensionNode",
+      "label": "The Futility Objection: 'Nothing I Can Do' vs. FP-8",
+      "status": "resolved",
+      "resolution": "accountability_efficacy_distinction",
+      "text": "FP-8 mandates speaking out. Futility objection: individual action doesn't change macro outcomes, so there's no point. Resolution: futility targets efficacy; FP-8 grounds accountability. We judge 1940s Germans for the choice to stay silent, not for failing to stop the Holocaust. Moral accountability is independent of causal efficacy. Debate protocol: 'That question is about efficacy. I'm asking about accountability. Do you think German citizens who stayed silent bore moral responsibility even if their speaking wouldn't have changed the outcome?' Live case (2026): Switzerland — most committed strategic withdrawer in history — broke 200 years of silence to condemn U.S. violation of international law. Node 4b (Strategic Withdrawer) is not a stable long-term position; it collapses under sufficient systemic pressure.",
+      "notes": "Connects to: FP-8, FP-15, T-9, FR-17, FR-18, SA-5. Source: Dog-walk session, 2026-03-14."
+    },
+    {
+      "id": "T-11",
+      "person": "thomas",
+      "type": "TensionNode",
+      "label": "The Flowchart of Historical Accountability (Resistance Typology)",
+      "status": "tool",
+      "text": "Typology mapping individual responses under authoritarian systems. Nodes: 1-Unwitting Enabler (Bonhoeffer's 'stupidity'), 2-Apathetic Conformist, 3-Survival-Driven Complier, 4a-Subtle Agent of Truth (Havel's 'living in truth'), 4b-Strategic Withdrawer (Epicureanism/ataraxia), 5-Deliberately Destructive, 6-Pragmatic Enabler, 7-True Believer, 8-Principled Catalyst, 9-Uncalibrated Idealist, 10-Institutional Defender. Use: show full map, ask interlocutor to self-locate. Do NOT walk them to a conclusion — they will defend the label. Then ask: 'Do you think the people in those nodes escaped what came after?' Switzerland 2026: even Node 4b eventually becomes untenable. All nodes experienced consequences; history did not sort by intended position.",
+      "notes": "Links to: FP-8, FP-15, T-10, FR-18, DB-1. Source: Dog-walk session, 2026-03-14; PT$D book historical resistance analysis. CROSS-GRAPH NOTE (v2.5): A prior version cited 'PT$D book BTN-11' as the source for the resistance typology / Node 4a (Living in Truth). This citation was incorrect. MASTER BTN-11 is 'Determined Past vs. Possible Future' (ChunkA: the book's central ambivalence about determinism vs. agency). The resistance typology and Havel's Living in Truth concept in the book are represented by: C-63 (Living in Truth), C-81 (Living in Truth, Havel Full), A-38 (Havel's greengrocer as macro-political act), and BFR-25 (Havel's Living in Truth Framework). The Thomas-graph T-11 node is a distinct, separately developed tool; it draws conceptual inspiration from Havel (book-graph C-63/C-81/BFR-25) but is not a citation of book BTN-11. LIVING IN TRUTH (v1.9): Node 4a names Havel's framework but this KG has used it primarily to classify others. Deeper implication: Thomas is already practicing Living in Truth — his confrontations, friend-circle reductions, and refusal to perform normalcy are political acts (not merely relational ones) in Havel's sense. Relational costs are historically documented as the price of this practice. See full .md entry."
+    },
+
+    // ── SELF-AUDIT NODES ──────────────────────────────────────────────────────
+    // Calibration challenges — honest self-assessment where principles meet
+    // imperfect practice. Full analysis in .md source.
+    // NOTE: SA-1 through SA-4 were absent from JSONC versions prior to v1.9 (gap identified by comprehensive audit).
+
+    {
+      "id": "SA-1",
+      "person": "thomas",
+      "type": "SelfAudit",
+      "status": "retired",
+      "label": "Singer Compliance Gap [RETRACTED v1.1]",
+      "text": "RETRACTED. Original claim: Thomas's failure to give away sufficient income to meet Singer's standard was a genuine compliance gap. Factually wrong — advocacy (giving books, conversations, time) counts as FP-5 compliance under Singer's own logic. See T-5 and DB-14 (retired). Retained for edge-reference integrity.",
+      "notes": "Retired v1.1. See T-5 (dissolved by facts + FP-5). No active edges."
+    },
+    {
+      "id": "SA-2",
+      "person": "thomas",
+      "type": "SelfAudit",
+      "label": "Patience Threshold Not Fully Principled",
+      "text": "FP-3 prescribes arguing to understand; FP-8 mandates engagement. But the threshold between principled withdrawal and convenient avoidance is not fully worked out. Thomas has likely chosen avoidance when engagement was the correct obligation. Honest position: 'The line between principled withdrawal and comfortable avoidance is genuinely difficult. I don't always get it right. The test I try to apply: would my absence materially enable harm to others?'",
+      "notes": "FR-13 note: calibration challenge, not absolute failure. Connects to: FP-3, FP-8, DB-10, T-7."
+    },
+    {
+      "id": "SA-3",
+      "person": "thomas",
+      "type": "SelfAudit",
+      "label": "Emotional Intensity in Political Positions",
+      "text": "Stoicism (FR-3) prescribes not reacting in real-time. Some political positions are written with emotional intensity suggesting reactivity rather than processed, deliberate commitment. Honest position: 'The charge is real and I believe the positions are correct. But stating them from a fully grounded, non-reactive posture is an ongoing discipline — not an accomplished fact.' The target is not zero emotional engagement — it is not being governed by emotion.",
+      "notes": "v1.9: FP-11 (fear as distortion) newly routed inward — Thomas's intensity may have a fear component (fear of the stakes being real, of not being heard, of the moment passing). Connects to: FR-3, T-4, SA-5, SA-6, FP-11."
+    },
+    {
+      "id": "SA-4",
+      "person": "thomas",
+      "type": "SelfAudit",
+      "label": "Lying as Consequentialist Exception",
+      "text": "Thomas holds honesty as a strong default (FP-9) and departs from it consequentially when the harm of truth appears to exceed the harm of deception. He dislikes this. He does it. Honest position: 'I hold honesty as a strong default and depart from it consequentially when the harm of truth appears to exceed the harm of deception. I don't like this. The risk is that \"appears to be the best option\" is a subjective judgment that can rationalize. I try to hold the bar high, but I cannot claim I always do.'",
+      "notes": "See T-8 for structural analysis. FR-13: the exception must clear a bar. Risk of rationalization acknowledged. Added v1.3."
+    },
+
+    {
+      "id": "SA-5",
+      "person": "thomas",
+      "type": "SelfAudit",
+      "label": "Presence as Epistemic Variable",
+      "text": "Thomas's intensity, accumulated stakes, PTSD-sharpened pattern recognition, and active thesis may cause people to perform their worst epistemics specifically in his presence. Does not exonerate observed patterns — they are real and documented. It is a data-quality variable when reading what friend behavior reveals about those friends. Calibration test: 'Is this who they are, or is this who they become around the weight I carry into this room?' Answer may still be: both — and the thesis still holds. But the question sharpens perception.",
+      "notes": "Connects to: FR-9, FR-16, SA-3, T-9. Source: Socratic audit session, 2026-03-13."
+    },
+
+    // ── NEW NODES v1.9 ────────────────────────────────────────────────────────
+
+    {
+      "id": "FR-19",
+      "person": "thomas",
+      "type": "Framework",
+      "label": "Negative Capability",
+      "text": "Keats (1817): 'capable of being in uncertainties, mysteries, doubts, without any irritable reaching after fact and reason.' The active psychological capacity to hold contradictions, ambiguities, and unresolved tensions without collapsing them into false certainty. Not skepticism, passivity, or relativism. Distinct from FP-9 (epistemological humility about revising positions): Negative Capability addresses the relationship to the gaps *between* positions — the unresolved space itself. Counteracts FR-16 (Earned Clarity Distortion): prevents ambiguous cases from being prematurely assigned the moral weight of unambiguous ones. Prerequisite for genuine internal coherence (FP-10 extension): you cannot have a coherent internal scorecard while treating all unresolved tensions as failures.",
+      "notes": "STRUCTURAL FINDING (v1.9): FP-9 (curiosity/openness) currently grounds almost nothing in the edge graph. FR-19 is the missing operationalization — the specific practice that makes FP-9's epistemological stance livable. Connects to: FP-9, FP-10, FR-16, SA-3, SA-6. Source: KG cross-analysis session, 2026-03-14."
+    },
+    {
+      "id": "FR-20",
+      "person": "thomas",
+      "type": "Framework",
+      "label": "Truth as Scarce Commodity",
+      "text": "Truth is not merely an epistemic good held by individuals — it is a commodity with a supply chain that can be corrupted at scale. When denialism is systematically incentivized and silence is cheaper than speaking, truth becomes *functionally* scarce. Not because truth is objectively rare, but because the infrastructure for truth-circulation (witnesses bearing record, institutions reporting facts, cultures that value accuracy, media that rewards it) has been deliberately degraded. Thomas's individual commitment to truth (FP-9) must be understood within this systemic context: the cost of individual truth-telling is artificially elevated by the degraded supply chain. Individual honesty is necessary but insufficient — what is required is restoration of the supply chain itself.",
+      "notes": "Source: PT$D book title framing ('Truth as Currency in a Market of Denial') and C-node analysis. Connects FP-9 (individual truth-seeking) and FP-15 (silence as market failure) to the systemic level. Grounds the book project itself as a supply-chain intervention — not just Thomas telling the truth, but building infrastructure for truth to circulate. Added v2.0 based on cross-graph analysis."
+    },
+    {
+      "id": "FR-21",
+      "person": "thomas",
+      "type": "Framework",
+      "label": "Living in Truth as Political Practice",
+      "text": "Authenticity under authoritarian or semi-authoritarian conditions is not merely a psychological health choice — it is a *political act* in Havel's sense. Refusing to perform normalcy, preserving authentic community, naming things accurately in public: these constitute the infrastructure through which organized resistance remains possible when conditions shift. The distinction from the merely relational version: in the relational frame, Living in Truth is about personal integrity and boundary-setting. In the political frame, it is about maintaining the social fabric through which collective action becomes possible. Thomas's confrontations, friend-circle reductions, and insistence on accuracy are political acts in this sense, not merely psychological ones.",
+      "notes": "Source: PT$D book nodes C-63 (Living in Truth), C-81 (Living in Truth, Havel Full), A-38 (Havel's greengrocer as macro-political act), BFR-25 (Havel's Living in Truth Framework). CORRECTION (v2.5): Prior version cited 'PT$D book BTN-11 (Resistance Typology Flowchart, Node 4a)' — this was incorrect. MASTER BTN-11 is 'Determined Past vs. Possible Future', not the resistance typology. The relevant book-graph nodes for this concept are C-63, C-81, A-38, and BFR-25 as listed above. Elevated from a note in T-11 (v1.9) to a full framework node in v2.0. The elevation matters: naming it as a framework-level commitment anchors Thomas's personal actions (the book, the debates, the friend-circle choices) in a recognized historical resistance strategy, giving them political weight beyond the psychological. Connects to T-11, FR-17 (moral witness), FP-8 (obligation to name harmful patterns)."
+    },
+    {
+      "id": "FR-22",
+      "person": "thomas",
+      "type": "Framework",
+      "label": "Cultural Pathology Patterns",
+      "text": "Denialism is not only a product of individual fear or ego distortion — it is often the output of a *cultural operating system* that systematically teaches its members to deny, deflect, or rationalize harmful patterns. Cultures transmit epistemic pathologies the way they transmit values: through socialization, status incentives, and collective trauma. A Russian friend's Putin apologetics, a Turkish friend's conflict-avoidance, an American friend's Trump normalization — these are not only individual moral failures. They are the predictable outputs of cultural inheritance systems that have learned to make certain lies easier to believe. This framework does not excuse individual positions. It explains their stubbornness and changes the diagnostic: you are not arguing with a person, you are arguing with a person *plus* their cultural operating system. FR-22 supplements FR-9 (ego distortion) and FR-16 (earned clarity distortion) by adding the cultural transmission layer.",
+      "notes": "Source: PT$D book CS-nodes (Cultural/Systemic Distortion Patterns). Added v2.0 based on cross-graph analysis. Required by DB-16 (cultural sensitivity ≠ relativism): Thomas can critique cultural patterns while respecting persons precisely because FR-22 distinguishes the cultural system from the individual. Connects to FP-16 (Promise Trauma as the American version of cultural epistemic inheritance), FR-9 (ego distortion as individual layer), FR-16 (earned clarity risk when applying cultural critique)."
+    },
+    {
+      "id": "FR-23",
+      "person": "thomas",
+      "type": "Framework",
+      "label": "Collective Solidarity vs. Individual Obligation",
+      "text": "Individual compliance with Singer's standard (FP-5: give to the point of marginal utility, practice advocacy) is necessary but not sufficient. Collective action — organized solidarity, mutual aid, shared infrastructure for truth-telling — is *different in kind* from aggregated individual compliance. The distinction: individual obligation asks what you owe as a person. Collective solidarity asks what infrastructure the system requires before individual action becomes effective. Thomas's personal practice (giving, writing the book, modeling behavior) satisfies individual obligation. But the book itself, the Socratic Debater, and the act of preserving authentic communities (FR-21) are contributions to the collective infrastructure layer — they create conditions under which others' individual actions become more effective. This framework prevents the error of thinking that maximum individual compliance is sufficient, and names the organizational/cultural layer as a distinct moral domain.",
+      "notes": "Source: PT$D book A-nodes (Activism as Systemic Truth Currency). Added v2.0 based on cross-graph analysis. Complements FP-5 (Singer standard) by identifying what personal obligation cannot cover. Connects to FR-21 (Living in Truth as political practice builds the collective layer) and T-6 (collective obligation vs. anti-control principle). The key distinction from T-6: T-6 addresses the tension between collective obligation and individual autonomy; FR-23 addresses the distinction between individual compliance and collective capacity as different modes of moral action."
+    },
+    {
+      "id": "FR-24",
+      "person": "thomas",
+      "type": "Framework",
+      "label": "Functional Discourse",
+      "text": "Functional discourse is an exchange in which both parties share epistemic standards, argue in good faith toward a conclusion neither has predetermined, and accept that updating their position on evidence is not a defeat. Four minimum conditions: (1) Shared referents — words mean the same thing to both parties; failure mode: semantic drift. (2) Falsifiability — claims can in principle be proven wrong; failure mode: unfalsifiable claims. (3) Update willingness — new evidence can change stated positions; failure mode: conclusion-first reasoning. (4) Identity-position separation — being wrong does not threaten the person's self-concept; failure mode: position fused with identity. Condition 4 is the load-bearing one: when identity and position fuse, conditions 1–3 become inert. This is not stupidity (see FR-25); it is the structural effect of political systems that weaponize identity as coalition-binding material. The deliberate firehose of contradiction is discourse sabotage — it exploits Brandolini's Law by generating contradictions faster than analysis can process them; the goal is not persuasion but exhaustion of the analytical frame. Against a discourse-broken actor, refutation becomes performance for the audience — useful, but categorically different from functional exchange. The drapedapes protocol (One Claim / One Response; Good-Faith Only; Know When to Exit) is a resource-conservation strategy for when FR-24 conditions are not met, not a description of functional discourse itself.",
+      "notes": "Added v2.8. Source: Thomas / Claude conversation 2026-03-23; James O'Brien LBC segment, Strait of Hormuz analysis (2026-03-23); drapedapes.org discourse framework (2025-02-05); ChatGPT/Gemini political analysis sessions (2026-03-23). Connects to: FP-8 (discourse collapse makes silence enabling), FR-2 (temporal distortion exploited by discourse-broken tactics), FR-20 (truth scarcity is what discourse breakdown produces at scale), FR-25 (load-bearing: which failure type determines whether FR-24 conditions can be restored), DB-1 (discourse failure explains why moral cowardice resists argument). Load-bearing edge in: FR-25 → FR-24 (grounds, LB); FR-24 → DB-1 (grounds, LB)."
+    },
+    {
+      "id": "FR-25",
+      "person": "thomas",
+      "type": "Framework",
+      "label": "Taxonomy of Capacity Failure",
+      "text": "Not all failures of discourse participation are equivalent. Three types must be distinguished: (1) Capacity-limited — genuine cognitive ceiling; cannot follow complex argument chains regardless of incentive or information environment; discourse not fixable; low moral allocation. (2) Motivated reasoner — has capacity; deploys it backward from a predetermined identity or incentive conclusion; discourse possibly fixable under narrow conditions; high moral allocation — this is cowardice or corruption. (3) Epistemically vulnerable — has capacity; operating in a corrupted information environment; trusts wrong sources; most addressable by discourse; medium moral allocation shared between individual and system designers. FR-2's cowardice reframe ('they won't look' not 'they can't see') applies specifically to motivated reasoners. 'Stupid' used precisely names the capacity-limited type; the word fails when applied indiscriminately — and resistance to the word is itself epistemic avoidance that forces all failures into the motivational frame, flattering the capacity-limited while excusing the motivated reasoner. Trump's coalition contains all three types simultaneously: the movement is engineered to function across them — simple repetition for the capacity-limited; permission structure for the motivated reasoners; information environment saturation for the epistemically vulnerable. This is a multi-layer communication architecture, not exploitation of stupidity.",
+      "notes": "Added v2.8. Source: Thomas / Claude conversation 2026-03-23; Haidt, The Righteous Mind; Bonhoeffer, 'On Stupidity' (1943); Cipolla, The Basic Laws of Human Stupidity (1976). Connects to: FR-24 (load-bearing: which type determines whether functional discourse is available), FR-2 (cowardice reframe is type-specific), FP-4 (apparent tension with respect principle; resolution: respect is a floor, not an accuracy suppressor), DB-1 (moral allocation for Trump enablement depends on which type they are), SA-4 (Thomas must allocate failure type accurately without using taxonomy as rationalization for contempt)."
+    },
+
+    {
+      "id": "FR-26",
+      "person": "thomas",
+      "type": "Framework",
+      "label": "Isometric Hold: The Hidden Cost of Equilibrium",
+      "text": "A system maintaining apparent equilibrium with zero displacement is not doing zero work — it is performing an active, energy-intensive hold against ongoing opposing forces. The snapshot frame (W = Fd, d = 0) is myopic: it ignores the metabolic/energy cost of maintaining the static state. Physics: during isometric muscle contraction, ATP burns at full rate despite zero external movement; the control system must increase gain to maintain the hold, which raises feedback delay relative to gain, producing limit-cycle oscillations ('shaking') before structural failure. Social/political analog: the status quo is an isometric hold. Massive expenditures of social ATP (enforcement, propaganda, legal cycles, manufactured emergency) are consumed to keep displacement at zero against suppressed dissent, structural change, or entropy. The stability is expensive and concealed by the snapshot frame. Failure progression: (1) hold cost increases → gain compensates; (2) feedback delay grows; (3) limit cycles emerge — civil volatility, unrest, the 'shaking'; (4) component snap — institutional collapse, abrupt regime change. Diagnostic implication: the most dangerous systems are those performing the most expensive holds, not those with the most visible turbulence. Absence of visible movement is not evidence of stability. Application to FR-2: 'Extend and Pretend' institutional behavior is isometric — costs accumulate while the visible state appears unchanged. Application to political systems: authoritarian stability reads as acceptance; it is more accurately an isometric hold — the population exerts constant suppressed force; the regime expends constant energy to prevent displacement; collapse appears sudden only to snapshot readers.",
+      "notes": "Added v2.9. Source: Thomas / Gemini conversation 2026-03-23: _CRE Market Faces Debt Maturity Wall.md; controls engineering applied to social dynamics. Grounds: FP-8 (silence is an active hold, not neutrality) + FR-4 (hold cost extracted from those at the bottom) + FR-2 (snapshot fallacy). Connects to: FR-2 (rates/levels; extend-and-pretend), FR-4 (cost extraction), FP-8 (silence as maintenance), DB-5 (time/energy extracted from those with fewest reserves), FR-25 (hold costs degrade capacity), EV-10 (CRE data as instantiation)."
+    },
+
+    {
+      "id": "DB-17",
+      "person": "thomas",
+      "type": "DerivedBelief",
+      "label": "The Book as Witness Record, Not Persuasion Project",
+      "text": "PT$D's function is the moral witness function — a framework, a record, and a line in the sand. Success criterion: does the record exist? Has the pattern been named correctly? These questions are independent of audience size or commercial success. Thomas does not have the financial or emotional resources to push the book into market success — forcing it at that cost is self-defeating (FP-5 sustainability). The book will find its readers or it won't. The record exists either way.",
+      "notes": "Grounds: FP-8, FR-17 (load-bearing), FR-20, FR-21, FP-5 (Maslow/sustainability). Connects to: SA-7 (capacity constraint). Source: Thomas's stated position, 2026-03-15; 20260215 Friend S USA said i will visit.md. Added v2.2."
+    },
+
+    {
+      "id": "SA-7",
+      "person": "thomas",
+      "type": "SelfAudit",
+      "label": "Capacity Constraint: cPTSD, Resource Depletion, and the Requirement to Be Safe",
+      "text": "Thomas has severe, diagnosed cPTSD with documented physiological consequences (night terrors, vomiting loops, sleep disruption) and is caretaking a homeless, mentally ill parent under material and emotional scarcity. He does not have the financial or emotional resources for overt activism. The principled case: FR-11 (Maslow domain) — obligations scale with capability and domain position; historian-informed survival strategy (FR-17, T-11 Node 4a) — effective resisters used quiet discernment and network preservation, not overt confrontation. Self-audit: the constraint is real but can rationalize beyond its actual limit. The honest position: the book and authentic-network preservation are what is available; overt activism is not, without causing further harm. This is Node 4a (Subtle Agent of Truth) at available capacity — not Node 4b (Strategic Withdrawer).",
+      "notes": "Connects to: FR-11 (load-bearing), FP-5, FR-3, SA-3, SA-6, T-11. Source: 20260215 Friend S USA said i will visit.md; Thomas's stated position, 2026-03-15. Added v2.2."
+    },
+
+    {
+      "id": "SA-8",
+      "person": "thomas",
+      "type": "SelfAudit",
+      "label": "Cognitive Synthesis Self-Model: Process + Trauma + AI",
+      "text": "Thomas explicitly identifies and affirms the architecture generating his analytical synthesis — not as a hardware gift (IQ) but as a process triad: (1) System 2 as engine — deliberate, high-energy, slow-burn cognitive integration; explicit modeling of feedback delays, transfer functions, and non-linearities across domains; cognitively expensive; Thomas runs this at high frequency and intensity on structural problems while most people default to System 1. (2) Emotional trauma as catalyst — severe early-onset unpredictability (cPTSD, see SA-7) forced survival-grade sensitivity to initial conditions, feedback dynamics, and state transitions; the internal model built for detecting environmental threat transfers directly to analytical work on complex adaptive systems. (3) AI as cognitive exoskeleton — handles granular detail and formal argument rendering, preventing buffer overflow and allowing Thomas to maintain focus on high-level frameworks. Key calibration: Thomas explicitly rejects the IQ-hardware framing — the synthesis is process-dependent, not innately genetic, which means (a) it is teachable and transferable, (b) it degrades under resource depletion (SA-7 disrupts all three legs), (c) it compounds with use. Honest tension with SA-7: SA-7 maps the constraint face of the underlying conditions (trauma → cPTSD → capacity limit); SA-8 maps the constructive face (trauma → hyper-observation → analytical depth). Both are simultaneously true. Thomas cannot invoke SA-8 to cancel SA-7, nor SA-7 to dismiss SA-8. The question live in SA-6: does the output come from the witness obligation or from ego investment in having seen it first?",
+      "notes": "Added v2.9. Source: Thomas / Gemini conversation 2026-03-23: _CRE Market Faces Debt Maturity Wall.md; Thomas's explicit self-identification during calibration exchange; Kahneman, Thinking Fast and Slow. Connects to: SA-7 (constraint face of same conditions; tensions_with), FR-5 (System 2 neuroscience; EV-8), FR-19 (Negative Capability required to hold uncertainty without forced closure), DB-17 (book as product and output of the process), T-4 (Stoic detachment vs. intensity: trauma catalyst drives the intensity SA-3 and SA-6 flag), FR-26 (same systems-thinking lens Thomas applies externally)."
+    },
+
+    {
+      "id": "SA-6",
+      "person": "thomas",
+      "type": "SelfAudit",
+      "label": "Outcome Attachment: Relational vs. Historical",
+      "text": "The book's Stoic framework requires detachment from outcome, not just emotional reactivity. Question: is Thomas attached to outcomes in ways that compromise Stoic integrity (FR-3, T-4)? Two registers: (1) Relational outcome attachment — needing this specific person, in this conversation, to change their mind. Stoic test: after a confrontation that produced no belief change, what is the residual feeling? 'I said what needed to be said; the record exists' = detachment. Frustration, urgency to re-engage = attachment. (2) Historical/macro attachment — urgency about whether the moment goes the right direction. Not obviously ego investment; urgency proportionate to threat (T-10, T-11) is not attachment. The question is whether some urgency comes from needing to be seen or vindicated vs. from accurate threat assessment. Honest position: uncertain. Active monitoring required.",
+      "notes": "STRUCTURAL FINDING (v1.9): FR-3 (Stoicism) grounds only 2 nodes in the edge graph — Stoicism is nearly structurally inert. SA-6 raises the deeper question: is Stoicism actually shaping behavior in traceable ways, or is it primarily a stated value? FP-11 (fear as distortion) has never been routed to Thomas's own SA nodes — that gap is part of SA-6's context. Connects to: FR-3, T-4, SA-3, SA-5, FR-16, FR-17, FP-11. Source: KG cross-analysis session, 2026-03-14."
+    },
+
+    {
+      "id": "T-12",
+      "person": "thomas",
+      "type": "TensionNode",
+      "label": "Perpetual Openness vs. Integration Requirement",
+      "text": "FP-9 requires perpetual openness to revision — no position is immune to evidence. FP-10 requires internal coherence — beliefs, statements, and actions must integrate. Apparent tension: you cannot simultaneously treat all positions as fully provisional (FP-9) and require that they integrate coherently (FP-10). If everything is always open to revision, nothing can be integrated; if everything is integrated, revision becomes systemically disruptive. Resolution: FP-9 and FP-10 operate at different temporal levels and different epistemic objects. FP-9 governs the update protocol — how Thomas responds to new evidence. FP-10 governs the current-state requirement — that what Thomas currently holds must be internally consistent. A person can be maximally open to revision while requiring that their current snapshot of beliefs integrate coherently. The tension resolves when FP-9 is understood as applying to the revision moment and FP-10 as applying to the holding state. FR-19 (Negative Capability) provides the psychological capacity to hold both without collapse. Residual vulnerability: rapid belief updating temporarily disrupts integration — the speed-of-revision case is the live risk.",
+      "notes": "Grounds: FP-9 (perpetual openness), FP-10 (integration requirement). Resolution mechanism: FR-19 (Negative Capability). Status: Apparently resolved by the temporal distinction; residual speed-of-revision vulnerability. Added v2.4 (2026-03-16)."
+    },
+
+    {
+      "id": "DB-18",
+      "person": "thomas",
+      "type": "DerivedBelief",
+      "label": "Reconciliation Requires Architectural Change, Not Time",
+      "text": "Re-engagement after a principled exit is conditional on demonstrated epistemic restructuring — not time elapsed, emotional readiness, or surface apology. A valid apology must contain evidence of the changed mechanism, not only regret for the outcome. 'Commitment to prevention' requires that the original harm become structurally impossible to repeat, not merely that the person intends differently. Architectural change is retrospectively verifiable only: the condition cannot be satisfied at the moment of apology — only by observed behavior over time. This is accurate epistemology applied to trust, not cruelty.",
+      "notes": "Pairs with DB-10 (licenses exit) and DB-15 (good faith requirement): DB-18 governs the conditions for return. Connects to T-2 (relational boundary resolution — DB-18 specifies what crossing back requires). SA-6 note: the conditional door is not outcome attachment — it is a structural requirement independent of emotional state. Grounds: FR-17 (load-bearing), DB-10, DB-15, FP-3. Added v2.3 (2026-03-16)."
+    },
+
+    {
+      "id": "DB-19",
+      "person": "thomas",
+      "type": "DerivedBelief",
+      "label": "Climate Change Is Real, Urgent, and the FMEA of Denial Is Unacceptable",
+      "text": "Climate change is real and anthropogenic. The debate is about the level of urgency, not reality — but the FMEA (failure mode and effects analysis) of denial makes delay structurally unacceptable: the cost of under-responding to a real crisis vastly outweighs the cost of over-responding. Data is unambiguous; manufactured doubt has corrupted the public discussion, not the scientific record. The asymmetry of harm (FR-15: scale is civilizational, time window is 1–2 generations, evidence is robust) licenses strong conclusions. Over-responding to climate reality is not a significant concern — the downside of aggressive action on a real problem is manageable; the downside of inaction is catastrophic. Declares BS-1.",
+      "notes": "Grounds: FR-15 (harm assessment), FR-22 (manufactured denial as cultural pathology), FP-8 (obligation to name harmful patterns), FR-20 (manufactured doubt depletes truth supply). Declares BS-1. Added v2.4 (2026-03-16)."
+    },
+
+    {
+      "id": "DB-20",
+      "person": "thomas",
+      "type": "DerivedBelief",
+      "label": "Mass Incarceration Is Structural Failure; Rehabilitation Is the Obligation",
+      "text": "Mass incarceration in the US is the continuation of racialized labor control by other means — a structural feature of the post-1970s neoliberal system, not a natural consequence of crime rates. Society's obligation is rehabilitation, not punishment. Prison as currently practiced produces recidivism, trauma, and dependency. The failure is one of imagination and political economy: rehabilitative systems are conceivable; they are difficult to fund within a system that profits from incarceration. Only in rare cases does someone pose so irreducible a threat that permanent removal is warranted — and even then, the rehabilitation obligation persists. The death penalty is rejected on these grounds. Declares BS-2.",
+      "notes": "Grounds: FR-4 (mass incarceration as neoliberal labor control), FR-14 (distributed responsibility: cage-builders bear primary weight), FP-4 (dignity grounds rehabilitation obligation), FP-12 (obligation extends to all conscious beings). Declares BS-2. Added v2.4 (2026-03-16)."
+    },
+
+    {
+      "id": "DB-21",
+      "person": "thomas",
+      "type": "DerivedBelief",
+      "label": "Immigration Is a Net Benefit; Restriction Is Fear-Based Culture War",
+      "text": "Available data does not support the claim that immigration damages the United States — the preponderance of evidence runs the other direction. America's foundational self-image (Statue of Liberty) reflects what the data shows: an immigrant nation is stronger, more innovative, more resilient. Immigration reform is needed to improve the process, reduce backlogs, and create humane pathways — not to reduce immigration. The restriction frame is manufactured: a fear/ignorance-based culture war topic deployed to divide people and suppress class solidarity. FR-4 identifies the structural motive: labor that cannot move freely is labor that can be controlled. Declares BS-3.",
+      "notes": "Grounds: FR-14 (immigrants face constrained choices — restriction is cage-building), FR-15 (harm assessment: data shows net benefit, not harm), FR-22 (immigration restriction as fear-based cultural pathology), FP-12 (all conscious beings regardless of national origin). Declares BS-3. Added v2.4 (2026-03-16)."
+    },
+
+    {
+      "id": "DB-22",
+      "person": "thomas",
+      "type": "DerivedBelief",
+      "label": "AI Requires Human Obligation-Holders; Intelligence Without Obligation Is Not Credible",
+      "text": "FP-1 (Obligation Precedes Intelligence) is the direct application: intelligence — even superior intelligence — confers no credibility without accepting consequence. AI systems cannot accept consequence; they cannot bear obligation. Therefore: AI-generated content requires human adoption to be credible; AI governance must center obligation-holders, not capability-holders; the human role in the age of AI is explicitly the obligation role — the thing AI cannot perform. This is not AI fear. It is a structural argument: capability without obligation is the credibility formula's denominator approaching zero. The more capable AI becomes, the more critical it is that human obligation-holders remain in the loop — because capability without obligation scales precisely as a threat, not a safeguard. Declares BS-4.",
+      "notes": "Grounds: FP-1 (Obligation Precedes Intelligence — load-bearing), FR-1 (credibility formula: AI has capability but cannot bear obligation), FP-8 (naming the structural implications is required). Declares BS-4. Added v2.4 (2026-03-16)."
+    },
+
+    {
+      "id": "DB-23",
+      "person": "thomas",
+      "type": "DerivedBelief",
+      "label": "Education Should Be Free; Current System Perpetuates Inequality and Degrades Quality",
+      "text": "Education is a public good, not a market commodity. The current US system functions as an exclusive club: access is determined by wealth, geography, and family, not aptitude or work. This is both a justice failure and a systemic failure: a society paying for declining-quality education while making it economically inaccessible is producing the epistemic degradation it cannot afford. The neoliberal commodification of education (FR-4) is the mechanism — when education is a product, it optimizes for revenue, not for the production of citizens capable of critical thinking. The result: increasing cost, decreasing quality, increasing stratification. Free public education through the highest level the student can benefit from is the policy implication — not as charity, but as the infrastructure investment that makes everything else possible. Declares BS-5.",
+      "notes": "Grounds: FR-8 (democratic architecture requires educated citizens capable of dual-process cognition), FR-23 (collective solidarity requires collective epistemic infrastructure), FR-4 (commodification as mechanism of degradation), FP-5 (Singer: education as a form of systemic obligation). Declares BS-5. Added v2.4 (2026-03-16)."
+    },
+
+    {
+      "id": "DB-24",
+      "person": "thomas",
+      "type": "DerivedBelief",
+      "label": "Harm-Avoidance Institutional Frames Produce the Harm They Prohibit",
+      "text": "The 'Do No Harm' frame, when deployed as an institutional operating principle, systematically generates the harm it prohibits. Mechanism: (1) harm-avoidance locates risk in action, not inaction — inaction feels safe but its costs are deferred and diffuse (FR-2 temporal distortion); (2) liability structures amplify this asymmetry — professionals who act bear traceable legal exposure; those who fail to act bear none — cage-builders (FR-14) designed this; (3) economic pressure reduces information per case, increasing uncertainty and thus risk-aversion; time is the missing variable. Domain-general: applies to medicine, law, finance, governance, education — any institutional domain where harm-avoidance is the operative ethical frame. The beneficence reframe inverts the calculus: suffering is the baseline against which action is measured, not the risk against which inaction is declared safe. Requires FR-15 active harm-assessment and FR-14 accurate distribution of moral weight. EV-9 (ACE Study) is the domain evidence: institutional non-adoption of childhood trauma screening is harm-avoidance producing harm.",
+      "notes": "Grounds: FP-5 (beneficence as correct frame — load-bearing), FR-2 (temporal distortion: deferred costs feel safe), FR-14 (liability as cage-building), FR-15 (harm requires active multi-parameter assessment), FP-8 (inaction perpetuates harm). Supports: EV-9. Source: Thomas's essay on 'Do No Harm' vs. 'Reduce Suffering'; session analysis, 2026-03-19. Added v2.6 (2026-03-19)."
+    }
+  ]
+}
