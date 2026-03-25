@@ -6,8 +6,7 @@
 
 ---
 
-## Thomas's Candid and Crude Position
-
+## PROMPT: Thomas's Candid and Crude Position
 > Challenge me. I feel a counter to FR-14 is that they chose to not confront the many many lies for such a long time, while simultaneously dismissing truth submissions from people like me... so at this stage, this type of person has lost credibility. I think the rules should shift. I've earned credibility and they have lost it. It's not about punishment — this is about ending asymmetric witnessing and burdens of critical thinking. The reality is that Friend-S and the architypal group her represents, they let Trump lie to them for years and ignored or justified the lies for selfish or emotionally immature reasons.
 
 ---
