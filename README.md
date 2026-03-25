@@ -1,6 +1,6 @@
 # Personal Constitution — Belief Accountability System
 
-![The Personal Constitution of [User]](Gemini_Generated_Image_pbdkvrpbdkvrpbdk.png)
+![The Personal Constitution of [User]](_media/Gemini_Generated_Image_pbdkvrpbdkvrpbdk.png)
 
 You talk. AI listens, organizes, and pushes back. Your beliefs end up on the record — mapped, connected, and stress-tested.
 
