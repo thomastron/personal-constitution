@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KG 3D — Thomas</title>
+<script src="https://unpkg.com/3d-force-graph@1.73.3/dist/3d-force-graph.min.js"></script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #080810;
+  color: #e0e0f0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── HEADER ── */
+#header {
+  background: #10101e;
+  border-bottom: 1px solid #222240;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  z-index: 10;
+}
+
+#header h1 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #7070cc;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.legend {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: #999;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  transition: border-color 0.15s;
+  user-select: none;
+}
+.legend-item:hover { border-color: #444; }
+.legend-item.active { border-color: #666; color: #ddd; }
+
+.legend-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.sep {
+  color: #333;
+  font-size: 14px;
+}
+
+#controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-left: auto;
+}
+
+.btn {
+  font-size: 11px;
+  padding: 3px 9px;
+  border-radius: 4px;
+  border: 1px solid #333;
+  background: #1a1a2e;
+  color: #aaa;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.btn:hover { background: #252540; color: #ddd; }
+.btn.active { background: #2a2a50; color: #aad; border-color: #446; }
+
+/* ── CANVAS ── */
+#graph {
+  flex: 1;
+  position: relative;
+}
+
+/* ── DETAIL PANEL ── */
+#detail {
+  position: absolute;
+  top: 60px;
+  right: 16px;
+  width: 320px;
+  background: rgba(12, 12, 24, 0.92);
+  border: 1px solid #2a2a50;
+  border-radius: 8px;
+  padding: 14px;
+  backdrop-filter: blur(6px);
+  display: none;
+  z-index: 20;
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+}
+
+#detail.visible { display: block; }
+
+#detail-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  cursor: pointer;
+  color: #555;
+  font-size: 16px;
+  line-height: 1;
+}
+#detail-close:hover { color: #aaa; }
+
+#detail-type-badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+#detail-id {
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+#detail-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #d0d0ee;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+#detail-text {
+  font-size: 12px;
+  color: #aaa;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+#detail-notes {
+  font-size: 11px;
+  color: #777;
+  font-style: italic;
+  border-top: 1px solid #222;
+  padding-top: 8px;
+  line-height: 1.5;
+}
+
+#detail-edges {
+  margin-top: 10px;
+  border-top: 1px solid #222;
+  padding-top: 8px;
+}
+
+#detail-edges-title {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.edge-row {
+  font-size: 11px;
+  color: #888;
+  margin-bottom: 3px;
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.edge-row .rel {
+  font-style: italic;
+  flex-shrink: 0;
+}
+
+.edge-row .lb {
+  color: #c06060;
+  font-size: 10px;
+  flex-shrink: 0;
+}
+
+.edge-row .peer {
+  color: #9090cc;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+/* ── STATS BAR ── */
+#stats {
+  position: absolute;
+  bottom: 10px;
+  left: 14px;
+  font-size: 10px;
+  color: #444;
+  z-index: 10;
+}
+</style>
+</head>
+<body>
+
+<div id="header">
+  <h1>KG 3D — Thomas</h1>
+
+  <div class="legend" id="legend"></div>
+
+  <span class="sep">|</span>
+
+  <div class="legend" id="rel-legend"></div>
+
+  <div id="controls">
+    <button class="btn active" id="btn-lb" title="Toggle load-bearing edge highlight">Load-bearing</button>
+    <button class="btn" id="btn-dag" title="Toggle DAG layout">DAG layout</button>
+    <button class="btn" id="btn-labels" title="Toggle node labels">Labels</button>
+  </div>
+</div>
+
+<div id="graph"></div>
+
+<div id="detail">
+  <span id="detail-close">✕</span>
+  <div id="detail-type-badge"></div>
+  <div id="detail-id"></div>
+  <div id="detail-label"></div>
+  <div id="detail-text"></div>
+  <div id="detail-notes"></div>
+  <div id="detail-edges">
+    <div id="detail-edges-title">Connections</div>
+    <div id="detail-edges-list"></div>
+  </div>
+</div>
+
+<div id="stats" id="stats"></div>
+
+<script>
+// ── DATA ──────────────────────────────────────────────────────────────────────
+// graph_data.json is loaded via fetch; must be in same directory on GitHub Pages
+// ──────────────────────────────────────────────────────────────────────────────
+
+const NODE_COLORS = {
+  FirstPrinciple: '#e8a825',
+  Framework:      '#4d9de0',
+  DerivedBelief:  '#3bb273',
+  Evidence:       '#1bc3c3',
+  TensionNode:    '#e05252',
+  BlindSpot:      '#e07a30',
+  SelfAudit:      '#b06dd4',
+  Unknown:        '#888',
+};
+
+const NODE_LABELS = {
+  FirstPrinciple: 'FP — First Principle',
+  Framework:      'FR — Framework',
+  DerivedBelief:  'DB — Derived Belief',
+  Evidence:       'EV — Evidence',
+  TensionNode:    'T — Tension',
+  BlindSpot:      'BS — Blind Spot',
+  SelfAudit:      'SA — Self-Audit',
+};
+
+const REL_COLORS = {
+  grounds:       '#6699cc',
+  supports:      '#66cc99',
+  implies:       '#ccaa44',
+  tensions_with: '#cc5555',
+  example_of:    '#9966cc',
+  contradicts:   '#ff3333',
+};
+
+const REL_LABELS = {
+  grounds:       'grounds',
+  supports:      'supports',
+  implies:       'implies',
+  tensions_with: 'tensions with',
+  example_of:    'example of',
+  contradicts:   'contradicts',
+};
+
+// ── STATE ────────────────────────────────────────────────────────────────────
+let showLoadBearing = true;
+let dagMode = false;
+let showLabels = false;
+let activeTypeFilter = null; // null = all
+let gData = null;
+let Graph = null;
+
+// ── LEGEND ───────────────────────────────────────────────────────────────────
+function buildLegend(types) {
+  const el = document.getElementById('legend');
+  types.forEach(type => {
+    const item = document.createElement('div');
+    item.className = 'legend-item';
+    item.dataset.type = type;
+    item.innerHTML = `<div class="legend-dot" style="background:${NODE_COLORS[type]||'#888'}"></div>${NODE_LABELS[type]||type}`;
+    item.addEventListener('click', () => toggleTypeFilter(type, item));
+    el.appendChild(item);
+  });
+}
+
+function buildRelLegend(rels) {
+  const el = document.getElementById('rel-legend');
+  rels.forEach(rel => {
+    const item = document.createElement('div');
+    item.className = 'legend-item';
+    item.style.borderLeftColor = REL_COLORS[rel]||'#888';
+    item.innerHTML = `<div class="legend-dot" style="background:${REL_COLORS[rel]||'#888'}; border-radius:2px; width:14px; height:3px;"></div>${REL_LABELS[rel]||rel}`;
+    el.appendChild(item);
+  });
+}
+
+function toggleTypeFilter(type, item) {
+  if (activeTypeFilter === type) {
+    activeTypeFilter = null;
+    document.querySelectorAll('#legend .legend-item').forEach(i => i.classList.remove('active'));
+  } else {
+    activeTypeFilter = type;
+    document.querySelectorAll('#legend .legend-item').forEach(i => i.classList.toggle('active', i.dataset.type === type));
+  }
+  refreshGraph();
+}
+
+// ── GRAPH INIT ────────────────────────────────────────────────────────────────
+function initGraph(data) {
+  gData = data;
+
+  const types = [...new Set(data.nodes.map(n => n.type))].filter(t => NODE_COLORS[t]);
+  const rels  = [...new Set(data.links.map(l => l.relation))];
+  buildLegend(types);
+  buildRelLegend(rels);
+
+  const el = document.getElementById('graph');
+
+  Graph = ForceGraph3D()(el)
+    .backgroundColor('#080810')
+    .width(el.clientWidth)
+    .height(el.clientHeight)
+    .nodeId('id')
+    .nodeLabel('label')
+    .nodeColor(n => nodeColor(n))
+    .nodeVal(n => nodeSize(n))
+    .nodeOpacity(0.9)
+    .linkSource('source')
+    .linkTarget('target')
+    .linkColor(l => linkColor(l))
+    .linkWidth(l => linkWidth(l))
+    .linkDirectionalArrowLength(4)
+    .linkDirectionalArrowRelPos(1)
+    .linkDirectionalArrowColor(l => linkColor(l))
+    .linkDirectionalParticles(l => (showLoadBearing && l.load_bearing) ? 4 : 0)
+    .linkDirectionalParticleWidth(2)
+    .linkDirectionalParticleColor(l => linkColor(l))
+    .linkOpacity(0.5)
+    .onNodeClick(node => showDetail(node))
+    .onBackgroundClick(() => hideDetail());
+
+  Graph.graphData(filteredData());
+
+  document.getElementById('stats').textContent =
+    `v${data.meta.nodes_version} nodes · v${data.meta.edges_version} edges · ${data.nodes.length} nodes · ${data.links.length} links`;
+
+  // Resize handler
+  window.addEventListener('resize', () => {
+    Graph.width(el.clientWidth).height(el.clientHeight);
+  });
+}
+
+function nodeColor(n) {
+  if (activeTypeFilter && n.type !== activeTypeFilter) return '#1a1a2a';
+  return NODE_COLORS[n.type] || '#888';
+}
+
+function nodeSize(n) {
+  // Count connections for sizing
+  if (!gData) return 1;
+  const id = n.id;
+  const degree = gData.links.filter(l => l.source === id || l.target === id || l.source?.id === id || l.target?.id === id).length;
+  return Math.max(1, Math.sqrt(degree) * 1.2);
+}
+
+function linkColor(l) {
+  return REL_COLORS[l.relation] || '#444';
+}
+
+function linkWidth(l) {
+  if (showLoadBearing && l.load_bearing) return 2.5;
+  return 0.5;
+}
+
+function filteredData() {
+  if (!activeTypeFilter) return { nodes: gData.nodes, links: gData.links };
+
+  const activeIds = new Set(gData.nodes.filter(n => n.type === activeTypeFilter).map(n => n.id));
+
+  // Include neighboring nodes so links don't break
+  const neighborIds = new Set(activeIds);
+  gData.links.forEach(l => {
+    const s = l.source?.id || l.source;
+    const t = l.target?.id || l.target;
+    if (activeIds.has(s)) neighborIds.add(t);
+    if (activeIds.has(t)) neighborIds.add(s);
+  });
+
+  return {
+    nodes: gData.nodes.filter(n => neighborIds.has(n.id)),
+    links: gData.links.filter(l => {
+      const s = l.source?.id || l.source;
+      const t = l.target?.id || l.target;
+      return neighborIds.has(s) && neighborIds.has(t);
+    })
+  };
+}
+
+function refreshGraph() {
+  if (!Graph || !gData) return;
+  Graph.nodeColor(n => nodeColor(n));
+  Graph.graphData(filteredData());
+}
+
+// ── DETAIL PANEL ──────────────────────────────────────────────────────────────
+function showDetail(node) {
+  const color = NODE_COLORS[node.type] || '#888';
+
+  document.getElementById('detail-type-badge').textContent = NODE_LABELS[node.type] || node.type;
+  document.getElementById('detail-type-badge').style.background = color + '33';
+  document.getElementById('detail-type-badge').style.color = color;
+  document.getElementById('detail-id').textContent = node.id;
+  document.getElementById('detail-label').textContent = node.label;
+  document.getElementById('detail-text').textContent = node.text || '';
+  document.getElementById('detail-notes').textContent = node.notes || '';
+  document.getElementById('detail-notes').style.display = node.notes ? 'block' : 'none';
+
+  // Build edge list
+  const edgeList = document.getElementById('detail-edges-list');
+  edgeList.innerHTML = '';
+
+  const edges = gData.links.filter(l => {
+    const s = l.source?.id || l.source;
+    const t = l.target?.id || l.target;
+    return s === node.id || t === node.id;
+  });
+
+  edges.forEach(l => {
+    const s = l.source?.id || l.source;
+    const t = l.target?.id || l.target;
+    const isSource = s === node.id;
+    const peer = isSource ? t : s;
+    const arrow = isSource ? '→' : '←';
+
+    const row = document.createElement('div');
+    row.className = 'edge-row';
+    row.innerHTML = `
+      <span class="rel" style="color:${REL_COLORS[l.relation]||'#888'}">${l.relation}</span>
+      <span>${arrow}</span>
+      <span class="peer">${peer}</span>
+      ${l.load_bearing ? '<span class="lb">★</span>' : ''}
+    `;
+    edgeList.appendChild(row);
+  });
+
+  document.getElementById('detail').classList.add('visible');
+}
+
+function hideDetail() {
+  document.getElementById('detail').classList.remove('visible');
+}
+
+document.getElementById('detail-close').addEventListener('click', hideDetail);
+
+// ── CONTROLS ─────────────────────────────────────────────────────────────────
+document.getElementById('btn-lb').addEventListener('click', function() {
+  showLoadBearing = !showLoadBearing;
+  this.classList.toggle('active', showLoadBearing);
+  if (Graph) {
+    Graph.linkWidth(l => linkWidth(l))
+         .linkDirectionalParticles(l => (showLoadBearing && l.load_bearing) ? 4 : 0);
+  }
+});
+
+document.getElementById('btn-dag').addEventListener('click', function() {
+  dagMode = !dagMode;
+  this.classList.toggle('active', dagMode);
+  if (Graph) {
+    Graph.dagMode(dagMode ? 'radialout' : null);
+  }
+});
+
+document.getElementById('btn-labels').addEventListener('click', function() {
+  showLabels = !showLabels;
+  this.classList.toggle('active', showLabels);
+  if (Graph) {
+    Graph.nodeThreeObjectExtend(showLabels)
+         .nodeThreeObject(showLabels ? nodeLabelObj : null);
+  }
+});
+
+// ── LOAD DATA ────────────────────────────────────────────────────────────────
+fetch('graph_data.json')
+  .then(r => r.json())
+  .then(data => initGraph(data))
+  .catch(err => {
+    document.getElementById('graph').innerHTML =
+      `<div style="padding:40px;color:#c06060;font-size:13px;">Failed to load graph_data.json: ${err.message}<br><br>Make sure graph_data.json is in the same directory.</div>`;
+  });
+</script>
+</body>
+</html>
