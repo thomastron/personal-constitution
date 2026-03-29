@@ -119,7 +119,6 @@ The chain-of-reasoning explainer. Walks a complex argument step-by-step, making 
 ---
 
 ## How to Use in Claude Code
-
 EASIEST OPTION - save the `KNOWLEDGE_GRAPH_Thomas.md` to your local machine, edit it to make your own `KNOWLEDGE_GRAPH_yournamehere.md`, and use it as context to feed into future AI sessions on any platform. 
 
 ## For Users of Agentic platforms like Claude Code
@@ -132,6 +131,11 @@ For `/socratic` sessions, the CLAUDE.md instructs Claude to load:
 - `KNOWLEDGE_GRAPH_Thomas__[latest].md` — your belief graph (prose)
 - `graph_edges_thomas.jsonc` — all edges with load-bearing flags
 - Your interlocutor's knowledge graph (if you've built one)
+
+Visually Interact with the demo graphs in this repo:
+![drapedapes.org/personal-constitution/graph_viewer](_media/CPT2603290913-1100x569.gif)
+### [drapedapes.org/personal-constitution/graph_viewer](https://drapedapes.org/personal-constitution/graph_viewer.html)
+
 
 ---
 
