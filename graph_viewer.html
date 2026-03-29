@@ -606,14 +606,16 @@ function buildNodes() {
         color: {
           background: dim ? '#2a2a3a' : cfg.color,
           border:     dim ? '#3d3d55' : cfg.border,
-          highlight:  { background: '#ffffff', border: cfg.border },
+          highlight:  { background: lighten(cfg.color, 55), border: '#ffffff' },
           hover:      { background: lighten(cfg.color, 30), border: cfg.border },
         },
         font: {
           color: dim ? '#555' : '#fff',
-          size: 11,
+          size: 13,
           face: 'monospace',
           multi: false,
+          strokeWidth: 3,
+          strokeColor: 'rgba(0,0,0,0.6)',
         },
         borderWidth: 2,
         borderWidthSelected: 3,
@@ -651,16 +653,36 @@ function buildEdges(visNodeIds) {
 }
 
 function buildNodeTooltip(n) {
-  const parts = [`<b>${n.id} — ${n.label||''}</b>`];
-  if (n.text)  parts.push(n.text.slice(0,200) + (n.text.length>200?'…':''));
-  if (n.notes) parts.push(`<i>${n.notes.slice(0,100)}…</i>`);
-  return parts.join('<br><br>');
+  const d = document.createElement('div');
+  d.style.cssText = 'max-width:280px;padding:7px 10px;font-size:12px;line-height:1.5;background:#1e1e38;border:1px solid #3d3d60;border-radius:5px;color:#ddd;pointer-events:none';
+  const hdr = document.createElement('b');
+  hdr.style.color = '#fff';
+  hdr.textContent = `${n.id} — ${n.label||''}`;
+  d.appendChild(hdr);
+  if (n.text) {
+    d.appendChild(document.createElement('br'));
+    d.appendChild(document.createElement('br'));
+    const t = document.createElement('span');
+    t.textContent = n.text.slice(0,220) + (n.text.length>220?'…':'');
+    d.appendChild(t);
+  }
+  return d;
 }
 
 function buildEdgeTooltip(e) {
-  const parts = [`<b>${e.relation}</b> ${e.load_bearing ? '★ load-bearing' : ''}`];
-  if (e.notes) parts.push(e.notes);
-  return parts.join('<br>');
+  const d = document.createElement('div');
+  d.style.cssText = 'max-width:240px;padding:5px 8px;font-size:11px;line-height:1.5;background:#1e1e38;border:1px solid #3d3d60;border-radius:4px;color:#ddd;pointer-events:none';
+  const hdr = document.createElement('b');
+  hdr.style.color = '#fff';
+  hdr.textContent = e.relation + (e.load_bearing ? ' ★' : '');
+  d.appendChild(hdr);
+  if (e.notes) {
+    d.appendChild(document.createElement('br'));
+    const t = document.createElement('span');
+    t.textContent = e.notes;
+    d.appendChild(t);
+  }
+  return d;
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -686,7 +708,6 @@ function renderGraph() {
 
     network.on('click',       onNetworkClick);
     network.on('doubleClick', onNetworkDblClick);
-    network.on('dragStart',   p => { if (p.nodes.length > 0) playBoing(); });
     network.on('startStabilizing', () => {
       document.getElementById('stabilizing').style.display = 'block';
     });
@@ -935,48 +956,6 @@ document.getElementById('reset-btn').onclick = function() {
   if (rawNodes.length) { buildSidebar(); renderGraph(); }
 };
 
-/* ══════════════════════════════════════════════════════════
-   BOING
-══════════════════════════════════════════════════════════ */
-let audioCtx = null;
-
-function playBoing() {
-  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-
-  const ctx      = audioCtx;
-  const now      = ctx.currentTime;
-  const duration = 1.4;
-
-  // Main oscillator — sweeps from high to low
-  const osc  = ctx.createOscillator();
-  const gain = ctx.createGain();
-  osc.type = 'sine';
-  osc.frequency.setValueAtTime(380, now);
-  osc.frequency.exponentialRampToValueAtTime(55, now + duration);
-
-  // LFO — wobble that slows as the spring settles
-  const lfo     = ctx.createOscillator();
-  const lfoGain = ctx.createGain();
-  lfo.type = 'sine';
-  lfo.frequency.setValueAtTime(12, now);
-  lfo.frequency.exponentialRampToValueAtTime(3, now + duration);
-  lfoGain.gain.setValueAtTime(60, now);
-  lfoGain.gain.exponentialRampToValueAtTime(2, now + duration);
-  lfo.connect(lfoGain);
-  lfoGain.connect(osc.frequency);
-
-  // Amplitude envelope — snappy attack, long spring decay
-  gain.gain.setValueAtTime(0, now);
-  gain.gain.linearRampToValueAtTime(0.28, now + 0.015);
-  gain.gain.exponentialRampToValueAtTime(0.001, now + duration);
-
-  osc.connect(gain);
-  gain.connect(ctx.destination);
-
-  osc.start(now);  lfo.start(now);
-  osc.stop(now + duration);
-  lfo.stop(now + duration);
-}
 
 /* ══════════════════════════════════════════════════════════
    UTILITIES
