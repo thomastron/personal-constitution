@@ -375,7 +375,7 @@ function initGraph(data) {
     .linkDirectionalParticles(l => (showLoadBearing && l.load_bearing) ? 4 : 0)
     .linkDirectionalParticleWidth(2)
     .linkDirectionalParticleColor(l => linkColor(l))
-    .linkOpacity(0.5)
+    .linkOpacity(0.8)
     .onNodeClick(node => showDetail(node))
     .onBackgroundClick(() => hideDetail());
 
@@ -408,8 +408,8 @@ function linkColor(l) {
 }
 
 function linkWidth(l) {
-  if (showLoadBearing && l.load_bearing) return 2.5;
-  return 0.5;
+  if (showLoadBearing && l.load_bearing) return 3;
+  return 1.5;
 }
 
 function filteredData() {
