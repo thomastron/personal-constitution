@@ -686,6 +686,7 @@ function renderGraph() {
 
     network.on('click',       onNetworkClick);
     network.on('doubleClick', onNetworkDblClick);
+    network.on('dragStart',   p => { if (p.nodes.length > 0) playBoing(); });
     network.on('startStabilizing', () => {
       document.getElementById('stabilizing').style.display = 'block';
     });
@@ -933,6 +934,49 @@ document.getElementById('reset-btn').onclick = function() {
   document.getElementById('show-retired').checked = false;
   if (rawNodes.length) { buildSidebar(); renderGraph(); }
 };
+
+/* ══════════════════════════════════════════════════════════
+   BOING
+══════════════════════════════════════════════════════════ */
+let audioCtx = null;
+
+function playBoing() {
+  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+  const ctx      = audioCtx;
+  const now      = ctx.currentTime;
+  const duration = 1.4;
+
+  // Main oscillator — sweeps from high to low
+  const osc  = ctx.createOscillator();
+  const gain = ctx.createGain();
+  osc.type = 'sine';
+  osc.frequency.setValueAtTime(380, now);
+  osc.frequency.exponentialRampToValueAtTime(55, now + duration);
+
+  // LFO — wobble that slows as the spring settles
+  const lfo     = ctx.createOscillator();
+  const lfoGain = ctx.createGain();
+  lfo.type = 'sine';
+  lfo.frequency.setValueAtTime(12, now);
+  lfo.frequency.exponentialRampToValueAtTime(3, now + duration);
+  lfoGain.gain.setValueAtTime(60, now);
+  lfoGain.gain.exponentialRampToValueAtTime(2, now + duration);
+  lfo.connect(lfoGain);
+  lfoGain.connect(osc.frequency);
+
+  // Amplitude envelope — snappy attack, long spring decay
+  gain.gain.setValueAtTime(0, now);
+  gain.gain.linearRampToValueAtTime(0.28, now + 0.015);
+  gain.gain.exponentialRampToValueAtTime(0.001, now + duration);
+
+  osc.connect(gain);
+  gain.connect(ctx.destination);
+
+  osc.start(now);  lfo.start(now);
+  osc.stop(now + duration);
+  lfo.stop(now + duration);
+}
 
 /* ══════════════════════════════════════════════════════════
    UTILITIES
