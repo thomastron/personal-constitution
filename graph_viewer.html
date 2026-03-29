@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KG Explorer — Thomas</title>
+<script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #0f0f1a;
+  color: #e0e0f0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ── HEADER ─────────────────────────────────────────────── */
+#header {
+  background: #1a1a2e;
+  border-bottom: 1px solid #2d2d50;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+#header h1 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #8080e0;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  margin-right: 4px;
+}
+
+.file-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.file-group span {
+  font-size: 11px;
+  color: #666;
+  white-space: nowrap;
+}
+.file-group input[type="file"] {
+  font-size: 11px;
+  color: #ccc;
+  background: #252540;
+  border: 1px solid #3d3d60;
+  border-radius: 4px;
+  padding: 3px 6px;
+  cursor: pointer;
+  max-width: 220px;
+}
+
+#search {
+  background: #252540;
+  border: 1px solid #3d3d60;
+  border-radius: 4px;
+  padding: 4px 10px;
+  color: #e0e0f0;
+  font-size: 12px;
+  width: 180px;
+  margin-left: auto;
+}
+#search::placeholder { color: #555; }
+#search:focus { outline: none; border-color: #6060cc; }
+
+.hdr-sep { color: #333; font-size: 18px; }
+
+.ctrl-btn {
+  background: #252540;
+  border: 1px solid #3d3d60;
+  border-radius: 4px;
+  padding: 4px 10px;
+  color: #aaa;
+  font-size: 11px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+.ctrl-btn:hover { background: #35355a; color: #ddd; }
+.ctrl-btn.on { background: #3a3a80; border-color: #5555cc; color: #c0c0ff; }
+
+/* ── MAIN AREA ───────────────────────────────────────────── */
+#main {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ── SIDEBAR ─────────────────────────────────────────────── */
+#sidebar {
+  width: 210px;
+  background: #16162a;
+  border-right: 1px solid #2d2d50;
+  padding: 10px;
+  overflow-y: auto;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.panel-title {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #555;
+  padding: 10px 0 5px;
+  border-top: 1px solid #252545;
+  margin-top: 6px;
+}
+.panel-title:first-child { border-top: none; margin-top: 0; padding-top: 2px; }
+
+.filter-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 3px 2px;
+  cursor: pointer;
+  border-radius: 3px;
+  user-select: none;
+  transition: background 0.1s;
+}
+.filter-row:hover { background: #252540; }
+.filter-row input[type="checkbox"] { cursor: pointer; accent-color: #6060cc; flex-shrink: 0; }
+.type-swatch { width: 9px; height: 9px; border-radius: 2px; flex-shrink: 0; }
+.filter-label { font-size: 12px; color: #ccc; flex: 1; }
+.filter-count { font-size: 10px; color: #555; }
+
+.option-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 2px;
+  cursor: pointer;
+  border-radius: 3px;
+  user-select: none;
+  font-size: 12px;
+  color: #aaa;
+}
+.option-row:hover { background: #252540; color: #ddd; }
+.option-row input { cursor: pointer; accent-color: #6060cc; flex-shrink: 0; }
+
+#reset-btn {
+  margin-top: 6px;
+  width: 100%;
+  background: #1e1e38;
+  border: 1px solid #3d3d60;
+  border-radius: 4px;
+  padding: 5px 8px;
+  color: #888;
+  font-size: 11px;
+  cursor: pointer;
+}
+#reset-btn:hover { background: #2d2d50; color: #bbb; }
+
+/* ── GRAPH WRAPPER ───────────────────────────────────────── */
+#graph-wrapper {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+#graph-canvas {
+  width: 100%;
+  height: 100%;
+  background: #0a0a14;
+}
+
+#empty-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  pointer-events: none;
+  z-index: 2;
+}
+#empty-overlay h2 { font-size: 20px; color: #333; font-weight: 400; }
+#empty-overlay p  { font-size: 13px; color: #3a3a5a; }
+
+#stabilizing {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #252540cc;
+  border: 1px solid #3d3d60;
+  border-radius: 4px;
+  padding: 5px 12px;
+  font-size: 11px;
+  color: #888;
+  display: none;
+  z-index: 3;
+}
+
+/* ── DETAIL PANEL ────────────────────────────────────────── */
+#detail {
+  width: 310px;
+  background: #16162a;
+  border-left: 1px solid #2d2d50;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+#detail.open { display: flex; }
+
+#detail-hdr {
+  padding: 10px 10px 8px;
+  border-bottom: 1px solid #2d2d50;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+#detail-close {
+  background: none;
+  border: none;
+  color: #555;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 0;
+  line-height: 1;
+  flex-shrink: 0;
+}
+#detail-close:hover { color: #ccc; }
+
+.d-id-badge {
+  display: inline-block;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 3px;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+.d-type-badge {
+  display: inline-block;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: #252550;
+  color: #888;
+  margin-left: 6px;
+  letter-spacing: 0.3px;
+}
+
+#detail-body {
+  padding: 10px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.d-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e8e8ff;
+  margin: 8px 0 6px;
+  line-height: 1.4;
+}
+.d-text {
+  font-size: 12px;
+  color: #999;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+.d-notes {
+  font-size: 11px;
+  color: #777;
+  font-style: italic;
+  line-height: 1.5;
+  padding: 7px 9px;
+  background: #1e1e38;
+  border-left: 2px solid #3d3d70;
+  border-radius: 0 3px 3px 0;
+  margin-bottom: 12px;
+  display: none;
+}
+
+.edge-section-title {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #555;
+  margin: 12px 0 5px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #252545;
+}
+
+.edge-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 5px 0;
+  border-bottom: 1px solid #1e1e38;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background 0.1s;
+}
+.edge-item:last-child { border-bottom: none; }
+.edge-item:hover { background: #1e1e38; }
+
+.rel-pill {
+  font-size: 10px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 1px;
+  font-weight: 500;
+}
+.lb-star { color: #f39c12; font-size: 11px; flex-shrink: 0; margin-top: 0; }
+.edge-body { flex: 1; min-width: 0; }
+.edge-node-ref { font-size: 11px; }
+.edge-node-id { color: #555; font-family: monospace; font-size: 10px; }
+.edge-node-lbl { color: #bbb; }
+.edge-note-text { font-size: 10px; color: #666; font-style: italic; margin-top: 2px; line-height: 1.4; }
+.no-edges-msg { font-size: 11px; color: #444; font-style: italic; padding: 3px 0; }
+
+/* ── STATUS BAR ──────────────────────────────────────────── */
+#statusbar {
+  background: #13132a;
+  border-top: 1px solid #252545;
+  padding: 3px 12px;
+  font-size: 11px;
+  color: #555;
+  display: flex;
+  gap: 16px;
+  flex-shrink: 0;
+}
+#status-selected { color: #888; margin-left: auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 400px; }
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ─────────────────────────────────────────────── -->
+<div id="header">
+  <h1>⬡ KG Explorer</h1>
+  <span id="load-status" style="font-size:11px;color:#555">Loading…</span>
+  <span class="hdr-sep">|</span>
+  <button class="ctrl-btn on" id="physics-btn">Physics</button>
+  <button class="ctrl-btn" id="labels-btn">Edge Labels</button>
+  <button class="ctrl-btn" id="fit-btn">Fit View</button>
+  <input type="text" id="search" placeholder="Search nodes…">
+</div>
+
+<!-- ── MAIN ───────────────────────────────────────────────── -->
+<div id="main">
+
+  <!-- SIDEBAR -->
+  <div id="sidebar">
+    <div class="panel-title">Node Types</div>
+    <div id="type-filters"></div>
+
+    <div class="panel-title">Edge Relations</div>
+    <div id="edge-filters"></div>
+
+    <div class="panel-title">Options</div>
+    <label class="option-row">
+      <input type="checkbox" id="lb-only"> Load-bearing edges only
+    </label>
+    <label class="option-row">
+      <input type="checkbox" id="show-retired"> Show retired nodes
+    </label>
+    <button id="reset-btn">Reset all filters</button>
+  </div>
+
+  <!-- GRAPH -->
+  <div id="graph-wrapper">
+    <div id="graph-canvas"></div>
+    <div id="empty-overlay">
+      <h2>KG Explorer</h2>
+      <p>Load <code>graph_thomas.jsonc</code> and <code>graph_edges_thomas.jsonc</code> above</p>
+    </div>
+    <div id="stabilizing">Laying out graph…</div>
+  </div>
+
+  <!-- DETAIL PANEL -->
+  <div id="detail">
+    <div id="detail-hdr">
+      <div>
+        <span class="d-id-badge" id="d-id"></span>
+        <span class="d-type-badge" id="d-type"></span>
+      </div>
+      <button id="detail-close">×</button>
+    </div>
+    <div id="detail-body">
+      <div class="d-label" id="d-label"></div>
+      <div class="d-text"  id="d-text"></div>
+      <div class="d-notes" id="d-notes"></div>
+      <div class="edge-section-title">Outgoing</div>
+      <div id="d-out"></div>
+      <div class="edge-section-title" style="margin-top:14px">Incoming</div>
+      <div id="d-in"></div>
+    </div>
+  </div>
+
+</div><!-- /#main -->
+
+<!-- ── STATUS BAR ─────────────────────────────────────────── -->
+<div id="statusbar">
+  <span id="st-nodes">No graph loaded</span>
+  <span id="st-edges"></span>
+  <span id="status-selected"></span>
+</div>
+
+<script>
+/* ══════════════════════════════════════════════════════════
+   CONSTANTS
+══════════════════════════════════════════════════════════ */
+const NODE_CFG = {
+  FirstPrinciple: { color: '#e74c3c', border: '#c0392b' },
+  Framework:      { color: '#3498db', border: '#2176ae' },
+  DerivedBelief:  { color: '#27ae60', border: '#1a7a44' },
+  Evidence:       { color: '#e67e22', border: '#b95e0a' },
+  Tension:        { color: '#9b59b6', border: '#6c3483' },
+  BlindSpot:      { color: '#7f8c8d', border: '#515a5a' },
+  SelfAudit:      { color: '#e91e8c', border: '#a01265' },
+};
+
+const EDGE_CFG = {
+  grounds:      { color: '#6a7f9a', label: 'grounds'      },
+  supports:     { color: '#27ae60', label: 'supports'     },
+  implies:      { color: '#e67e22', label: 'implies'      },
+  tensions_with:{ color: '#e74c3c', label: 'tension'      },
+  contradicts:  { color: '#c0392b', label: 'contradicts'  },
+  example_of:   { color: '#1abc9c', label: 'example of'   },
+};
+
+/* ══════════════════════════════════════════════════════════
+   STATE
+══════════════════════════════════════════════════════════ */
+let rawNodes = [], rawEdges = [];
+let nodeMap  = {};          // id → raw node object
+let network, nodesDS, edgesDS;
+
+let activeTypes     = new Set(Object.keys(NODE_CFG));
+let activeRelations = new Set(Object.keys(EDGE_CFG));
+let lbOnly       = false;
+let showRetired  = false;
+let showLabels   = false;
+let physicsOn    = true;
+
+/* ══════════════════════════════════════════════════════════
+   JSONC PARSER  (strips // line-comments + trailing commas)
+══════════════════════════════════════════════════════════ */
+function parseJsonc(text) {
+  // Remove // line comments (not inside strings — good enough for this data)
+  let s = text.replace(/\/\/[^\n]*/g, '');
+  // Remove trailing commas before } or ]
+  s = s.replace(/,(\s*[}\]])/g, '$1');
+  return JSON.parse(s);
+}
+
+/* ══════════════════════════════════════════════════════════
+   FILE LOADING
+══════════════════════════════════════════════════════════ */
+const NODES_FILE = 'graph_thomas.jsonc';
+const EDGES_FILE = 'graph_edges_thomas.jsonc';
+
+async function tryLoad() {
+  const status = document.getElementById('load-status');
+  try {
+    const [nRes, eRes] = await Promise.all([fetch(NODES_FILE), fetch(EDGES_FILE)]);
+    if (!nRes.ok) throw new Error(`Could not fetch ${NODES_FILE} (${nRes.status})`);
+    if (!eRes.ok) throw new Error(`Could not fetch ${EDGES_FILE} (${eRes.status})`);
+    const [nText, eText] = await Promise.all([nRes.text(), eRes.text()]);
+    const nData = parseJsonc(nText);
+    const eData = parseJsonc(eText);
+    rawNodes = nData.nodes || [];
+    rawEdges = eData.edges || [];
+    nodeMap  = {};
+    rawNodes.forEach(n => nodeMap[n.id] = n);
+    document.getElementById('empty-overlay').style.display = 'none';
+    status.textContent = `v${nData.meta?.version || '?'} · ${rawNodes.length} nodes · ${rawEdges.length} edges`;
+    status.style.color = '#556';
+    buildSidebar();
+    renderGraph();
+  } catch(err) {
+    console.error(err);
+    status.textContent = 'Load failed: ' + err.message;
+    status.style.color = '#e74c3c';
+  }
+}
+
+window.addEventListener('DOMContentLoaded', tryLoad);
+
+/* ══════════════════════════════════════════════════════════
+   SIDEBAR BUILDER
+══════════════════════════════════════════════════════════ */
+function buildSidebar() {
+  // ── node type counts
+  const typeCounts = {};
+  rawNodes.forEach(n => { if (n.type) typeCounts[n.type] = (typeCounts[n.type]||0)+1; });
+
+  const tf = document.getElementById('type-filters');
+  tf.innerHTML = '';
+  Object.entries(NODE_CFG).forEach(([type, cfg]) => {
+    const count = typeCounts[type] || 0;
+    const label = document.createElement('label');
+    label.className = 'filter-row';
+    label.innerHTML = `
+      <input type="checkbox" ${activeTypes.has(type)?'checked':''}>
+      <span class="type-swatch" style="background:${cfg.color}"></span>
+      <span class="filter-label">${humanType(type)}</span>
+      <span class="filter-count">${count}</span>`;
+    label.querySelector('input').onchange = e => {
+      if (e.target.checked) activeTypes.add(type); else activeTypes.delete(type);
+      renderGraph();
+    };
+    tf.appendChild(label);
+  });
+
+  // ── edge relation counts
+  const relCounts = {};
+  rawEdges.forEach(e => { relCounts[e.relation] = (relCounts[e.relation]||0)+1; });
+
+  const ef = document.getElementById('edge-filters');
+  ef.innerHTML = '';
+  Object.entries(EDGE_CFG).forEach(([rel, cfg]) => {
+    const count = relCounts[rel] || 0;
+    const label = document.createElement('label');
+    label.className = 'filter-row';
+    label.innerHTML = `
+      <input type="checkbox" ${activeRelations.has(rel)?'checked':''}>
+      <span class="type-swatch" style="background:${cfg.color};border-radius:0"></span>
+      <span class="filter-label">${cfg.label}</span>
+      <span class="filter-count">${count}</span>`;
+    label.querySelector('input').onchange = e => {
+      if (e.target.checked) activeRelations.add(rel); else activeRelations.delete(rel);
+      renderGraph();
+    };
+    ef.appendChild(label);
+  });
+}
+
+function humanType(t) {
+  return t.replace(/([A-Z])/g, ' $1').trim();
+}
+
+/* ══════════════════════════════════════════════════════════
+   GRAPH BUILDER
+══════════════════════════════════════════════════════════ */
+function buildNodes() {
+  return rawNodes
+    .filter(n => {
+      if (!n.type) return false;
+      if (!showRetired && (n.status === 'retired' || n.status === 'never_assigned')) return false;
+      return activeTypes.has(n.type);
+    })
+    .map(n => {
+      const cfg  = NODE_CFG[n.type] || { color: '#444', border: '#333' };
+      const dim  = n.status === 'retired' || n.status === 'never_assigned';
+      const lbl  = trunc(n.label || '', 32);
+      return {
+        id:    n.id,
+        label: `${n.id}\n${lbl}`,
+        title: buildNodeTooltip(n),
+        shape: 'box',
+        color: {
+          background: dim ? '#2a2a3a' : cfg.color,
+          border:     dim ? '#3d3d55' : cfg.border,
+          highlight:  { background: '#ffffff', border: cfg.border },
+          hover:      { background: lighten(cfg.color, 30), border: cfg.border },
+        },
+        font: {
+          color: dim ? '#555' : '#fff',
+          size: 11,
+          face: 'monospace',
+          multi: false,
+        },
+        borderWidth: 2,
+        borderWidthSelected: 3,
+        margin: { top: 6, right: 8, bottom: 6, left: 8 },
+      };
+    });
+}
+
+function buildEdges(visNodeIds) {
+  return rawEdges
+    .filter(e => {
+      if (lbOnly && !e.load_bearing) return false;
+      if (!activeRelations.has(e.relation)) return false;
+      if (!visNodeIds.has(e.source) || !visNodeIds.has(e.target)) return false;
+      return true;
+    })
+    .map((e, i) => {
+      const cfg   = EDGE_CFG[e.relation] || { color: '#555', label: e.relation };
+      const width = e.load_bearing ? 3 : 1;
+      return {
+        id:     i,
+        from:   e.source,
+        to:     e.target,
+        label:  showLabels ? cfg.label : '',
+        title:  buildEdgeTooltip(e),
+        color:  { color: cfg.color, highlight: '#fff', hover: '#ddd' },
+        width,
+        dashes: !e.load_bearing,
+        arrows: { to: { enabled: true, scaleFactor: 0.6 } },
+        smooth: { enabled: true, type: 'dynamic' },
+        font:   { size: 9, color: '#777', align: 'middle', strokeWidth: 2, strokeColor: '#0a0a14' },
+        _raw:   e,
+      };
+    });
+}
+
+function buildNodeTooltip(n) {
+  const parts = [`<b>${n.id} — ${n.label||''}</b>`];
+  if (n.text)  parts.push(n.text.slice(0,200) + (n.text.length>200?'…':''));
+  if (n.notes) parts.push(`<i>${n.notes.slice(0,100)}…</i>`);
+  return parts.join('<br><br>');
+}
+
+function buildEdgeTooltip(e) {
+  const parts = [`<b>${e.relation}</b> ${e.load_bearing ? '★ load-bearing' : ''}`];
+  if (e.notes) parts.push(e.notes);
+  return parts.join('<br>');
+}
+
+/* ══════════════════════════════════════════════════════════
+   RENDER
+══════════════════════════════════════════════════════════ */
+function renderGraph() {
+  const vNodes  = buildNodes();
+  const nodeIds = new Set(vNodes.map(n => n.id));
+  const vEdges  = buildEdges(nodeIds);
+
+  document.getElementById('st-nodes').textContent = `${vNodes.length} nodes`;
+  document.getElementById('st-edges').textContent = `${vEdges.length} edges`;
+
+  if (!network) {
+    nodesDS = new vis.DataSet(vNodes);
+    edgesDS = new vis.DataSet(vEdges);
+
+    network = new vis.Network(
+      document.getElementById('graph-canvas'),
+      { nodes: nodesDS, edges: edgesDS },
+      networkOptions()
+    );
+
+    network.on('click',       onNetworkClick);
+    network.on('doubleClick', onNetworkDblClick);
+    network.on('startStabilizing', () => {
+      document.getElementById('stabilizing').style.display = 'block';
+    });
+    network.on('stabilized', () => {
+      document.getElementById('stabilizing').style.display = 'none';
+    });
+    network.on('stabilizationIterationsDone', () => {
+      document.getElementById('stabilizing').style.display = 'none';
+    });
+  } else {
+    nodesDS.clear();
+    edgesDS.clear();
+    nodesDS.add(vNodes);
+    edgesDS.add(vEdges);
+  }
+}
+
+function networkOptions() {
+  return {
+    physics: {
+      enabled: true,
+      barnesHut: {
+        gravitationalConstant: -5000,
+        centralGravity: 0.25,
+        springLength: 130,
+        springConstant: 0.04,
+        damping: 0.1,
+        avoidOverlap: 0.2,
+      },
+      stabilization: { iterations: 300 },
+    },
+    interaction: {
+      hover: true,
+      tooltipDelay: 400,
+      zoomView: true,
+      dragView: true,
+    },
+    nodes: {
+      shadow: { enabled: true, color: 'rgba(0,0,0,0.6)', size: 8, x: 2, y: 2 },
+    },
+    edges: {
+      selectionWidth: 3,
+    },
+    layout: {
+      improvedLayout: true,
+    },
+  };
+}
+
+/* ══════════════════════════════════════════════════════════
+   NETWORK EVENTS
+══════════════════════════════════════════════════════════ */
+function onNetworkClick(params) {
+  if (params.nodes.length === 0) {
+    closeDetail();
+    document.getElementById('status-selected').textContent = '';
+    return;
+  }
+  showDetail(params.nodes[0]);
+}
+
+function onNetworkDblClick(params) {
+  if (params.nodes.length > 0) {
+    network.focus(params.nodes[0], { scale: 1.8, animation: { duration: 400, easingFunction: 'easeInOutQuad' } });
+  }
+}
+
+/* ══════════════════════════════════════════════════════════
+   DETAIL PANEL
+══════════════════════════════════════════════════════════ */
+function showDetail(nodeId) {
+  const node = nodeMap[nodeId];
+  if (!node) return;
+
+  const cfg = NODE_CFG[node.type] || { color: '#555' };
+
+  // Header badges
+  const idEl = document.getElementById('d-id');
+  idEl.textContent      = node.id;
+  idEl.style.background = cfg.color;
+
+  const tyEl = document.getElementById('d-type');
+  tyEl.textContent = humanType(node.type || '');
+
+  document.getElementById('d-label').textContent = node.label || '';
+  document.getElementById('d-text').textContent  = node.text  || '';
+
+  const notesEl = document.getElementById('d-notes');
+  if (node.notes && node.notes.trim()) {
+    notesEl.textContent    = node.notes;
+    notesEl.style.display  = 'block';
+  } else {
+    notesEl.style.display  = 'none';
+  }
+
+  renderEdgeList('d-out', rawEdges.filter(e => e.source === nodeId), 'out');
+  renderEdgeList('d-in',  rawEdges.filter(e => e.target === nodeId), 'in');
+
+  document.getElementById('detail').classList.add('open');
+  document.getElementById('status-selected').textContent = `${nodeId} — ${node.label || ''}`;
+}
+
+function renderEdgeList(containerId, edges, direction) {
+  const el = document.getElementById(containerId);
+  el.innerHTML = '';
+  if (!edges.length) {
+    el.innerHTML = '<div class="no-edges-msg">none</div>';
+    return;
+  }
+  // Group by relation for clarity? Keep flat for now.
+  edges.forEach(e => {
+    const peerId   = direction === 'out' ? e.target : e.source;
+    const peer     = nodeMap[peerId];
+    const peerLbl  = peer ? peer.label : peerId;
+    const relCfg   = EDGE_CFG[e.relation] || { color: '#555', label: e.relation };
+
+    const item = document.createElement('div');
+    item.className = 'edge-item';
+    item.title     = 'Click to navigate';
+    item.onclick   = () => {
+      if (network) {
+        network.selectNodes([peerId]);
+        network.focus(peerId, { scale: 1.4, animation: { duration: 350, easingFunction: 'easeInOutQuad' } });
+      }
+      showDetail(peerId);
+    };
+
+    const pill = document.createElement('span');
+    pill.className       = 'rel-pill';
+    pill.textContent     = relCfg.label;
+    pill.style.cssText   = `background:${relCfg.color}22;color:${relCfg.color};border:1px solid ${relCfg.color}44`;
+
+    const star = document.createElement('span');
+    star.className   = 'lb-star';
+    star.textContent = e.load_bearing ? '★' : '';
+
+    const body = document.createElement('div');
+    body.className = 'edge-body';
+
+    const ref = document.createElement('div');
+    ref.className = 'edge-node-ref';
+    ref.innerHTML = `<span class="edge-node-id">${peerId} </span><span class="edge-node-lbl">${trunc(peerLbl||'',40)}</span>`;
+
+    body.appendChild(ref);
+    if (e.notes && e.notes.trim()) {
+      const nt = document.createElement('div');
+      nt.className   = 'edge-note-text';
+      nt.textContent = e.notes;
+      body.appendChild(nt);
+    }
+
+    item.append(pill, star, body);
+    el.appendChild(item);
+  });
+}
+
+function closeDetail() {
+  document.getElementById('detail').classList.remove('open');
+}
+
+document.getElementById('detail-close').onclick = closeDetail;
+
+/* ══════════════════════════════════════════════════════════
+   SEARCH
+══════════════════════════════════════════════════════════ */
+let searchTimer;
+document.getElementById('search').oninput = function() {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => {
+    const q = this.value.trim().toLowerCase();
+    if (!nodesDS) return;
+
+    if (!q) {
+      // restore all colors
+      const updates = nodesDS.get().map(n => {
+        const raw = nodeMap[n.id];
+        const cfg = NODE_CFG[(raw||{}).type] || { color: '#444', border: '#333' };
+        return { id: n.id, color: { background: cfg.color, border: cfg.border } };
+      });
+      nodesDS.update(updates);
+      document.getElementById('status-selected').textContent = '';
+      return;
+    }
+
+    let matchCount = 0;
+    const updates = nodesDS.get().map(n => {
+      const raw     = nodeMap[n.id];
+      const cfg     = NODE_CFG[(raw||{}).type] || { color: '#444', border: '#333' };
+      const matches = raw && (
+        raw.id.toLowerCase().includes(q) ||
+        (raw.label||'').toLowerCase().includes(q) ||
+        (raw.text||'').toLowerCase().includes(q)
+      );
+      if (matches) matchCount++;
+      return {
+        id: n.id,
+        color: matches
+          ? { background: cfg.color, border: '#fff' }
+          : { background: '#1a1a28', border: '#252545' },
+        font: { color: matches ? '#fff' : '#333' },
+      };
+    });
+    nodesDS.update(updates);
+    document.getElementById('status-selected').textContent =
+      matchCount ? `${matchCount} match${matchCount>1?'es':''}` : 'No matches';
+  }, 180);
+};
+
+/* ══════════════════════════════════════════════════════════
+   HEADER CONTROLS
+══════════════════════════════════════════════════════════ */
+document.getElementById('physics-btn').onclick = function() {
+  physicsOn = !physicsOn;
+  this.classList.toggle('on', physicsOn);
+  if (network) network.setOptions({ physics: { enabled: physicsOn } });
+};
+
+document.getElementById('labels-btn').onclick = function() {
+  showLabels = !showLabels;
+  this.classList.toggle('on', showLabels);
+  if (network) renderGraph();
+};
+
+document.getElementById('fit-btn').onclick = function() {
+  if (network) network.fit({ animation: { duration: 500, easingFunction: 'easeInOutQuad' } });
+};
+
+document.getElementById('lb-only').onchange = function() {
+  lbOnly = this.checked;
+  if (network) renderGraph();
+};
+
+document.getElementById('show-retired').onchange = function() {
+  showRetired = this.checked;
+  buildSidebar();
+  if (network) renderGraph();
+};
+
+document.getElementById('reset-btn').onclick = function() {
+  activeTypes     = new Set(Object.keys(NODE_CFG));
+  activeRelations = new Set(Object.keys(EDGE_CFG));
+  lbOnly      = false;
+  showRetired = false;
+  document.getElementById('lb-only').checked      = false;
+  document.getElementById('show-retired').checked = false;
+  if (rawNodes.length) { buildSidebar(); renderGraph(); }
+};
+
+/* ══════════════════════════════════════════════════════════
+   UTILITIES
+══════════════════════════════════════════════════════════ */
+function trunc(s, n) {
+  return s.length > n ? s.slice(0, n - 1) + '…' : s;
+}
+
+function lighten(hex, amt) {
+  const n = parseInt(hex.replace('#',''), 16);
+  const r = Math.min(255, ((n >> 16) & 0xff) + amt);
+  const g = Math.min(255, ((n >>  8) & 0xff) + amt);
+  const b = Math.min(255, ( n        & 0xff) + amt);
+  return '#' + [r,g,b].map(x => x.toString(16).padStart(2,'0')).join('');
+}
+</script>
+</body>
+</html>

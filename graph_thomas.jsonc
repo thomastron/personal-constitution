@@ -802,6 +802,15 @@
     },
 
     {
+      "id": "FR-28",
+      "person": "thomas",
+      "type": "Framework",
+      "label": "Chain-Span Exploitation as Systemic Architecture",
+      "text": "The system is designed such that it exploits chain-span limitations. Structurally distinct from 'designed to exploit' — the distinction matters for moral allocation (FR-14). The dominant political and economic communication architectures are optimized for chain-span-limited reasoning: simple slogans, transactional framing, zero-sum games, emotional salience over structural analysis. These fit within 2-3 links. Counter-arguments (cooperation enlarges the total, money is not value, accountability serves long-term interest) require 5-7 links. The architecture doesn't need conscious design to exploit; it needs only to be selected for by incentives that reward simplicity and punish complexity. Three actor types: (1) Nefarious actors who deliberately design for chain-span exploitation — primary moral weight; (2) Leaders who accept the architecture without weaponizing it — intermediate moral weight; (3) Participants who cannot see the architecture — low individual moral weight, high systemic consequence. The money-worship instantiation: the chain from money to what actually constitutes value has too many links for someone at a 3-link ceiling. Zero-sum framing is the default game-theoretic model for chain-span-limited reasoning; cooperative outcomes require modeling second-order effects that exceed the ceiling.",
+      "notes": "Grounds: FR-27 (cognitive mechanism), FR-4 (political economy), FR-8 (algorithmic amplification), FR-25 (individual taxonomy), FR-14 (moral allocation across actor types). Connects to: DB-29, FR-9, FR-20, SA-9. Source: Thomas / Claude session 2026-03-25; Pritzker commencement speech. Added v3.4 (2026-03-25)."
+    },
+
+    {
       "id": "DB-17",
       "person": "thomas",
       "type": "DerivedBelief",
@@ -907,6 +916,33 @@
       "label": "Harm-Avoidance Institutional Frames Produce the Harm They Prohibit",
       "text": "The 'Do No Harm' frame, when deployed as an institutional operating principle, systematically generates the harm it prohibits. Mechanism: (1) harm-avoidance locates risk in action, not inaction — inaction feels safe but its costs are deferred and diffuse (FR-2 temporal distortion); (2) liability structures amplify this asymmetry — professionals who act bear traceable legal exposure; those who fail to act bear none — cage-builders (FR-14) designed this; (3) economic pressure reduces information per case, increasing uncertainty and thus risk-aversion; time is the missing variable. Domain-general: applies to medicine, law, finance, governance, education — any institutional domain where harm-avoidance is the operative ethical frame. The beneficence reframe inverts the calculus: suffering is the baseline against which action is measured, not the risk against which inaction is declared safe. Requires FR-15 active harm-assessment and FR-14 accurate distribution of moral weight. EV-9 (ACE Study) is the domain evidence: institutional non-adoption of childhood trauma screening is harm-avoidance producing harm.",
       "notes": "Grounds: FP-5 (beneficence as correct frame — load-bearing), FR-2 (temporal distortion: deferred costs feel safe), FR-14 (liability as cage-building), FR-15 (harm requires active multi-parameter assessment), FP-8 (inaction perpetuates harm). Supports: EV-9. Source: Thomas's essay on 'Do No Harm' vs. 'Reduce Suffering'; session analysis, 2026-03-19. Added v2.6 (2026-03-19)."
+    },
+
+    {
+      "id": "DB-29",
+      "person": "thomas",
+      "type": "DerivedBelief",
+      "label": "The Indivisible Vote: Moral Package Deal",
+      "text": "A vote is morally indivisible — you purchase the entire package. When a voter claims they voted for the best option for their family, the claim requires assessment of the full moral cost: a convicted sexual predator, the most prominent non-Epstein/Maxwell figure in the Epstein files, an administration whose members the voter likely cannot name a single non-compromised member of, and a leader who pitches zero-sum games as governance. If the voter cannot name what moral cost they accepted, they didn't assess it, and the rational family-interest claim is post-hoc rationalization (FR-9: ego distortion). The cheating trap door: once the vote is cast, rational self-interest requires the cheater to win and keep winning — accountability applied to your side now threatens you. This requires abandoning rule of law and honest governance, because those mechanisms applied fairly would indict the team you chose. This is why MAGA supporters must actively defend corruption. Zero-sum framing is the only framework available once accountability has been abandoned: if you cannot win by the rules, your only path is cheating where you are on the cheating side. Every additional day of defense deepens the moral sunk cost.",
+      "notes": "Grounds: FP-1 (obligation to assess), FP-8 (silence enables), FR-1 (credibility formula), FR-24 (discourse collapse), FR-25 (capacity taxonomy), DB-1 (moral cowardice — DB-29 adds the trap door that locks it in), FR-9 (ego distortion), FR-8 (abandonment of rule of law), FR-28 (zero-sum as chain-span-limited game theory). Connects to: DB-18, FR-4, DB-30, DB-31. Source: Thomas / Claude session 2026-03-25. Added v3.4 (2026-03-25)."
+    },
+
+    {
+      "id": "DB-30",
+      "person": "thomas",
+      "type": "DerivedBelief",
+      "label": "Temporal Evidence of Moral Failure: The Timeline Is Incriminating",
+      "text": "The timing of a political reversal is the moral assessment, not incidental to it. If a Trump supporter claims they were conned, 'When did you change your mind and what changed it?' is incriminating on any timeline. Recent answer: evidence was available for 10+ years from sources with established credibility, provided directly at personal cost — the lateness documents deliberate ignorance. Early-but-unarticulated answer: years of continued defense after the internal shift = moral cowardice in purest form. 'I was conned' answer: the con required active cooperation — ignoring counter-evidence from trusted sources over years is not gullibility, it is FR-9 as a lifestyle. The TDS dismissal is FR-18 (filter-premise) in operation: it pre-rejects the destination before any chain is walked, and converts the critic's vindicated track record into evidence of pathology. This is ego distortion weaponized as social label. For PT$D: the enabler's future reversal does not exonerate — it documents the duration of the enabling. Silence over time is not a gap in the record; it is the record.",
+      "notes": "Grounds: FR-2 (temporal distortion), DB-18 (architectural change requirement deepened by timeline), FP-8 (silence enables), FP-15 (silence is a position), FR-17 (moral witness creates the record), DB-1 (moral cowardice), FR-9 (TDS as ego distortion), FR-18 (TDS as filter-premise). Connects to: DB-29 (trap door deepens yearly), SA-5 (presence as epistemic variable). Source: Thomas / Claude session 2026-03-25. Added v3.4 (2026-03-25)."
+    },
+
+    {
+      "id": "DB-31",
+      "person": "thomas",
+      "type": "DerivedBelief",
+      "label": "Credibility Destruction Asymmetry",
+      "text": "Credibility is destroyed asymmetrically: fast to lose, slow to rebuild, and once lost, genuine belief becomes indistinguishable from tactical positioning. This asymmetry is implicit in FR-1's time-integration but deserves standalone treatment. The indistinguishability problem: when someone who spent years dismissing evidence reverses course, the reversal could be genuine self-correction, tactical self-deprecation to obscure knowingly compromised choices, or social positioning as the cost of the old position exceeds its benefit. The person's credibility — the instrument you would use to assess sincerity — has been destroyed by the same behavior pattern. FR-1 formula: intelligence may be intact, but obligation has atrophied and insulation remains high. At near-zero credibility, signal is indistinguishable from noise. This is why DB-18 requires architectural change, not surface apology: only structural behavioral evidence over time can overcome the indistinguishability problem. Words are cheap and unreadable at low credibility.",
+      "notes": "Grounds: FR-1 (credibility formula — time-integration implies asymmetry), FR-2 (time-integrated pattern), DB-18 (architectural change as minimum threshold), DB-30 (timeline as record of destruction), DB-29 (trap door deepens destruction), FP-9 (truth-seeking requires reliable signals), SA-5 (Thomas's perceptive limits), FR-25 (genuine cognitive update vs. indistinguishable type). Source: Thomas / Claude session 2026-03-25. Added v3.4 (2026-03-25)."
     }
   ]
 }
