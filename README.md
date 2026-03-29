@@ -1,6 +1,6 @@
-# Personal Constitution — Belief Accountability System
+## Personal Constitution — Belief Accountability System
 
-![The Personal Constitution of [User]](_media/Gemini_Generated_Image_pbdkvrpbdkvrpbdk.jpg)
+![The Personal Constitution of [User]](https://github.com/thomastron/personal-constitution/blob/master/_media/Gemini_Generated_Image_pbdkvrpbdkvrpbdk.jpg?raw=true)
 
 You talk. AI listens, organizes, and pushes back. Your beliefs end up on the record — mapped, connected, and stress-tested.
 
@@ -10,7 +10,7 @@ No coding or software required. For a most simple example: save `KNOWLEDGE_GRAPH
 
 ---
 
-## What This Is
+### What This Is
 
 Everyone has a personal constitution. It's the set of principles that actually govern how you think, what you defend, and what you won't compromise on — whether you've written them down or not. The difference between having it on paper and not is accountability.
 
@@ -37,7 +37,7 @@ Everything is versioned, timestamped, and amendment-traceable.
 
 ---
 
-## Why It Exists
+### Why It Exists
 
 Three purposes:
 
@@ -49,9 +49,9 @@ Three purposes:
 
 ---
 
-## System Architecture
+### System Architecture
 
-### Node Taxonomy
+#### Node Taxonomy
 
 | ...Prefix... | Type | Description |
 |--------|------|-------------|
@@ -63,7 +63,7 @@ Three purposes:
 | `BS-n` | Blind Spot | Domain where principles imply undeclared positions |
 | `SA-n` | Self-Audit | Calibration challenge; ongoing honest self-assessment |
 
-### Edge Vocabulary
+#### Edge Vocabulary
 
 | Relation | Meaning |
 |----------|---------|
@@ -74,13 +74,13 @@ Three purposes:
 | `example_of` | Evidence instantiates a framework |
 | `contradicts` | Direct conflict — primary Socratic engine target |
 
-### The `load_bearing` Flag
+#### The `load_bearing` Flag
 
 Every edge in `graph_edges_thomas.jsonc` has a `load_bearing` boolean. When `true`: removing this edge structurally collapses the target node. These are the attack surfaces.
 
 This is the single most useful field for debate targeting. The load-bearing edges tell you where the graph is actually vulnerable, not just where it is complex.
 
-### Two-Format Design
+#### Two-Format Design
 
 The belief system is maintained in two synchronized formats:
 
@@ -95,9 +95,9 @@ Section 7 of the MD file contains a human-readable rendering of the full edge li
 
 ---
 
-## Slash Commands
+### Slash Commands
 
-### `/socratic [claim or argument]`
+#### `/socratic [claim or argument]`
 
 The debate engine. Given a claim from an opponent:
 
@@ -112,16 +112,16 @@ The debate engine. Given a claim from an opponent:
    - **Firehose Freeze** — when they're expanding, not engaging
 6. Returns what to ignore (bait claims) and what vulnerabilities to watch for
 
-### `/dog-walk [topic or argument]`
+#### `/dog-walk [topic or argument]`
 
 The chain-of-reasoning explainer. Walks a complex argument step-by-step, making each inferential link explicit and checkable. Useful for understanding an opponent's position before attacking it, or for clarifying your own reasoning chain.
 
 ---
 
-## How to Use in Claude Code
+### How to Use in Claude Code
 EASIEST OPTION - save the `KNOWLEDGE_GRAPH_Thomas.md` to your local machine, edit it to make your own `KNOWLEDGE_GRAPH_yournamehere.md`, and use it as context to feed into future AI sessions on any platform. 
 
-## For Users of Agentic platforms like Claude Code
+### For Users of Agentic platforms like Claude Code
 1. **Clone this repo** and open it as your working directory in Claude Code
 2. **CLAUDE.md** will be auto-loaded as session configuration
 3. Start a session with `/socratic [opponent's claim]` or `/dog-walk [topic]`
@@ -133,21 +133,21 @@ For `/socratic` sessions, the CLAUDE.md instructs Claude to load:
 - Your interlocutor's knowledge graph (if you've built one)
 
 Visually Interact with the demo graphs in this repo:
-[![drapedapes.org/personal-constitution/graph_viewer](_media/CPT2603290913-1100x569.gif)](https://drapedapes.org/personal-constitution/graph_viewer.html)
+[![drapedapes.org/personal-constitution/graph_viewer](https://github.com/thomastron/personal-constitution/blob/master/_media/CPT2603290913-1100x569.gif?raw=true)](https://drapedapes.org/personal-constitution/graph_viewer.html)
 [drapedapes.org/personal-constitution/graph_viewer](https://drapedapes.org/personal-constitution/graph_viewer.html)
 
 
 ---
 
-## Adapting This for Yourself
+### Adapting This for Yourself
 
 This system is designed to be forked and repopulated with your own beliefs.
 
-### Step 1 — Articulate your First Principles
+#### Step 1 — Articulate your First Principles
 
 Start by telling the AI what you actually believe at the deepest level — the things you'd defend in any situation, not just positions you hold on particular topics. These become your FP nodes. You don't need to format them yourself; just say them in plain language and let the AI translate. Anything that can't survive being stated universally probably isn't a first principle.
 
-### Step 2 — Build your First Principles layer (FP nodes)
+#### Step 2 — Build your First Principles layer (FP nodes)
 
 Each FP node should be:
 - Stated in universal form
@@ -155,25 +155,25 @@ Each FP node should be:
 - Grounded in your Constitution or independently justifiable
 - Connected to downstream nodes via `grounds` edges
 
-### Step 3 — Add Frameworks, Derived Beliefs, Evidence
+#### Step 3 — Add Frameworks, Derived Beliefs, Evidence
 
 FR nodes are lenses — they don't assert facts, they interpret them. DB nodes are positions that depend on both a principle and a framework applied to data. EV nodes are empirical anchors.
 
-### Step 4 — Map your tensions honestly
+#### Step 4 — Map your tensions honestly
 
 T nodes are where your system is most interesting. Every belief system has internal tensions. Mapping them forces you to either resolve them or acknowledge they're unresolved. The resolution status matters.
 
-### Step 5 — Self-audit aggressively
+#### Step 5 — Self-audit aggressively
 
 SA nodes are where you call yourself out. These are the nodes where your stated beliefs and your actual behavior or reasoning pattern might diverge. These are the most valuable nodes in the graph for debate preparation because they're where you're most vulnerable.
 
-### Amendment Protocol
+#### Amendment Protocol
 
 First Principles may only be revised via **explicit, timestamped amendment** with stated rationale. Amendments are written inline (e.g., `**v2.0 amendment:**`) and summarized in the Changelog. "Contextual application" is not revision — applying a principle to a specific case is correct use of the system, not a change to it.
 
 ---
 
-## File Index
+### File Index
 
 | File | Description |
 |------|-------------|
@@ -190,7 +190,7 @@ First Principles may only be revised via **explicit, timestamped amendment** wit
 
 ---
 
-## Key Structural Properties (Thomas's graph, v2.3)
+### Key Structural Properties (Thomas's graph, v2.3)
 
 - **Most central First Principle:** FP-8 — grounds the largest number of downstream nodes; most load-bearing edges
 - **Most central Framework:** FR-13 — resolves nearly every tension node via contextual application logic
@@ -199,7 +199,7 @@ First Principles may only be revised via **explicit, timestamped amendment** wit
 
 ---
 
-## License
+### License
 
 The system architecture, slash commands, and process documents are free to use and adapt (MIT).
 
