@@ -103,11 +103,39 @@ body {
   border-right: 1px solid #2d2d50;
   padding: 10px;
   overflow-y: auto;
+  overflow-x: hidden;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
   gap: 2px;
+  transition: width 0.25s ease, padding 0.25s ease;
 }
+#sidebar.collapsed {
+  width: 0;
+  padding: 0;
+}
+#sidebar.collapsed > * { display: none; }
+
+#sidebar-toggle {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: #252540;
+  border: 1px solid #3d3d60;
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  color: #888;
+  font-size: 13px;
+  line-height: 1;
+  padding: 8px 4px;
+  cursor: pointer;
+  transition: left 0.25s ease, color 0.15s;
+  writing-mode: vertical-rl;
+  letter-spacing: 1px;
+}
+#sidebar-toggle:hover { color: #ddd; background: #35355a; }
 
 .panel-title {
   font-size: 10px;
@@ -383,7 +411,8 @@ body {
   </div>
 
   <!-- GRAPH -->
-  <div id="graph-wrapper">
+  <div id="graph-wrapper" style="position:relative">
+    <button id="sidebar-toggle" title="Toggle filters">◀</button>
     <div id="graph-canvas"></div>
     <div id="empty-overlay">
       <h2>KG Explorer</h2>
@@ -908,6 +937,23 @@ document.getElementById('reset-btn').onclick = function() {
 /* ══════════════════════════════════════════════════════════
    UTILITIES
 ══════════════════════════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════════
+   SIDEBAR TOGGLE
+══════════════════════════════════════════════════════════ */
+const sidebar       = document.getElementById('sidebar');
+const toggleBtn     = document.getElementById('sidebar-toggle');
+
+function setSidebar(collapsed) {
+  sidebar.classList.toggle('collapsed', collapsed);
+  toggleBtn.textContent = collapsed ? '▶' : '◀';
+  if (network) setTimeout(() => network.redraw(), 260);
+}
+
+toggleBtn.onclick = () => setSidebar(!sidebar.classList.contains('collapsed'));
+
+// Auto-collapse on mobile
+if (window.innerWidth < 640) setSidebar(true);
+
 function trunc(s, n) {
   return s.length > n ? s.slice(0, n - 1) + '…' : s;
 }
