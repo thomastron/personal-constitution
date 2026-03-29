@@ -133,8 +133,8 @@ For `/socratic` sessions, the CLAUDE.md instructs Claude to load:
 - Your interlocutor's knowledge graph (if you've built one)
 
 Visually Interact with the demo graphs in this repo:
-![drapedapes.org/personal-constitution/graph_viewer](_media/CPT2603290913-1100x569.gif)
-### [drapedapes.org/personal-constitution/graph_viewer](https://drapedapes.org/personal-constitution/graph_viewer.html)
+[![drapedapes.org/personal-constitution/graph_viewer](_media/CPT2603290913-1100x569.gif)](https://drapedapes.org/personal-constitution/graph_viewer.html)
+[drapedapes.org/personal-constitution/graph_viewer](https://drapedapes.org/personal-constitution/graph_viewer.html)
 
 
 ---
