@@ -368,14 +368,13 @@ function initGraph(data) {
     .linkSource('source')
     .linkTarget('target')
     .linkColor(l => linkColor(l))
-    .linkWidth(l => linkWidth(l))
-    .linkDirectionalArrowLength(4)
+    .linkDirectionalArrowLength(6)
     .linkDirectionalArrowRelPos(1)
     .linkDirectionalArrowColor(l => linkColor(l))
-    .linkDirectionalParticles(l => (showLoadBearing && l.load_bearing) ? 4 : 0)
+    .linkDirectionalParticles(l => (showLoadBearing && l.load_bearing) ? 5 : 0)
     .linkDirectionalParticleWidth(2)
     .linkDirectionalParticleColor(l => linkColor(l))
-    .linkOpacity(0.8)
+    .linkOpacity(0.7)
     .onNodeClick(node => showDetail(node))
     .onBackgroundClick(() => hideDetail());
 
@@ -407,10 +406,6 @@ function linkColor(l) {
   return REL_COLORS[l.relation] || '#444';
 }
 
-function linkWidth(l) {
-  if (showLoadBearing && l.load_bearing) return 3;
-  return 1.5;
-}
 
 function filteredData() {
   if (!activeTypeFilter) return { nodes: gData.nodes, links: gData.links };
@@ -497,8 +492,7 @@ document.getElementById('btn-lb').addEventListener('click', function() {
   showLoadBearing = !showLoadBearing;
   this.classList.toggle('active', showLoadBearing);
   if (Graph) {
-    Graph.linkWidth(l => linkWidth(l))
-         .linkDirectionalParticles(l => (showLoadBearing && l.load_bearing) ? 4 : 0);
+    Graph.linkDirectionalParticles(l => (showLoadBearing && l.load_bearing) ? 5 : 0);
   }
 });
 
