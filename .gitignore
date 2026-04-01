@@ -1,69 +1,28 @@
-# ── Private / excluded from public repo ────────────────────────────────────
+# ── Whitelist approach: ignore everything, allow only tracked files ──────────
 
-# Constitution (superseded by Knowledge Graph; kept locally as archive)
-CONSTITUTION_Principles__*
+# Ignore everything by default
+*
 
-# Interlocutor graphs (private personal data)
-KNOWLEDGE_GRAPH_Skyler*
-SKYLER_*
+# Allow tracked files
+!.gitignore
+!CLAUDE.md
+!README.md
+!FR-27_Working_Memory__20260323.md
+!KNOWLEDGE_GRAPH_FriendS__20260322-1000.md
+!KNOWLEDGE_GRAPH_Thomas__20260324-1000.md
+!KNOWLEDGE_GRAPH_Thomas__CHANGELOG.md
+!PROCESS_Obligation_First_Workflow__20260130-1428.md
+!self-audit_FR-14_credibility-threshold_20260306.md
+!graph_edges_thomas.jsonc
+!graph_thomas.jsonc
+!graph_viewer.html
 
-# Book project (separate concern)
-PT$D_book_*
-NARRATIVE_STRUCTURE_*
-KNOWLEDGE_GRAPH_PTSD_*
-BOOK_DEVELOPMENT_*
-BOOK_INSIGHTS_*
+# Allow .claude/commands/ (skills)
+!.claude/
+!.claude/commands/
+!.claude/commands/dog-walk.md
+!.claude/commands/socratic.md
 
-# Session transcripts and conversation logs
-20260*.md
-20260*.txt
-
-# Pending-review drafts
-XXXX*.md
-XXX*.md
-
-# Underscore-prefixed private drafts and notes
-_*.md
-
-# Backup files
-*_backup.jsonc
-
-# Internal eval data
-.dog-walk-evals/
-
-# Version archive
-_archive/
-
-# Loose Claude session task-description files (generated during sessions)
-# These are planning notes, not content
-Add *.md
-Build *.md
-Compare *.md
-Consolidate *.md
-Create *.md
-Discuss *.md
-Embed *.md
-Plan *.md
-Review *.md
-Personal *.md
-Untitled.md
-
-# Mind map drafts
-Mind Map*.md
-
-# Standalone session notes
-"The Pincer Movement*.md"
-
-# Media / images (exclude by default; whitelist _media/ for README assets)
-*.png
-*.jpg
-*.jpeg
+# Allow _media/ tracked asset
 !_media/
-!_media/*
-
-# OS / editor artifacts
-.DS_Store
-Thumbs.db
-desktop.ini
-*.swp
-*.swo
+!_media/Gemini_Generated_Image_pbdkvrpbdkvrpbdk.jpg
