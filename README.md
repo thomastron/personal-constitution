@@ -4,13 +4,36 @@
 
 You talk. AI listens, organizes, and pushes back. Your beliefs end up on the record — mapped, connected, and stress-tested.
 
-No coding or software required. For a most simple example: save `KNOWLEDGE_GRAPH_Thomas.md` to your local machine, edit it as needed and make your own `KNOWLEDGE_GRAPH_yournamehere.md`, and then just drag this file into AI conversations as context. Then prompt about any topic. The structure is there so the AI can understand you more deeply. You don't have to think in graphs. That's what the AI is for.
+No fancy coding or software skills required! 
+
+A simple example:  
+_1. Save `KNOWLEDGE_GRAPH_Thomas.md` to your local machine_  
+_2. (OPTIONAL) edit it as needed to make your own `KNOWLEDGE_GRAPH_yournamehere.md`_  
+_3. Just drag or upload the file into any AI conversations as CONTEXT._  
+_4. Start the conversation. Prompt (declare or query) about any topic._   
+
+The structure is there so the AI can understand you more deeply. You don't have to think in graphs. That's what the AI is for.
 
 ![Help Me Help You](https://media.giphy.com/media/fdLR6LGwAiVNhGQNvf/giphy.gif)
 
 ---
+## What you're looking at (pick your lens)
 
-### What This Is
+Depending on why you're here:
+
+**1. If you're here to USE the system:**  
+> Everything after this section explains how.
+
+**2. If you're evaluating AI / data architecture:**  
+>This is a hand-built, machine-traversable knowledge graph — 250+ typed nodes (first principles, frameworks, derived beliefs, evidence, tensions, blind spots, self-audits) with typed edges and `load_bearing` flags marking the dependencies that would collapse downstream positions if removed. It ships in dual format (prose Markdown for humans, JSONC for machine traversal), with a Socratic debate engine (`/socratic`) and a chain-of-reasoning explainer (`/dog-walk`) that run against the graph as Claude Code commands. Amendments to first principles are versioned and timestamped. The design problem it solves — getting a reasoning system to honestly report the structure of its own beliefs, including the uncomfortable parts — is the human-side analog of AI alignment work on eliciting honest internal state.
+
+**3. If you're evaluating systems engineering:**  
+>This is documentation architecture. It demonstrates failure-mode thinking applied to belief systems — the `load_bearing` flag is FMEA for arguments — plus disciplined change control (timestamped amendments only, no silent edits) and cross-referenced document structure that stays navigable at scale. The methods came from engineering document control; the substrate happens to be epistemology. 
+
+
+**NOTE:** this machinery was developed alongside — and stress-tested by — a full-length book written under the same constitutional governance principles. The book ships as AI-loadable epistemic infrastructure at [thomastron.github.io/PT$D](https://github.com/thomastron/thomastron.github.io/tree/main/PT%24D).
+
+## Introduction
 
 Everyone has a personal constitution. It's the set of principles that actually govern how you think, what you defend, and what you won't compromise on — whether you've written them down or not. The difference between having it on paper and not is accountability.
 
