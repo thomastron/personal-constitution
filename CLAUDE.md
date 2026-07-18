@@ -10,9 +10,6 @@ This project uses a flat folder with timestamped filenames (e.g., `__20260323-10
 
 **Always load the most recent version** of each file type, identified by the latest timestamp in the filename. Do not load superseded versions, session transcripts, pending-review files (`XXXX`-prefixed), PDFs, or early drafts (`_`-prefixed) unless explicitly requested.
 
-**Large files to avoid loading whole:**
-- `PT$D_book_20260217-1005.md` (~653 KB) — load sections explicitly as needed
-- `NARRATIVE_STRUCTURE__20260217-1500.md` (~109 KB) — load explicitly for book structure work
 
 ### Session-type context overrides
 
@@ -22,7 +19,7 @@ This project uses a flat folder with timestamped filenames (e.g., `__20260323-10
 
 ## Project Purpose
 
-This project maintains a structured knowledge graph of Thomas's belief system for use in Socratic debate preparation, self-audit, and book development (PT$D). The primary subjects are Thomas (self-side) and Friend S (interlocutor-side).
+This project maintains a structured knowledge graph of Thomas's belief system for use in Socratic debate preparation, self-audit, and book development (PT$D).
 
 ---
 
@@ -35,7 +32,7 @@ This project maintains a structured knowledge graph of Thomas's belief system fo
 | `KNOWLEDGE_GRAPH_Thomas__[date].md` | Authoritative source. Full prose reasoning, contextual application notes, amendment history, source citations. |
 | `graph_thomas__[date].jsonc` | Compiled node file. Debate-ready text summaries. Machine-traversable. |
 | `graph_edges_thomas__[date].jsonc` | All edges: typed relations, load_bearing flags, notes. |
-| `KNOWLEDGE_GRAPH_Interlocutor__[date].md` | Interlocutor's belief system (same structure as Thomas's). |
+
 
 ### Two-Format Design (MD + JSONC)
 
