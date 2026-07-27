@@ -25,7 +25,7 @@ Notes: v3.3 (2026-03-24): DB-8 amended (human-AI entanglement via distributed ob
 - Socratic audit session, 2026-03-13 (Claude — Socratic Debater): authoritarian collapse, cultural sensitivity, friendship calibration, historical resistance models
 - Dog-walk session, 2026-03-14 (Claude — dog-walk skill): futility-filter bypass, chain-routing communication strategy, Friend N illustrative case, Switzerland transcript cross-check
 - Transcript cross-check: transcripts/Switzerland_Says_NO_to_USA_AHVOeHBF0Qo.md (2026-03-14)
-- `20260215 Friend S USA said i will visit.md` (2026-03-15): book purpose, resource constraints, cPTSD as structural limit, friend-circle reduction as active decision
+- `20260215 Friend visit.md` (2026-03-15): book purpose, resource constraints, cPTSD as structural limit, friend-circle reduction as active decision
 - Thomas's essay on "Do No Harm" vs. "Reduce Suffering" (2026-03-19): harm-avoidance frame critique, ACE Study, liability-driven risk-aversion, domain-general abstraction
 - Thomas / Claude conversation, 2026-03-23: functional discourse analysis, capacity failure taxonomy, O'Brien LBC segment (Strait of Hormuz), drapedapes framework
 - Thomas / Claude conversation, 2026-03-24: U.S. fiscal insolvency analysis (Fortune article, Hanke & Walker), Treasury FY2025 consolidated financial statements, human-AI entanglement and distributed obligation (Sapolsky), BS-9 promotion to DB-26
