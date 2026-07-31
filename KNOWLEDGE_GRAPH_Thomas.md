@@ -4,16 +4,16 @@ Status: Working
 Obligation Holder: Thomas
 Default Mode: Mode 1
 Promotion Rule: Promoted to Canonical only after Thomas reviews for accuracy, completeness, and self-audit honesty
-Notes: v3.3 (2026-03-24): DB-8 amended (human-AI entanglement via distributed obligation/Sapolsky); BS-9 promoted to DB-26 (aggressively progressive taxation + UBI); BS-7+BS-10 promoted to DB-27 (healthcare as civil right, merged); BS-8 promoted to DB-28 (technology regulation, OpenAI red flag); EV-11 added (Treasury FY2025 fiscal insolvency data); FR-26 enriched (fiscal insolvency application); SA-3 amended (book-writing as resilience calibration); T-13 added (transformation arrival vs. captured political class); all blind spots (BS-7–BS-10) now declared; 34 new edges. Source: Thomas / Claude session 2026-03-24 (Fortune article analysis, fiscal insolvency dog-walk). v3.2 (2026-03-23): Trim pass — removed declared blind spots (BS-1–BS-6), extracted FR-27 to companion file, removed obsolete 7b implies edges, cleaned merger annotations and duplicate edges from edge map. v3.1 (2026-03-23): Structural audit — section renumbering, stale edge cleanup, new blind spots (BS-7–BS-10), SA-7/DB-17 tension edge, FR-2 amended with FR-25 qualification, FP-16 classification note, T-12 expanded, amendment history extracted to changelog file. Full history: `KNOWLEDGE_GRAPH_Thomas__CHANGELOG__20260323.md`.
+Notes: v3.4 (2026-07-31): Public-copy generalization pass — instance-specific political references (named individuals and movements) generalized to structural form throughout; one declared position (DB-28) and its supporting evidence node (EV-12) withdrawn on re-evaluation — the position as stated overclaimed confidence and is no longer held in declared form; associated stubs and edges removed, full record retained in internal copies and version history; no other positions, nodes, grounds, or edges changed; DB-2 and remaining evidence nodes retained as factual anchors. v3.3 (2026-03-24): DB-8 amended (human-AI entanglement via distributed obligation/Sapolsky); BS-9 promoted to DB-26 (aggressively progressive taxation + UBI); BS-7+BS-10 promoted to DB-27 (healthcare as civil right, merged); EV-11 added (Treasury FY2025 fiscal insolvency data); FR-26 enriched (fiscal insolvency application); SA-3 amended (book-writing as resilience calibration); T-13 added (transformation arrival vs. captured political class); blind spots BS-7, BS-9, and BS-10 now declared; 34 new edges. Source: Thomas / Claude session 2026-03-24 (Fortune article analysis, fiscal insolvency dog-walk). v3.2 (2026-03-23): Trim pass — removed declared blind spots (BS-1–BS-6), extracted FR-27 to companion file, removed obsolete 7b implies edges, cleaned merger annotations and duplicate edges from edge map. v3.1 (2026-03-23): Structural audit — section renumbering, stale edge cleanup, new blind spots (BS-7–BS-10), SA-7/DB-17 tension edge, FR-2 amended with FR-25 qualification, FP-16 classification note, T-12 expanded, amendment history extracted to changelog file. Full history: `KNOWLEDGE_GRAPH_Thomas__CHANGELOG__20260323.md`.
 -->
 
 # KNOWLEDGE GRAPH — Thomas (Self-Side)
 
 **Timestamp:** 2026-03-06 14:00
-**Revised:** 2026-03-24 (v3.3)
+**Revised:** 2026-07-31 (v3.4)
 **Status:** Working / Awaiting Thomas Review
-**Version:** 3.3
-**Previous version:** `KNOWLEDGE_GRAPH_Thomas__20260323-1700.md` (v3.2)
+**Version:** 3.4
+**Previous version:** `KNOWLEDGE_GRAPH_Thomas__20260324-1000.md` (v3.3)
 **Amendment history:** `KNOWLEDGE_GRAPH_Thomas__CHANGELOG__20260323.md`
 **Sources:**
 - `Mind Map 2025.md`
@@ -201,7 +201,7 @@ This does not excuse denialism. It explains it, and changes the moral allocation
 
 **Source:** PT$D book (B-1 concept).
 
-**Nuances DB-1:** Trump enablers are practicing moral cowardice *within a system that has already taught them that idealism leads to betrayal.* The cowardice is real; the context matters for understanding it.
+**Nuances DB-1:** Authoritarian enablers are practicing moral cowardice *within a system that has already taught them that idealism leads to betrayal.* The cowardice is real; the context matters for understanding it.
 
 **Nuances FR-14 (distributed responsibility):** The architects of the broken promise bear the heaviest moral weight.
 
@@ -449,7 +449,7 @@ When an actor is constrained into a choice between bad options, the moral burden
 
 **Implications:**
 - The trolley problem is not a clean test of individual ethics — it is primarily an indictment of whoever created the trolley scenario
-- Trump enablers bear less individual moral weight if their information environment was deliberately engineered (FR-4, FR-8) — but this reduces, not eliminates, their obligation
+- Enablers of authoritarian movements bear less individual moral weight if their information environment was deliberately engineered (FR-4, FR-8) — but this reduces, not eliminates, their obligation
 - Systemic moral responsibility does not dissolve individual obligation; it distributes it across more actors
 - "Anger at the system" is not a rationalization — it is accurate moral accounting
 
@@ -487,7 +487,7 @@ Harm is not a simple binary. Assessing it requires three parameters:
 
 ### FR-16 — Earned Clarity Distortion *(v1.6 addition)*
 
-**The framework:** Being repeatedly vindicated on large-scale threats sharpens pattern recognition — this is an asset. But it also compresses the moral distance between genuinely unambiguous cases (e.g., Nazi salute on inaugural stage, family member defending a rapist) and contextually ambiguous ones (e.g., friend not reading your book, Turkish friend's conflict-avoidance). Trauma-sharpened pattern recognition accelerates this compression. The result: ambiguous data gets assigned the moral weight of the clearest cases.
+**The framework:** Being repeatedly vindicated on large-scale threats sharpens pattern recognition — this is an asset. But it also compresses the moral distance between genuinely unambiguous cases (e.g., a Nazi salute performed on a national political stage, family member defending a rapist) and contextually ambiguous ones (e.g., friend not reading your book, Turkish friend's conflict-avoidance). Trauma-sharpened pattern recognition accelerates this compression. The result: ambiguous data gets assigned the moral weight of the clearest cases.
 
 **This is not a debunking of Thomas's positions.** His macro-level threat assessments have been vindicated. The risk is not that he is wrong about the large things. The risk is that the certainty earned on large things bleeds into calibration of smaller things.
 
@@ -620,7 +620,7 @@ Harm is not a simple binary. Assessing it requires three parameters:
 
 **The framework:** Denialism is not only a product of individual fear or ego distortion — it is often the output of a *cultural operating system* that systematically teaches its members to deny, deflect, or rationalize harmful patterns. Cultures transmit epistemic pathologies the way they transmit values: through socialization, status incentives, and collective trauma.
 
-**Illustrative cases:** A Russian friend's Putin apologetics, a Turkish friend's conflict-avoidance, an American friend's Trump normalization — these are not only individual moral failures. They are the predictable outputs of cultural inheritance systems that have learned to make certain lies easier to believe.
+**Illustrative cases:** A Russian friend's Putin apologetics, a Turkish friend's conflict-avoidance, an American friend's normalization of authoritarian politics — these are not only individual moral failures. They are the predictable outputs of cultural inheritance systems that have learned to make certain lies easier to believe.
 
 **What this framework does not do:** It does not excuse individual positions. It explains their stubbornness and changes the diagnostic: you are not arguing with a person, you are arguing with a person *plus* their cultural operating system.
 
@@ -671,7 +671,7 @@ Functional discourse is an exchange in which both parties share epistemic standa
 
 **Why discourse breaks:**
 
-Condition 4 is the load-bearing one. When identity and position fuse, conditions 1–3 become inert — no evidence can penetrate because revision feels like annihilation of self. This is not stupidity (see FR-25); it is the structural effect of political systems that weaponize identity as the binding material of coalition. Trump's movement exploits this deliberately: the policy content is secondary; the identity signal is primary. Once the fusion is complete, discourse is not degraded — it is functionally unavailable.
+Condition 4 is the load-bearing one. When identity and position fuse, conditions 1–3 become inert — no evidence can penetrate because revision feels like annihilation of self. This is not stupidity (see FR-25); it is the structural effect of political systems that weaponize identity as the binding material of coalition. Modern authoritarian-populist movements exploit this deliberately: the policy content is secondary; the identity signal is primary. Once the fusion is complete, discourse is not degraded — it is functionally unavailable.
 
 **Why this matters beyond politics:**
 
@@ -728,18 +728,18 @@ The resistance to the word is itself a form of epistemic avoidance: by refusing 
 
 **The honest sociological claim:**
 
-Trump's coalition contains all three types simultaneously. The movement is engineered to function across them:
+Authoritarian-populist coalitions contain all three types simultaneously. The movement is engineered to function across them:
 - For the **capacity-limited**: simple repetition, emotional signal, identity salience — no argument required
 - For the **motivated reasoners**: permission structure — everyone else is doing it; the rules don't apply to us
 - For the **epistemically vulnerable**: information environment saturation — alternative sources discredited before they can compete
 
-This is not exploitation of stupidity. It is a multi-layer communication architecture optimized for each failure mode. The reality TV expertise is real: Trump understands that emotional salience beats factual coherence in high-noise media environments. That is a production insight, not a political one. It was transferred from entertainment to politics intact.
+This is not exploitation of stupidity. It is a multi-layer communication architecture optimized for each failure mode. The entertainment-industry expertise such movements draw on is real: emotional salience beats factual coherence in high-noise media environments — a production insight, not a political one, transferred from entertainment to politics intact.
 
 **Relationship to FP-4 (Basic Respect):**
 
 Naming the capacity-limited type honestly does not violate FP-4. Respect is a floor — it is not agreement, not patience without limit, not the suppression of accurate diagnosis. Calling something what it is is compatible with treating every person with baseline dignity. The failure to name it is not kindness; it is an accuracy cost paid in the currency of politeness.
 
-**Connects to:** FR-24 (which type you face determines whether functional discourse is available), FR-1 (type determines what kind of response is calibrated), FR-2 (cowardice reframe "won't look / can't see" applies specifically to motivated reasoners), FP-4 (respect is a floor, not an accuracy suppressor — apparent tension resolved here), FP-16 (motivated reasoners in the Trump coalition are partly operating under promise trauma; context shifts moral weight toward architects without eliminating individual allocation), DB-1 (moral allocation for Trump enablement depends on which type they are), SA-4 (Thomas must accurately allocate failure type without using the taxonomy as a rationalization for contempt)
+**Connects to:** FR-24 (which type you face determines whether functional discourse is available), FR-1 (type determines what kind of response is calibrated), FR-2 (cowardice reframe "won't look / can't see" applies specifically to motivated reasoners), FP-4 (respect is a floor, not an accuracy suppressor — apparent tension resolved here), FP-16 (motivated reasoners in such coalitions are partly operating under promise trauma; context shifts moral weight toward architects without eliminating individual allocation), DB-1 (moral allocation for authoritarian enablement depends on which type they are), SA-4 (Thomas must accurately allocate failure type without using the taxonomy as a rationalization for contempt)
 
 **Source:** Haidt, *The Righteous Mind*; Bonhoeffer, "On Stupidity" (1943); Cipolla, *The Basic Laws of Human Stupidity* (1976); Thomas / Claude conversation, 2026-03-23.
 
@@ -765,7 +765,7 @@ A system maintaining apparent equilibrium with zero displacement is not doing "z
 
 **Application to political systems:** Authoritarian stability is often read as societal acceptance. It is more accurately an isometric hold: the population is exerting constant suppressed force; the regime is expending constant energy to prevent displacement. When the energy balance shifts — through economic shock, elite defection, or coordination — the collapse is rapid and appears "sudden" only to snapshot readers.
 
-**Application to U.S. fiscal insolvency (v3.3):** The U.S. fiscal position is a sovereign-scale isometric hold. $136.2T in total obligations against $6T in assets, growing $10.1T/year in unfunded obligations alone. The hold appears stable — no sovereign default, no currency collapse, no benefit cuts — but the energy cost is enormous: $1T/year in interest payments alone (buying nothing), reserve currency privilege being expended as structural load-bearing capacity, and political capital consumed in manufactured emergencies that distract from the underlying arithmetic. The "rolling scheme" argument — that each day's scheme only needs to get us to tomorrow's scheme — is extend-and-pretend at civilizational scale. The diagnostic question is which phase the system occupies: if phase 3 (limit-cycle oscillations = political volatility, institutional erosion, DOGE chaos, culture war as displacement activity), then the structural snap is in the failure progression, not merely hypothetical. The potential phase-shift (AI-driven governance transformation) is a race condition: does the transformation arrive and deploy before the hold cost exceeds the system's remaining capacity? See T-13, EV-11.
+**Application to U.S. fiscal insolvency (v3.3):** The U.S. fiscal position is a sovereign-scale isometric hold. $136.2T in total obligations against $6T in assets, growing $10.1T/year in unfunded obligations alone. The hold appears stable — no sovereign default, no currency collapse, no benefit cuts — but the energy cost is enormous: $1T/year in interest payments alone (buying nothing), reserve currency privilege being expended as structural load-bearing capacity, and political capital consumed in manufactured emergencies that distract from the underlying arithmetic. The "rolling scheme" argument — that each day's scheme only needs to get us to tomorrow's scheme — is extend-and-pretend at civilizational scale. The diagnostic question is which phase the system occupies: if phase 3 (limit-cycle oscillations = political volatility, institutional erosion, slash-and-burn government-efficiency campaigns, culture war as displacement activity), then the structural snap is in the failure progression, not merely hypothetical. The potential phase-shift (AI-driven governance transformation) is a race condition: does the transformation arrive and deploy before the hold cost exceeds the system's remaining capacity? See T-13, EV-11.
 
 **Grounds:** FP-8 (silence is not neutrality — it is an active hold against change) + FR-4 (structural cost extraction: the hold cost is extracted disproportionately from those at the bottom) + FR-2 (snapshot fallacy: the level appears stable while the rate tells a different story)
 
@@ -805,10 +805,10 @@ Complex ideas fail to transfer not primarily because of vocabulary but because o
 
 ---
 
-### DB-1 — Trump's Enablers Are Practicing Moral Cowardice, Not Ignorance
+### DB-1 — Authoritarian Enablers Are Practicing Moral Cowardice, Not Ignorance
 Grounds: FP-1 (obligation) + FP-8 (silence enables) + FR-2 (deferral = temporal distortion) + FR-9 (ego distortion) + FR-14 (distributed responsibility)
 
-The evidence of harm has been available and documented since before the 2016 campaign. Continued support is not ignorance — it is a choice to defer consequence onto others. The cowardice frame: *"They won't look"* — not *"They can't see."*
+The evidence of harm has been available and documented long before each point of escalation. Continued support is not ignorance — it is a choice to defer consequence onto others. The cowardice frame: *"They won't look"* — not *"They can't see."*
 
 This is a moral diagnosis, not a cognitive one. It implies different remedies: not more information, but confrontation with obligation.
 
@@ -826,7 +826,7 @@ A peaceful transfer of power is not a norm — it is the mechanism by which pres
 ### DB-3 — Vaccine and Mask Refusal Violates Collective Obligation
 Grounds: FP-5 (Singer) + FP-6 (freedom limits) + EV-1
 
-These are not freedom issues. They are collective obligation issues. When your behavior creates measurable harm to others (infection, death), FP-6 applies. The 1M+ COVID deaths (EV-1) from a "hoax virus" is the evidentiary anchor.
+These are not freedom issues. They are collective obligation issues. When your behavior creates measurable harm to others (infection, death), FP-6 applies. The 1M+ COVID deaths (EV-1) despite the official "hoax" framing are the evidentiary anchor.
 
 ---
 
@@ -940,7 +940,7 @@ When all three conditions are met, the obligation shifts from preserving epistem
 
 **The limit:** The charge is *not always* a category error. Cultural sensitivity includes sensitivity to *how* you engage — not just *whether* you engage. The substance of Thomas's critique may be correct while the delivery in a specific moment warrants adjustment. Thomas acknowledged this in the relevant session and made adjustments accordingly.
 
-**Illustrative case (from 2026-03-13 audit):** Russian friend defending Putin, Turkish friends' conflict-avoidance around Elon Musk Nazi salute. These are not private quirks — they are politically consequential patterns documented across the literature on authoritarian collapse. Critiquing them is not insensitivity to the persons. It is fidelity to FP-8.
+**Illustrative case (from 2026-03-13 audit):** Russian friend defending Putin, Turkish friends' conflict-avoidance around a major public figure's Nazi salute. These are not private quirks — they are politically consequential patterns documented across the literature on authoritarian collapse. Critiquing them is not insensitivity to the persons. It is fidelity to FP-8.
 
 **Connects to:** FP-4, FP-8, FP-12, FR-16, FR-17, T-9
 
@@ -1107,7 +1107,7 @@ Grounds: FR-4 + DB-5 + FR-26 + FR-1 + EV-11 + EV-3
 
 2. **Universal Basic Income.** UBI is necessary as a stabilization and recovery mechanism — not as a permanent substitute for structural economic participation, but as a floor that prevents the time-extraction spiral (DB-5) from pulling people below the threshold where they can think, participate, and hold their institutions accountable. Without a floor, the bottom of the distribution runs perpetual deficits and cannot afford the cognitive resources that democratic participation requires.
 
-**The fiscal insolvency connection (EV-11):** The Treasury's FY2025 data shows $136.2 trillion in total obligations against $6 trillion in assets. The political class that created this hole did so while cutting taxes on the wealthy and deferring the cost onto Social Security and Medicare — the programs the middle and lower classes depend on. MAGA voters enabled policies that make their own dollars weaker and their own safety net less funded. This is FR-9 (ego distortion) and FP-8 (denialism enables oppression) operating at sovereign fiscal scale.
+**The fiscal insolvency connection (EV-11):** The Treasury's FY2025 data shows $136.2 trillion in total obligations against $6 trillion in assets. The political class that created this hole did so while cutting taxes on the wealthy and deferring the cost onto Social Security and Medicare — the programs the middle and lower classes depend on. The voters most loyal to that political class enabled policies that make their own dollars weaker and their own safety net less funded. This is FR-9 (ego distortion) and FP-8 (denialism enables oppression) operating at sovereign fiscal scale.
 
 **The cPTSD parallel:** The pattern is structurally identical to the family dysfunction documented in PT$D: the "adults in the room" (political class, institutional leadership) are failing their obligation, the cost is deferred onto the vulnerable, denial prevents acknowledgment, and everyone is about to suffer as a result. The national fiscal crisis is the family crisis at scale. Thomas's resilience — earned through writing the book and processing the family pattern — is what allows this connection to be named without being governed by it. See SA-3 v3.3 amendment.
 
@@ -1134,34 +1134,13 @@ Grounds: DB-24 + EV-9 + FR-14 + FP-5 + FP-1 + FR-4 + FR-26
 
 ---
 
-### DB-28 — Technology Requires Regulation; the AI Race Framing Is Reckless *(v3.3 addition — promoted from BS-8)*
-Grounds: FR-8 + FR-24 + FR-22 + FP-11 + FR-1 + FR-20
-
-**The position:** Technology platforms and AI systems require regulation. The framing of AI development as a race between the U.S. and China is a manufactured urgency (FP-11) that suppresses the regulatory instinct. Slowing down is not losing — it is being less reckless with civilizational-scale tools.
-
-**Regulation helps industries:** This is not an anti-technology position. Regulation routinely helps industries by establishing trust, standardizing interfaces, preventing race-to-the-bottom dynamics, and creating the conditions under which long-term investment is possible. The absence of regulation is not freedom — it is the precondition for capture by the most aggressive and least scrupulous actors. FR-8 (algorithmic architecture inverts democratic design) and FR-24 (discourse collapse) document the consequences of the unregulated status quo.
-
-**The OpenAI case — a red flag lie:** OpenAI was founded as a nonprofit with an explicit public benefit mission and a commitment to openness. It is now a closed-source, for-profit entity. The trajectory — public benefit promise → investor capture → mission inversion — is a textbook case of FR-1 (credibility collapses when obligation is severed). The organization's original name is now a lie. This is not a minor branding issue; it is FR-20 (truth as scarce commodity) in operation: a major AI institution depleted its own truth-supply by making promises it structurally abandoned. The "open" in OpenAI is now manufactured consent (FR-4 mechanism 6).
-
-**The connection to FR-8 and FR-24:** Unregulated algorithmic systems have already produced the discourse collapse (FR-24) and democratic inversion (FR-8) that the KG documents. AI systems are the next generation of the same architecture — more powerful, less transparent, and being deployed under the same "move fast and break things" ideology that produced the current pathology. The appropriate response is not acceleration but the regulatory infrastructure that should have existed for social media and was deliberately prevented by the same interests (FR-4) that benefit from the absence of constraint.
-
-**The Altman pattern — serial obligation-severance (EV-12):** The OpenAI case is not a single corporate pivot. Sam Altman's career is a documented series of "trust me bro" moments — claimed obligation followed by severance. Loopt: claimed massive user base, had 500, sold in an alleged dirty deal, walked away with millions for an app that ceased to exist. YC/Hydrazine: promised no cross-investment, invested 75% of his fund in YC companies. OpenAI: launched with a charter pledging "primary fiduciary duty to humanity," converted to for-profit, went closed-source, now lobbies for deregulation. Peter Thiel called him "more of a messiah figure" — the messiah archetype is FR-1's altitude model at maximum: infinite insulation, zero accountability, credibility sustained entirely by faith rather than demonstrated obligation. Three documented lies before the Blueprint adds a fourth layer. This is not a tech company that drifted from its mission — it is a pattern of obligation-as-branding where the obligation was never structurally real.
-
-**The OpenAI Economic Blueprint as case study (EV-12):** In February 2025, OpenAI published a U.S. Economic Blueprint that instantiates every mechanism DB-28 names. The document frames AI as a "race America must win" against China (FP-11: manufactured urgency), uses American exceptionalism as moral cover without acknowledging the actual U.S. record (FR-9: national ego distortion), deploys a cherry-picked automobile analogy to cast regulation as backwards (FR-20: truth-supply depletion via selective history), and states the transaction in plain text: companies that cooperate on national security evaluations receive "preemption from state-by-state regulations" (FR-4 mechanism 1: regulatory capture). The document is not policy analysis — it is a lobbying artifact produced by an entity that has already demonstrated willingness to sever public obligation for profit. The Thucydides Trap framing (inevitable U.S.-China rivalry) forecloses cooperative or multipolar options before the conversation begins (FR-24: discourse collapse applied to geopolitics). The $175B "will flow to China" argument is FP-11 + FR-2: fear-based urgency combined with "act now or lose forever" temporal distortion. Sam Altman's framing — "AI will help our children do things we can't… everyone's lives can be better than anyone's life is now" — is utopian promise deployed as regulatory anesthetic.
-
-**What this position does not declare:** Specific regulatory mechanisms (algorithmic transparency mandates, platform breakup, public utility classification, AI licensing regimes). The position is that regulation is necessary, that the race framing is a manufactured urgency, and that the entities lobbying loudest against regulation are the ones whose track record most demands it. See FR-13.
-
-**Source:** Thomas / Claude conversation, 2026-03-24; `Open AI Economic blueprint.md`.
-
----
-
 ## SECTION 4 — EVIDENCE / DATA
 
 *External anchors. Empirical claims. Revisable when better evidence arrives.*
 
 | ID | Evidence | Supports |
 |---|---|---|
-| EV-1 | 1M+ U.S. COVID deaths from a declared "hoax virus" | DB-1, DB-3 |
+| EV-1 | 1M+ U.S. COVID deaths despite official "hoax" denialism | DB-1, DB-3 |
 | EV-2 | January 6 documented record; court findings; Big Lie litigation outcomes | DB-2 |
 | EV-3 | Neoliberal wealth concentration data: Gini coefficients, wealth share trends since 1970s | DB-5, DB-8, FR-4 |
 | EV-4 | Gun violence and suicide statistics; comparative international data; gun removal → suicide rate drop | DB-7 |
@@ -1172,7 +1151,6 @@ Grounds: FR-8 + FR-24 + FR-22 + FP-11 + FR-1 + FR-20
 | EV-9 | ACE Study (Felitti et al., 1998; ~17,000 participants): adverse childhood experiences directly predict adult chronic disease, mental health disorders, and shortened lifespan via dose-response; institutional non-adoption of ACE screening is itself evidence of harm-avoidance producing harm | FP-16, FR-22, DB-24 |
 | EV-10 | CRE 2026 market data: office CMBS delinquency at 12.34% (early 2026); ~$875B debt maturing 2026, ~$1.26T in 2027 — the stacking effect of 2024–2025 "Extend and Pretend" loan extensions; K-shaped recovery (trophy assets stabilizing, Class B/C office in negative equity); BlackRock HLEND ($26B fund) gated withdrawals March 6 2026 ($1.2B redemption requests against 5% quarterly cap). Primary instantiation of FR-2 Rates vs. Levels (extend-and-pretend = institutional temporal distortion), FR-26 (Isometric Hold: stable level while cost compounds), and FR-4 (K-shaped distress = wealth concentration in crisis resolution). Source: Thomas / Gemini conversation 2026-03-23: `_CRE Market Faces Debt Maturity Wall.md` | FR-2, FR-4, FR-26 |
 | EV-11 | U.S. Treasury FY2025 Consolidated Financial Statements (released March 2026): $6.06T total assets vs. $47.78T total liabilities (on balance sheet); negative net position of −$41.72T; $88.4T in 75-year unfunded social insurance obligations (off balance sheet); total federal obligations $136.2T (~5× annual GDP of ~$27T); single-year surge of $10.1T in unfunded obligations (FY2024→FY2025), driven by $6.9T Medicare Part B and $2.5T Social Security shortfall increases; annual interest payments approaching $1T (larger than defense budget); GAO issued disclaimer of opinion for 29th consecutive year — cannot determine whether statements are fairly presented, primarily due to DoD accounting failures. The household analogy (÷100M): income $52,446, spending $73,378, deficit $20,932, total debt $1,361,788, assets $60,554. Source: Hanke & Walker, "The Treasury just declared the U.S. insolvent. The media missed it," *Fortune*, March 23, 2026. | DB-26, FR-26, FR-2, FR-4, FR-9, FP-8 |
-| EV-12 | OpenAI Economic Blueprint (Feb 2025) + Altman pattern: OpenAI published a U.S. policy document lobbying for federal preemption of state AI regulation, framing AI as a "race America must win" against China, and positioning OpenAI as a national security partner. Key structural moves: (1) manufactured urgency via U.S.-China binary that forecloses cooperative/multipolar options (FP-11); (2) American exceptionalism as moral cover — "the values the US has always stood for" — without acknowledging the actual U.S. record (FR-9 at national scale); (3) Red Flag Act analogy casting regulation as backward (FR-20: cherry-picked history as argument); (4) explicit transaction: companies cooperate on national security theater, receive "preemption from state-by-state regulations" in return (FR-4 mechanism 1: regulatory capture in plain text); (5) $175B "will flow to China" fear framing (FP-11 + FR-2); (6) "common-sense rules" = self-regulation by the entities that already severed their public benefit obligation. **The Altman pattern (More Perfect Union, 2026):** The Blueprint is not an isolated document from an otherwise trustworthy entity. Sam Altman's career is a serial pattern of claimed obligation followed by severance: (a) Loopt — claimed "way more users than any similar service," had 500; promised Reuters evidence, never provided it; sold to Green Dot in alleged dirty deal enriching Sequoia insiders; tech was shut down immediately; (b) Hydrazine/YC — promised he didn't cross-invest in YC companies; 75% of Hydrazine capital was in YC companies; (c) OpenAI — launched with charter pledging "primary fiduciary duty to humanity" and commitment to "avoid enabling uses of AI that harm humanity or unduly concentrate power"; converted to for-profit, closed source, lobbied for deregulation. Peter Thiel described Altman as "more of a messiah figure" — the messiah is the ultimate insulated position in FR-1's altitude model: no accountability, only faith. "Trust me bro" IS the insulation mechanism. Three documented lies (user base, cross-investment, nonprofit charter) before the Economic Blueprint adds a fourth layer. Source: `Open AI Economic blueprint.md`; `Critique of US Economic Blueprint (Feb 2025) and Thucydides Trap.md`; More Perfect Union (YouTube, 2026); Thomas / Claude session 2026-03-24. | DB-28, FR-4, FP-11, FR-9, FR-20, FR-1, FR-24 |
 
 ---
 
@@ -1408,7 +1386,7 @@ flowchart LR
 
 **The tension:** The U.S. fiscal position (EV-11) is an isometric hold (FR-26) in what appears to be phase 3 (limit-cycle oscillations). A potential escape exists: transformative technology (AI) could restructure governance, resource allocation, and scarcity problems sufficiently to change the underlying physics before the structural snap. The "rolling scheme" argument — that each day's scheme only needs to get us to tomorrow, and tomorrow may bring a genuinely new paradigm — is not inherently dishonest. It is how sovereign debt has functioned for decades, and it has *worked* in the narrow sense of avoiding collapse.
 
-**Why the tension is genuine:** The escape requires AI to be deployed for redistribution, governance reform, and genuine resource allocation — i.e., to reduce the insulation variable in FR-1 and reverse the wealth concentration FR-4 documents. But the political class controlling AI deployment is the same class FR-4 identifies as captured by plutocratic interests. They will deploy AI to *maintain* the isometric hold (surveillance, efficiency extraction, cost-cutting that concentrates wealth further — Musk's DOGE is the proof case), not to *release* it (redistribution, genuine allocation reform, UBI infrastructure).
+**Why the tension is genuine:** The escape requires AI to be deployed for redistribution, governance reform, and genuine resource allocation — i.e., to reduce the insulation variable in FR-1 and reverse the wealth concentration FR-4 documents. But the political class controlling AI deployment is the same class FR-4 identifies as captured by plutocratic interests. They will deploy AI to *maintain* the isometric hold (surveillance, efficiency extraction, cost-cutting that concentrates wealth further — recent government-efficiency initiatives are the proof case), not to *release* it (redistribution, genuine allocation reform, UBI infrastructure).
 
 **The race condition:** This is a time-dependent tension. The hold cost is increasing ($10.1T/year in unfunded obligations alone). The question is whether:
 - (a) AI-driven transformation arrives and is deployed by obligation-holders (DB-8 v3.3: human-AI entangled dyads where the human bears consequence), OR
@@ -1434,11 +1412,6 @@ flowchart LR
 
 ### ~~BS-7 — Healthcare System Reform~~ *(v3.1 addition)*
 **[PROMOTED TO DB-27, merged with BS-10 — v3.3]** Thomas has declared healthcare (including mental health) as a civil right. See DB-27.
-
----
-
-### ~~BS-8 — Technology/Platform Regulation~~ *(v3.1 addition)*
-**[PROMOTED TO DB-28 — v3.3]** Thomas has declared regulation as necessary; AI race framing as reckless. See DB-28.
 
 ---
 
@@ -1668,7 +1641,7 @@ The minimum structure that must hold for the full argument to stand. Primary tar
 | FP-15 | grounds | T-11 | FP-15 is instantiated structurally in T-11 |
 | FP-15 | grounds | FR-20 | Silence depletes truth supply; FP-15 is micro-level, FR-20 is systemic |
 | FP-5 | grounds | FR-23 | FP-5 establishes individual obligation; FR-23 identifies what individual compliance cannot satisfy |
-| FR-2 | grounds | DB-1 | Deferral = temporal distortion. Load-bearing for Trump debate |
+| FR-2 | grounds | DB-1 | Deferral = temporal distortion. Load-bearing for the authoritarian-enabler debate |
 | FR-2 | grounds | DB-2 | Jan 6 as temporal binding violation |
 | FR-3 | grounds | T-4 | Core Stoic/intensity structural tension; SA-6 extends this |
 | FR-3 | grounds | SA-6 | FR-3 (Stoicism) is the principle SA-6 calibrates against — Stoic detachment from outcome |
@@ -1702,8 +1675,6 @@ Principles that structurally commit Thomas to undeclared positions. A Socratic o
 | Source | Target | Notes |
 |--------|--------|-------|
 | ~~DB-24~~ | ~~BS-7~~ | *(v3.1; retired v3.3)* BS-7 promoted to DB-27 — edges moved to 7d |
-| ~~FR-8~~ | ~~BS-8~~ | *(v3.1; retired v3.3)* BS-8 promoted to DB-28 — edges moved to 7d |
-| ~~FR-24~~ | ~~BS-8~~ | *(v3.1; retired v3.3)* BS-8 promoted to DB-28 — edges moved to 7d |
 | ~~FR-4~~ | ~~BS-9~~ | *(v3.1; retired v3.3)* BS-9 promoted to DB-26 — edges moved to 7d |
 | ~~FR-26~~ | ~~BS-9~~ | *(v3.1; retired v3.3)* BS-9 promoted to DB-26 — edges moved to 7d |
 | ~~SA-7~~ | ~~BS-10~~ | *(v3.1; retired v3.3)* BS-10 merged into DB-27 — edges moved to 7d |
@@ -1740,7 +1711,7 @@ Internal conflicts requiring resolution. Load-bearing tensions are structurally 
 |--------|--------|-------|
 | FP-1 | DB-1 | |
 | FP-1 | DB-8 | |
-| FP-2 | DB-1 | Trump enablers choose comfort over clarity |
+| FP-2 | DB-1 | Authoritarian enablers choose comfort over clarity |
 | FP-2 | DB-10 | |
 | FP-2 | FR-9 | Ego maintenance is motivated by comfort-seeking; FP-2 is the moral foundation of the distortion model |
 | FP-3 | DB-10 | Conditional application |
@@ -1880,7 +1851,7 @@ Internal conflicts requiring resolution. Load-bearing tensions are structurally 
 | FR-23 | DB-25 | Collective skin-in-the-game as democratic infrastructure; national obligation as electoral transformer |
 | FR-2 | FR-25 | Cowardice reframe ("won't look" not "can't see") is type-specific — applies to motivated reasoners only |
 | FR-24 | FP-8 | Discourse collapse is a mechanism by which silence enables — makes speaking costly and correction impossible |
-| FR-25 | DB-1 | Moral allocation for Trump enablement depends on which failure type they are |
+| FR-25 | DB-1 | Moral allocation for authoritarian enablement depends on which failure type they are |
 | FR-4  | DB-25 | Class structure: insulation from war costs enables foreign policy adventurism without accountability |
 | FR-1  | DB-25 | Credibility formula: insulated advocates have near-zero credibility; universal draft uniquely reduces insulation for the political class |
 | FR-14 | DB-25 | War architects bear primary moral weight regardless of whether a draft exists; draft does not transfer that weight to draftees |
@@ -1902,7 +1873,7 @@ Internal conflicts requiring resolution. Load-bearing tensions are structurally 
 | FR-4 | T-13 | *(v3.3)* Captured political class controls AI deployment architecture |
 | DB-26 | T-13 | *(v3.3)* Progressive taxation + UBI are preconditions for the escape path — they shift the political conditions under which deployment decisions are made |
 | DB-8 | T-13 | *(v3.3)* Human-AI entanglement (v3.3 amendment) determines whether obligation-holders control the deployment |
-| FR-9 | DB-26 | *(v3.3)* Ego distortion explains why MAGA voters enabled wealth-extraction policies against their own fiscal interests |
+| FR-9 | DB-26 | *(v3.3)* Ego distortion explains why the movement's own voters enabled wealth-extraction policies against their own fiscal interests |
 | FP-8 | DB-26 | *(v3.3)* Denialism about fiscal insolvency enables continued extraction — media silence on Treasury data is FP-8 in operation |
 | DB-24 | DB-27 | *(v3.3)* Harm-avoidance frames produce the harm they prohibit — the healthcare system's instrumental turn |
 | EV-9 | DB-27 | *(v3.3)* ACE Study: mind-body separation is empirically false; institutional non-adoption is the system's negligence in action |
@@ -1912,12 +1883,6 @@ Internal conflicts requiring resolution. Load-bearing tensions are structurally 
 | FR-4 | DB-27 | *(v3.3)* Revenue concentration at the top while cost is externalized onto the population — FR-4 in the healthcare domain |
 | FR-26 | DB-27 | *(v3.3)* The healthcare status quo is an isometric hold: massive expenditure maintaining artificial scarcity |
 | SA-7 | DB-27 | *(v3.3)* Thomas has direct personal experience of the mental health system's failures — cPTSD as structural limit the system nominally but not practically addresses |
-| FR-8 | DB-28 | *(v3.3)* Algorithmic architecture inverts democratic design — regulation is the corrective |
-| FR-24 | DB-28 | *(v3.3)* Discourse collapse as systemic consequence of unregulated platforms |
-| FR-22 | DB-28 | *(v3.3)* Cultural pathology amplified by algorithmic systems — regulation breaks the amplification loop |
-| FP-11 | DB-28 | *(v3.3)* The AI race framing is manufactured urgency — FP-11 distortion test applies |
-| FR-1 | DB-28 | *(v3.3)* OpenAI's credibility collapsed when it severed its public benefit obligation — FR-1 formula in operation |
-| FR-20 | DB-28 | *(v3.3)* OpenAI's bait-and-switch depleted its own truth-supply — "open" is now manufactured consent |
 
 #### Tension & Self-Audit Nodes →
 
@@ -1934,7 +1899,7 @@ Internal conflicts requiring resolution. Load-bearing tensions are structurally 
 | T-9 | SA-5 | SA-5 is the data-quality caveat on T-9's confrontation decisions |
 | T-9 | T-10 | T-9 (efficacy/accountability distinction) is the same logic applied in T-10 |
 | T-10 | T-11 | T-10 provides the live Switzerland case study that enriches T-11 Node 4b analysis |
-| T-11 | DB-1 | Trump enablers map to nodes 2, 3, 6, 7 on the accountability flowchart |
+| T-11 | DB-1 | Authoritarian enablers map to nodes 2, 3, 6, 7 on the accountability flowchart |
 | T-11 | SA-7 | T-11 Node 4a: historian-informed survival — quiet discernment, not overt activism — is the operational match for SA-7's capacity constraint |
 | DB-17 | SA-7 | Accepting the book's non-commercial function requires acknowledging the capacity constraints SA-7 names |
 | SA-3 | SA-7 | SA-7 extends SA-3: not just emotional intensity but structural capacity limit |
@@ -1968,15 +1933,8 @@ Internal conflicts requiring resolution. Load-bearing tensions are structurally 
 | EV-11 | example_of | FR-26 | — | *(v3.3)* $136.2T obligations, $10.1T/year growth, $1T/year interest = sovereign-scale isometric hold; level appears stable while cost compounds |
 | EV-11 | example_of | FR-2 | — | *(v3.3)* "Rolling scheme" / extend-and-pretend at civilizational scale: each day's fiscal scheme only needs to get to tomorrow's |
 | EV-11 | supports | FR-4 | — | *(v3.3)* Tax cuts for the wealthy created the hole; unfunded obligations fall on Social Security/Medicare beneficiaries = wealth concentration via fiscal architecture |
-| EV-11 | supports | FR-9 | — | *(v3.3)* MAGA voters enabled policies against their own fiscal interests; ego distortion prevents acknowledgment |
+| EV-11 | supports | FR-9 | — | *(v3.3)* The movement's own voters enabled policies against their own fiscal interests; ego distortion prevents acknowledgment |
 | EV-11 | supports | FP-8 | — | *(v3.3)* Media silence on Treasury data = FP-8 denialism at institutional scale; 29-year GAO audit failure = accountability structure that has been silenced |
-| EV-12 | supports | DB-28 | — | *(v3.3)* OpenAI Economic Blueprint is the primary evidentiary anchor for DB-28: lobbying document disguised as policy analysis |
-| EV-12 | supports | FR-4 | — | *(v3.3)* Blueprint explicitly offers regulatory preemption in exchange for national security cooperation — FR-4 mechanism 1 (regulatory capture) stated in plain text |
-| EV-12 | supports | FP-11 | — | *(v3.3)* "Race America must win" + $175B "will flow to China" = manufactured urgency to suppress regulatory instinct |
-| EV-12 | supports | FR-9 | — | *(v3.3)* "The values the US has always stood for" without acknowledging the actual record = national ego distortion |
-| EV-12 | supports | FR-20 | — | *(v3.3)* Red Flag Act analogy and selective history deployed as argument against regulation = truth-supply depletion via cherry-picked narrative |
-| EV-12 | supports | FR-1 | — | *(v3.3)* OpenAI's trajectory (nonprofit → for-profit, open → closed, public benefit → shareholder value) is FR-1 credibility collapse when obligation is severed |
-| EV-12 | example_of | FR-24 | — | *(v3.3)* Thucydides Trap framing forecloses cooperative options before conversation begins — discourse collapse applied to geopolitics |
 
 ---
 
