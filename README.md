@@ -2,7 +2,7 @@
 
 ![The Personal Constitution of [User]](https://github.com/thomastron/personal-constitution/blob/master/_media/Gemini_Generated_Image_pbdkvrpbdkvrpbdk.jpg?raw=true)
 
-You talk. AI listens, organizes, and pushes back. Your beliefs end up on the record — mapped, connected, and stress-tested.
+You talk. AI listens, organizes, and pushes back. Your beliefs end up on the record — mapped, connected, and stress-tested. This is not ego preservation. 
 
 No fancy coding or software skills required! 
 
