@@ -1,6 +1,6 @@
 ## Personal Constitution — Belief Accountability System
 
-![The Personal Constitution of [User]](https://github.com/thomastron/personal-constitution/blob/master/_media/Gemini_Generated_Image_pbdkvrpbdkvrpbdk.jpg?raw=true)
+![](https://github.com/thomastron/personal-constitution/blob/8607502dcb1596f4d585e5eb109ae7b5c3063dc6/_media/WhatEgo.jpeg)
 
 You talk. AI listens, organizes, and pushes back. Your beliefs end up on the record — mapped, connected, and stress-tested. This is not ego preservation. 
 
