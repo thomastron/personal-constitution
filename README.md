@@ -31,8 +31,6 @@ Depending on why you're here:
 >This is documentation architecture. It demonstrates failure-mode thinking applied to belief systems — the `load_bearing` flag is FMEA for arguments — plus disciplined change control (timestamped amendments only, no silent edits) and cross-referenced document structure that stays navigable at scale. The methods came from engineering document control; the substrate happens to be epistemology. 
 
 
-**NOTE:** this machinery was developed alongside — and stress-tested by — a full-length book written under the same constitutional governance principles. The book ships as AI-loadable epistemic infrastructure at [thomastron.github.io/PT$D](https://github.com/thomastron/thomastron.github.io/tree/main/PT%24D).
-
 ## Introduction
 
 Everyone has a personal constitution. It's the set of principles that actually govern how you think, what you defend, and what you won't compromise on — whether you've written them down or not. The difference between having it on paper and not is accountability.
